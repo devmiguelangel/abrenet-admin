@@ -10,7 +10,7 @@ if ($session->err === true) {
 				require '/app/views/rep_general.php';
 				break;
 			case 2:		// Clientes
-				
+				require '/app/views/rep_client.php';
 				break;
 			default:
 				header('Location: index.php');
