@@ -14,7 +14,11 @@ class UserController extends Administrator
 		$depto,
 		$permission,
 		$activated,
-		$passwordUpdate;
+		$passwordUpdate,
+
+		$data = array(),
+		$dataDepto = array()
+		;
 
 	private $cx;
 
@@ -125,6 +129,32 @@ class UserController extends Administrator
 		} else {
 			return false;
 		}
+	}
+
+	public function getDepto($codex = '')
+	{
+		$sql = 'select 
+			sdep.id,
+			sdep.departamento,
+			sdep.codigo 
+		from 
+			sa_departamento as sdep
+		where
+			sdep.codigo like "%' . $codex . '%"
+		;';
+
+		if (($rs = $this->query($sql, MYSQLI_STORE_RESULT)) !== false) {
+			if ($rs->num_rows > 0) {
+				$this->dataDepto = array();
+				while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
+					$this->dataDepto[] = $row;
+				}
+
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	private function cryptPass($password, $digit = 7) {

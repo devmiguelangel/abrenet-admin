@@ -286,8 +286,7 @@ nav{
 #main{
 	width:1100px;
 	min-height:470px;
-	max-height:600px;
-	overflow:auto;
+	min-height:600px;
 	height:auto;
 	margin:0 auto;
 	padding:5px 0;
@@ -492,6 +491,267 @@ form{
 }
 
 /* ===========================BODY============================ */
+#main h1, #main h2, #main h3, #main h4, .h4{
+	display:block;
+	width:auto;
+	height:auto;
+	margin:0 0;
+	padding:15px 15px;
+	border-top:5px solid #00CCFF;
+	text-align:left;
+	font-family: 'league_gothicregular', Helvetica, sans-serif;
+	font-size:200%;
+}
+
+#main h3{
+	width:50%;
+	margin:0 auto;
+	font-size:150%;
+}
+
+/* ===========================REPORTES============================ */
+.rc-records{
+	display:block;
+	width:100%;
+	height:auto;
+	min-height:500px;
+	border:1px solid #CECECE;
+	border-top:0 none;
+}
+
+.rp-link-container{
+	width:100%;
+	border-collapse:collapse;
+}
+
+.rp-link-container tr td{
+	height:30px;
+	border-collapse:collapse;
+	padding:0;
+	margin:0;
+	/*border:1px solid #FCC;*/
+}
+
+.rp-link{
+	display:block;
+	width:auto;
+	height:30px;
+	padding:9px 10px;
+	/*border:1px solid #CCC;*/
+	border-right:1px solid #FFF;
+	border-left:1px solid #CECECE;
+	color:#FFF;
+	font-size:75%;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+	
+	background: #033333; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzMzMzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #033333 0%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#033333), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #033333 0%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #033333 0%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #033333 0%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #033333 0%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#033333', endColorstr='#7db9e8',GradientType=0 ); /* IE6-8 */
+
+
+}
+
+.rp-link:hover, .rp-link.rp-active{
+	border-top:1px solid #CECECE;
+	border-right:1px solid #CECECE;
+	color:#333;
+	background: #dbdbdb; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #dbdbdb 0%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dbdbdb), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #dbdbdb 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #dbdbdb 0%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #dbdbdb 0%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #dbdbdb 0%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+
+}
+
+/*FORMULARIO DE REPORTES*/
+.f-reports{
+	display:block;
+	width:95%;
+	height:auto;
+	margin:0 auto;
+	padding:5px 5px;
+	/*border:1px solid #009;*/
+	border-bottom:1px solid #9FE0FF;
+	
+	font-size:70%;
+	text-align:left;
+}
+
+.f-reports label, .f-reports input[type="text"], .f-reports select, .f-reports .frp-btn{
+	display: inline-block;
+	*display:inline;
+	_display:inline;
+	zoom: 1;
+	vertical-align:top;
+	
+	width:120px;
+	height:auto;
+	margin:2px auto;
+	padding:6px 8px;
+	border-radius:3px;
+	border:1px solid #7CBEBE;
+	
+	box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	-o-box-sizing:content-box;
+	-ms-box-sizing:content-box;
+}
+
+.f-reports label{
+	text-align:right;
+	font-weight:bold;
+	border:0 none;
+}
+
+.f-reports .lbl-cb{
+	width:auto;
+	font-size:90%;
+	vertical-align:text-bottom;
+	height:auto;
+	border:1px solid #CACACA;
+	padding:3px 8px;
+	cursor: pointer;
+}
+
+.f-reports .lbl-cb input[type="checkbox"], .f-reports .lbl-cb input[type="radio"]{
+	cursor:pointer;
+}
+
+.f-reports input[type="submit"].frp-btn{
+	background-image:url(../img/search-icon.png);
+}
+
+.f-reports input[type="reset"].frp-btn{
+	background-image:url(../img/reset-icon.png);
+}
+
+.f-reports .frp-btn{
+	width:170px;
+	height:16px;
+	margin:8px 5px 0 5px;
+	padding:13px 15px;
+	border:1px solid #C6F1FF;
+	border-radius:5px;
+	
+	background-position:left center;
+	background-repeat:no-repeat;
+	cursor: pointer;
+	text-align:center;
+	text-decoration:none;
+	font-size:110%;
+}
+
+.f-reports .frp-btn:hover{
+	background-color:#00BBBB;
+	color:#FFF;
+}
+
+.f-reports input[type="text"].date{
+	width:60px;
+}
+
+.send-xls{
+	display:block;
+	width:200px;
+	height:20px;
+	padding:15px 10px;
+	padding-left:25px;
+	border:1px solid #CCC;
+	background:#333 url(../img/excel1-icon.png) left center no-repeat;
+	background-position:5px center;
+	color:#FFF;
+	font-size:150%;
+	text-align:center;
+	text-decoration:none;
+}
+
+.send-xls:hover{
+	background-color:#E8E8E8;
+	color:#333;
+}
+
+.rp-pr-container{
+	width:100%;
+	height:auto;
+	display:none;
+}
+
+.result-container{
+	width:100%;
+	height:500px;
+}
+
+.result-search{
+	width:100%;
+	height:500px;
+	overflow:auto;
+	overflow:scroll;
+}
+
+.result-loading{
+	display:none;
+	width:100%;
+	height:500px;
+	background:#999 url(../img/loading-03.gif) center no-repeat;
+}
+
+.result-list{
+	font-size:55%;
+}
+
+.result-list thead{
+	background:#0080C0;
+	color:#FFF;
+}
+
+.result-list thead tr td{
+	font-weight:bold;
+	border:1px solid #FFF;
+}
+
+.result-list tbody tr{
+	cursor:default;
+}
+
+.result-list tbody tr td{
+	border-bottom:1px solid #09F;
+	/*font-weight:bold;*/
+}
+
+.result-list tbody tr.unread > td{
+	font-weight:bold;
+}
+
+.result-list tr td{
+	border:1px solid #E5E5E5;
+	padding:2px 3px;
+	text-align:center;
+}
+
+.result-list tr.hover > td{
+	background:#9BDEFF;
+	color:#000;
+}
+
+.result-list tr.active > td{
+	background:#00A5F4;
+	color:#FFF;
+}
 
 /* ===========================FOOTER============================ */
 footer{

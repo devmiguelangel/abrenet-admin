@@ -20,8 +20,28 @@ if ($session->err === true) {
 	<meta charset="utf-8" >
 
 	<link type="text/css" href="css/style.css" rel="stylesheet" />
+
+	<link type="text/css" href="jQueryAssets/smoothness/jquery.ui.all.css" rel="stylesheet" >
+	
+	<link type="text/css" href="css/tooltip-ui.css" rel="stylesheet" />
+	<link type="text/css" href="css/flat/_all.css" rel="stylesheet" />
+
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.widget.js"></script>
+
+	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript" src="jQueryAssets/ui/i18n/jquery.ui.datepicker-es.js"></script>
+	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.accordion.js"></script>
+	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.tabs.js"></script>
+	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.position.js"></script>
+	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.tooltip.js"></script>
+
+	<!--[if lte IE 8]>
 	<script type="text/javascript" src="js/modernizr.custom.17465.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript" src="js/icheck.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
