@@ -21,6 +21,7 @@ class Administrator extends mysqli
 	protected function __construct()
 	{
 		$data = $this->data['mysql'];
+
 		@parent::__construct($data['host'], $data['username'], $data['password'], $data['database']);
 		
 		if (mysqli_connect_error()) {

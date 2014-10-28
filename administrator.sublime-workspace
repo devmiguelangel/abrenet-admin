@@ -4,12 +4,140 @@
 		"selected_items":
 		[
 			[
-				"va",
-				"varchar"
+				"setRe",
+				"setResultCrecer"
+			],
+			[
+				"id",
+				"id_user"
+			],
+			[
+				"sq",
+				"sql  (variable)"
+			],
+			[
+				"ec",
+				"echo	echo \"…\""
+			],
+			[
+				"connect_erro",
+				"connect_errno  (variable)"
+			],
+			[
+				"connec",
+				"connect_error  (variable)"
+			],
+			[
+				"Repo",
+				"ReportDECrecerController  (class)"
+			],
+			[
+				"sa_ef",
+				"sa_ef_aseguradora"
+			],
+			[
+				"int",
+				"into"
 			],
 			[
 				"req",
 				"req	require …"
+			],
+			[
+				"rowD",
+				"rowDt"
+			],
+			[
+				"MYSQLI",
+				"MYSQLI_ASSOC"
+			],
+			[
+				"que",
+				"queryCrecerDt"
+			],
+			[
+				"sql",
+				"sqlCl  (variable)"
+			],
+			[
+				"qu",
+				"query  (function)"
+			],
+			[
+				"query",
+				"queryCrecerEm  (function)"
+			],
+			[
+				"setQ",
+				"setQueryEm"
+			],
+			[
+				"dat",
+				"databse  (variable)"
+			],
+			[
+				"ech",
+				"echo	echo \"…\""
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"ar",
+				"array"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"pr",
+				"product  (variable)"
+			],
+			[
+				"arr",
+				"arrData"
+			],
+			[
+				"na",
+				"name"
+			],
+			[
+				"pre",
+				"prefix"
+			],
+			[
+				"wid",
+				"width:   (property)"
+			],
+			[
+				"base64",
+				"base64_encode"
+			],
+			[
+				"bas",
+				"base64_encode  (function)"
+			],
+			[
+				"echo",
+				"echo"
+			],
+			[
+				"de",
+				"depto"
+			],
+			[
+				"r",
+				"rp  (variable)"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"for",
+				"foreach	foreach …"
 			],
 			[
 				"_S",
@@ -26,14 +154,6 @@
 			[
 				"MYSQ",
 				"MYSQLI_ASSOC"
-			],
-			[
-				"MYSQLI",
-				"MYSQLI_STORE_RESULT"
-			],
-			[
-				"bas",
-				"base64_decode"
 			],
 			[
 				"jsoo",
@@ -76,10 +196,6 @@
 				"multi_query  (function)"
 			],
 			[
-				"arr",
-				"array"
-			],
-			[
 				"fon",
 				"font-size:   (property)"
 			],
@@ -112,42 +228,26 @@
 	"buffers":
 	[
 		{
-			"file": "pass.php",
-			"settings":
-			{
-				"buffer_size": 607,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "header.php",
-			"settings":
-			{
-				"buffer_size": 1882,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "app/views/rep_general.php",
 			"settings":
 			{
-				"buffer_size": 37067,
+				"buffer_size": 3651,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/controllers/ReportController.php",
+			"file": "app/views/rep_de_template.php",
 			"settings":
 			{
-				"buffer_size": 182,
+				"buffer_size": 6528,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/report_template.php",
+			"file": "report.php",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 7098,
 				"line_ending": "Windows"
 			}
 		},
@@ -155,18 +255,31 @@
 			"file": "app/controllers/ReportGeneralController.php",
 			"settings":
 			{
-				"buffer_size": 181,
+				"buffer_size": 6598,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "<?php \n/**\n* Administrator MySQL\n*/\nclass Administrator extends mysqli\n{\n	protected $err = false;\n\n	private $data = array('mysql' => array(\n            'driver'    => 'mysql',\n            'host'      => 'localhost',\n            'database'  => 'sud_administrator',\n            'username'  => 'root',\n            'password'  => '',\n            'charset'   => 'utf8',\n            'collation' => 'utf8_unicode_ci',\n            'prefix'    => 'sa_',\n        )\n	);\n\n	protected $product\n	\n	protected function __construct()\n	{\n		$data = $this->data['mysql'];\n		@parent::__construct($data['host'], $data['username'], $data['password'], $data['database']);\n		\n		if (mysqli_connect_error()) {\n			die('Error de Conexion (' . mysqli_connect_errno() . ' ) ' . mysqli_connect_error());\n		}\n	}\n}\n\n?>",
-			"file": "app/config/administrator.php",
-			"file_size": 793,
-			"file_write_time": 130585526744131603,
+			"file": "app/controllers/ReportDEController.php",
 			"settings":
 			{
-				"buffer_size": 783,
+				"buffer_size": 1374,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/ReportDEEcofuturoController.php",
+			"settings":
+			{
+				"buffer_size": 308,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/ReportDECrecerController.php",
+			"settings":
+			{
+				"buffer_size": 12279,
 				"line_ending": "Windows"
 			}
 		},
@@ -174,23 +287,15 @@
 			"file": "app/config/sud_admin.sql",
 			"settings":
 			{
-				"buffer_size": 3503,
+				"buffer_size": 5121,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "css/style.css",
+			"file": "app/views/rep_de_crecer.php",
 			"settings":
 			{
-				"buffer_size": 19785,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/home.php",
-			"settings":
-			{
-				"buffer_size": 366,
+				"buffer_size": 8692,
 				"line_ending": "Windows"
 			}
 		}
@@ -244,11 +349,45 @@
 		"/D/xampp/htdocs/administrator/app/controllers",
 		"/D/xampp/htdocs/administrator/app/models",
 		"/D/xampp/htdocs/administrator/app/views",
-		"/D/xampp/htdocs/administrator/css",
 		"/D/xampp/htdocs/administrator/js"
 	],
 	"file_history":
 	[
+		"/D/xampp/htdocs/administrator/app/controllers/ProductController.php",
+		"/D/xampp/phpMyAdmin/config.inc.php",
+		"/D/xampp/phpMyAdmin/libraries/config.values.php",
+		"/D/xampp/phpMyAdmin/libraries/config.default.php",
+		"/D/xampp/phpMyAdmin/config.sample.inc.php",
+		"/C/Users/miguel/Desktop/config.inc.php",
+		"/C/Users/miguel/Desktop/php1.ini",
+		"/D/xampp/htdocs/administrator/app/controllers/UserController.php",
+		"/D/xampp/htdocs/crecer/DE-reports-general.class.php",
+		"/D/xampp/htdocs/administrator/app/config/sud_admin.sql",
+		"/D/xampp/htdocs/crecer/sibas-db.class.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM.inc.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_de_result.php",
+		"/D/xampp/htdocs/administrator/app/config/administrator.php",
+		"/C/Users/miguel/AppData/Local/Temp/Rar$DIa0.392/ecofuturo.sql",
+		"/D/xampp/htdocs/administrator/css/style.css",
+		"/D/xampp/htdocs/administrator/css/square/square.css",
+		"/D/xampp/htdocs/administrator/app/views/rep_au_template.php",
+		"/D/xampp/htdocs/crecer/rp-records.php",
+		"/D/xampp/htdocs/crecer/rc-report.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_cl_template.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_trm_template.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_trd_template.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_de_template.php",
+		"/C/Users/miguel/Desktop/miguelangel_mgm/reportes/por_ramo.php",
+		"/D/xampp/htdocs/administrator/app/views/home.php",
+		"/C/Users/miguel/Desktop/miguelangel_mgm/reportes/por_ci.php",
+		"/C/Users/miguel/Desktop/config.php",
+		"/D/xampp/htdocs/administrator/js/script.js",
+		"/D/xampp/htdocs/administrator/app/controllers/SessionController.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_client.php",
+		"/D/xampp/htdocs/crecer/css/style.css",
+		"/D/xampp/htdocs/administrator/pass.php",
+		"/D/xampp/htdocs/administrator/app/views/report_template.php",
+		"/D/xampp/htdocs/administrator/header.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportController",
 		"/C/Users/miguel/Desktop/miguelangel_mgm/reportes/index.php",
@@ -257,33 +396,23 @@
 		"/C/Users/miguel/Desktop/miguelangel_mgm/reportes/css/tooltip-ui.css",
 		"/C/Users/miguel/Desktop/miguelangel_mgm/reportes/css/style.css",
 		"/D/xampp/htdocs/administrator/menu.php",
-		"/D/xampp/htdocs/administrator/app/views/rep_client.php",
 		"/D/xampp/htdocs/administrator/app/views/rep_general.php",
 		"/C/Users/miguel/Desktop/configuration.class.php",
-		"/D/xampp/htdocs/administrator/app/config/administrator.php",
-		"/D/xampp/htdocs/administrator/app/controllers/UserController.php",
 		"/D/xampp/htdocs/administrator/login.php",
 		"/D/xampp/htdocs/administrator/app/views/login.html",
-		"/D/xampp/htdocs/administrator/app/controllers/SessionController.php",
-		"/D/xampp/htdocs/administrator/css/style.css",
-		"/D/xampp/htdocs/administrator/app/views/home.php",
-		"/D/xampp/htdocs/administrator/header.php",
 		"/D/xampp/htdocs/administrator/index.php",
 		"/D/xampp/htdocs/administrator/logout.php",
 		"/D/xampp/htdocs/administrator/app/controllers/session.php",
-		"/D/xampp/htdocs/crecer/sibas-db.class.php",
 		"/D/xampp/htdocs/crecer/TH-loan-record.php",
 		"/D/xampp/htdocs/administrator/app/controllers/AdministratorController.php",
 		"/D/xampp/htdocs/supradmin/login.php",
 		"/D/xampp/htdocs/administrator/app/controllers/user.php",
 		"/D/xampp/htdocs/supradmin/verify-pass.php",
-		"/D/xampp/htdocs/administrator/app/config/sud_admin.sql",
 		"/D/xampp/htdocs/crecer/session.class.php",
 		"/D/xampp/htdocs/supradmin/form-login.php",
 		"/D/xampp/htdocs/administrator/js/scripts.js",
 		"/D/xampp/htdocs/supradmin/js/script.js",
 		"/D/xampp/htdocs/crecer/USR-login.php",
-		"/D/xampp/htdocs/administrator/pass.php",
 		"/D/xampp/htdocs/ecoseguro/script.php",
 		"/D/xampp/htdocs/idepro/sibas-db.class.php",
 		"/D/xampp/htdocs/crecer/includes-ce/certificate-TRD-EM.inc.php",
@@ -291,7 +420,6 @@
 		"/D/xampp/htdocs/crecer/index.php",
 		"/D/xampp/htdocs/crecer/ws_idepro.php",
 		"/D/xampp/htdocs/crecer/admin/sgc_ingreso_usuario.php",
-		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM.inc.php",
 		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM-MO.inc.php",
 		"/D/xampp/htdocs/crecer/certificate-detail.php",
 		"/D/xampp/htdocs/crecer/classes/certificate-sibas-query.class.php",
@@ -318,7 +446,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 		]
@@ -328,66 +456,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"sa_entidad_financiera",
-			"'',",
-			"id int(11)",
-			"int(11)",
-			"sa_entidad_financiera",
-			"</label>",
-			"<label class=\"lbl-cb\">",
-			"</label>",
-			"<label class=\"lbl-cb\">",
-			"</label>",
-			"mode",
-			"rp-pr-container",
-			"h3",
-			"repor",
-			"rp-link-container",
-			"section",
-			"desgr",
-			"automo",
-			"$id,\n				$user,\n				$password,\n				$name,\n				$email,\n				$depto,\n				$permission,\n				$activated,\n				$passwordUpdate;",
-			"IdeproUser",
-			"$session",
-			"err",
+			"checked",
+			"ExecTimeLimit",
+			"18",
+			"cache_size",
+			"upload_max_filesize",
+			"max_execution_time",
+			"xls",
+			"rs",
+			"quer",
+			"this->query",
+			"que",
+			"publ",
+			"queryCrecerEm",
+			"$this->data",
+			"$this->xls\n",
+			"$xls",
+			"')",
+			"),\n",
+			"11",
+			"get_state",
+			"arr_state",
+			"TRUE",
+			"FALSE",
+			"$",
+			"$rowcl",
+			"this->",
+			"<td",
+			"rowcl",
+			"xls",
+			".\"",
+			"\".",
+			"'",
+			"rowCl",
+			"rsCl",
+			"sqlCl",
+			"$sqlCl",
+			"'",
+			"prefijo",
+			". \"",
+			"\" .",
+			"'",
+			"'%",
+			".\"",
+			"\".",
+			".\"'",
+			"'\".",
+			"\"'",
+			"'\"",
+			"'",
+			"<td",
+			"tblusuarios",
 			"$data",
-			"\"",
-			"token-login",
-			"$digito",
-			"fl-sinHash",
-			"sa_",
-			"captcha",
-			"form-login",
-			"fl-captcha",
-			"fl-sin",
-			"fl-captcha",
-			"fl-pass",
-			"fl-user",
-			"$ideproUser",
-			"IdeproUser",
-			"$data_idepro",
-			"$2x$",
-			"$2a$",
-			"('",
-			"index.php?ms=8991b1d81282aa116cf7f035c8ad50ec&page=f9bffe20974b0244098886ab6ac791f6",
-			"$page",
-			"$token",
-			"toke",
-			"interv",
-			"interval",
-			"diff",
-			"datetime1",
-			"page",
-			"<page",
-			"fecha",
-			"tipo",
-			"pla",
-			"opera",
-			"pro",
-			"circu",
-			"ci_cl",
-			"set_query_de_sc",
-			"get_query_sc"
+			"$config",
+			"$",
+			"$this->data['r-state']",
+			"$this->ef",
+			"r-ef",
+			"data-pr",
+			"nc",
+			"prefix",
+			"r-ef",
+			"r-state",
+			"send-xls",
+			"cx->",
+			"$xls",
+			"data-pr",
+			"frp-as",
+			"nas",
+			"$nas",
+			"r-as",
+			"nas",
+			"$nas",
+			"nef",
+			"$value['as_codigo']",
+			"frp-ef-",
+			"nef",
+			"$value['ef_codigo']",
+			"TRUE",
+			"frp-nc",
+			"data-pr",
+			")",
+			"in_",
+			"ef_",
+			"$ef",
+			"ef_",
+			"$pr->data",
+			"dataDepto",
+			"data_depto",
+			"flag",
+			"data-pr",
+			"pr",
+			"id=\"pr\"",
+			"data-pr",
+			"gif",
+			".gif",
+			"</td>",
+			"<div class=\"result-container\">\n        <div class=\"result-loading rl-de\"></div>\n        <div class=\"result-search rs-de\">\n            <table class=\"result-list\" id=\"result-de\">",
+			"<td>",
+			"AU",
+			"-au",
+			"</label>",
+			"<option",
+			"scroll",
+			"fac-records",
+			"result-list",
+			"AU",
+			"TRD",
+			"TRM",
+			"DE",
+			"-de",
+			"-DE",
+			"TRM",
+			"</label>",
+			"<input",
+			"</label>",
+			"<label",
+			"</label>",
+			"<option",
+			"TRD",
+			"TRM",
+			"</label>",
+			"<label",
+			"<input",
+			"<option",
+			"<input",
+			"value",
+			"<input",
+			"<label"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -405,290 +601,24 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "pass.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 607,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								149,
-								135
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "header.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1882,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1718,
-								1718
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "app/views/rep_general.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 37067,
+						"buffer_size": 3651,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								386,
-								386
+								2677,
+								2677
 							]
 						],
 						"settings":
@@ -797,30 +727,32 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1125.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/controllers/ReportController.php",
+					"buffer": 1,
+					"file": "app/views/rep_de_template.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 182,
+						"buffer_size": 6528,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								103,
-								103
+								2161,
+								2161
 							]
 						],
 						"settings":
@@ -929,58 +861,165 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/views/report_template.php",
+					"buffer": 2,
+					"file": "report.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 7098,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1268,
+								1268
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 542.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 3,
 					"file": "app/controllers/ReportGeneralController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 181,
+						"buffer_size": 6598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								173,
-								173
+								4157,
+								4157
 							]
 						],
 						"settings":
@@ -1092,27 +1131,160 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 945.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/config/administrator.php",
+					"buffer": 4,
+					"file": "app/controllers/ReportDEController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 783,
+						"buffer_size": 1374,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								479,
-								479
+								1012,
+								1012
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/controllers/ReportDEEcofuturoController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								79
 							]
 						],
 						"settings":
@@ -1231,20 +1403,152 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "app/config/sud_admin.sql",
+					"buffer": 6,
+					"file": "app/controllers/ReportDECrecerController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3503,
+						"buffer_size": 12279,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3364,
-								3364
+								286,
+								286
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/config/sud_admin.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3644,
+								3339
 							]
 						],
 						"settings":
@@ -1360,161 +1664,29 @@
 						"translation.y": 1125.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "css/style.css",
+					"file": "app/views/rep_de_crecer.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19785,
+						"buffer_size": 8692,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19611,
-								19611
+								1878,
+								1878
 							]
 						],
 						"settings":
 						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 10021.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/views/home.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 366,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								366,
-								366
-							]
-						],
-						"settings":
-						{
+							"auto_name": "",
 							"codeintel": true,
 							"codeintel_config":
 							{
@@ -1620,13 +1792,14 @@
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1678,6 +1851,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"css",
+				"css\\style.css"
+			],
+			[
+				"userc",
+				"app\\controllers\\UserController.php"
+			],
+			[
+				"s",
+				"css\\style.css"
+			],
+			[
+				"pa",
+				"pass.php"
+			],
 			[
 				"hea",
 				"header.php"
@@ -1735,11 +1924,11 @@
 		"selected_items":
 		[
 			[
-				"CRE",
+				"cre",
 				"D:\\xampp\\htdocs\\crecer\\crecer.sublime-project"
 			],
 			[
-				"cre",
+				"CRE",
 				"D:\\xampp\\htdocs\\crecer\\crecer.sublime-project"
 			],
 			[

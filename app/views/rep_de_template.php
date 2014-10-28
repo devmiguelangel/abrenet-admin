@@ -1,6 +1,10 @@
 <div class="rp-pr-container" id="rp-tab-de" style=" <?=$display;?> ">
     <form class="f-reports">
         
+        <label>Prefijo: </label>
+        <input type="text" id="frp-prefix" name="frp-prefix" value="" autocomplete="off"
+            style="width: 50px;">
+
         <label>No. de Certificado: </label>
         <input type="text" id="frp-nc" name="frp-nc" value="" autocomplete="off">
 
@@ -42,17 +46,20 @@ foreach ($depto as $key => $value) {
             <div>
 <?php
 $ef = array();
-if ($pr->getEFProduct('DE') === true) {
+if ($pr->getEFProduct('DE', $_SESSION['id_user']) === true) {
     $ef = $pr->data;
 
+    $nef = 0;
     foreach ($ef as $key => $value) {
+        $nef += 1;
         echo '<label class="lbl-cb">
-            <input type="checkbox" id="frp-ef-' . $value['ef_codigo'] 
-                . '" name="frp-ef-' . $value['ef_codigo'] . '" value="' 
-                . base64_encode($value['ef_id']) . '">
-            ' . $value['ef_nombre'] . '
+            <input type="checkbox" id="frp-ef-' . $nef 
+                . '" name="frp-ef-' . $nef . '" value="' 
+                . $value['ef_codigo'] . '" checked> ' . $value['ef_nombre'] . ' 
         </label> ';
     }
+
+    echo '<input type="hidden" id="nef" name="nef" value="' . $nef . '" >';
 }
 ?>
             </div>
@@ -64,14 +71,17 @@ $in = array();
 if ($pr->getInsurer() === true) {
     $in = $pr->data;
 
+    $nin = 0;
     foreach ($in as $key => $value) {
+        $nin += 1;
         echo '<label class="lbl-cb">
-            <input type="checkbox" id="frp-in-' . $value['as_codigo'] 
-                . '" name="frp-in-' . $value['as_codigo'] . '" value="' 
-                . base64_encode($value['as_id']) . '">
-            ' . $value['as_nombre'] . '
+            <input type="checkbox" id="frp-in-' . $nin 
+                . '" name="frp-in-' . $nin . '" value="' 
+                . $value['as_codigo'] . '"> ' . $value['as_nombre'] . '
         </label> ';
     }
+
+    echo '<input type="hidden" id="nin" name="nin" value="' . $nin . '" >';
 }
 ?>
             </div>
@@ -161,45 +171,7 @@ if ($pr->getInsurer() === true) {
     <div class="result-container">
         <div class="result-loading rl-de"></div>
         <div class="result-search rs-de">
-            <table class="result-list" id="result-de">
-                <thead>
-                    <tr>
-                        <td>No. Certificado</td>
-                        <td>Entidad Financiera</td>
-                        <td>Cliente</td>
-                        <td>CI</td>
-                        <td><?=htmlentities('Género', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Ciudad</td>
-                        <td><?=htmlentities('Teléfono', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Celular</td>
-                        <td>Email</td>
-                        <td>Monto Solicitado</td>
-                        <td>Moneda</td>
-                        <td><?=htmlentities('Plazo Crédito', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Estatura (cm)</td>
-                        <td>Peso (kg)</td>
-                        <td><?=htmlentities('Participación (%)', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Deudor / Codeudor</td>
-                        <td>Edad</td>
-                        <td>Creado Por</td>
-                        <td>Fecha de Ingreso</td>
-                        <td>Sucursal</td>
-                        <td>Agencia</td>
-                        <td>Certificados Anulados</td>
-                        <td>Anulado por</td>
-                        <td><?=htmlentities('Fecha de Anulación', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Estado Compañia', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Estado Banco</td>
-                        <td><?=htmlentities('Motivo Estado Compañia', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Porcentaje Extraprima</td>
-                        <td><?=htmlentities('Fecha Respuesta final Compañia', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Días en Proceso', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Días de Ultima Modificación', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Duración total del caso', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Solicitud Enviada</td>
-                    </tr>
-                </thead>
-            </table>
+            
         </div>
     </div>
 </div>

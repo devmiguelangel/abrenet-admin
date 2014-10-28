@@ -5,34 +5,20 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
+require_once '/app/controllers/ReportGeneralController.php';
+
 if(isset($_GET['data-pr'])){
-	
-	$xls = FALSE;
+	$xls = false;
 	if(isset($_GET['xls'])) {
 		if($_GET['xls'] === md5('TRUE')) {
-			$xls = TRUE;
+			$xls = true;
 		}
 	}
 			
 	$arrData = array();
 	
 	$arrData['r-nc'] = $_GET['frp-nc'];
-	$arrData['r-prefix'] = '';
-	if (isset($_GET['frp-prefix'])) {
-		$arrData['r-prefix'] = $_GET['frp-prefix'];
-	}
-	$arrData['r-user'] = '';
-	if (isset($_GET['frp-user'])) {
-		$arrData['r-user'] = $_GET['frp-user'];
-	}
-	$arrData['r-subsidiary'] = '';
-	if (isset($_GET['frp-subsidiary'])) {
-		$arrData['r-subsidiary'] = $_GET['frp-subsidiary'];
-	}
-	$arrData['r-agency'] = '';
-	if (isset($_GET['frp-agency'])) {
-		$arrData['r-agency'] = $_GET['frp-agency'];
-	}
+	$arrData['r-prefix'] = $_GET['frp-prefix'];
 
 	$arrData['r-client'] = $_GET['frp-client'];
 	$arrData['r-dni'] = $_GET['frp-dni'];
@@ -40,15 +26,45 @@ if(isset($_GET['data-pr'])){
 	$arrData['r-ext'] = $_GET['frp-ext'];
 	$arrData['r-date-b'] = $_GET['frp-date-b'];
 	$arrData['r-date-e'] = $_GET['frp-date-e'];
+
 	if(empty($arrData['r-date-b']) === TRUE) {
 		$arrData['r-date-b'] = '2000-01-01';
 	}
 	if(empty($arrData['r-date-e']) === TRUE) {
 		$arrData['r-date-e'] = '2100-01-01';
 	}
-	
-	$arrData['r-policy'] = '';
-	if(isset($_GET['frp-policy'])) { $arrData['r-policy'] .= $_GET['frp-policy']; }
+
+	$arrData['r-ef'] = '';
+	if ($xls === false) {
+		$nef = (int)$_GET['nef'];
+
+		for ($i = 1; $i <= $nef; $i++) { 
+			if (isset($_GET['frp-ef-' . $i])) {
+				$arrData['r-ef'] .= $_GET['frp-ef-' . $i];
+			}
+		}
+
+		$arrData['r-ef'] = '['.$arrData['r-ef'].']{2}';
+		/*if(empty($arrData['r-ef']) === TRUE) { $arrData['r-ef'] = '.'; }
+		else { $arrData['r-ef'] = '['.$arrData['r-ef'].']{2}'; }*/
+	} else {
+		if(isset($_GET['frp-ef'])) { $arrData['r-ef'] = $_GET['frp-ef']; }
+	}
+
+	$arrData['r-in'] = '';
+	if ($xls === false) {
+		$nin = (int)$_GET['nin'];
+
+		for ($i = 1; $i <= $nin; $i++) { 
+			if (isset($_GET['frp-in-' . $i])) {
+				$arrData['r-in'] .= $_GET['frp-in-' . $i];
+			}
+		}
+		if(empty($arrData['r-in']) === TRUE) { $arrData['r-in'] = '.'; }
+		else { $arrData['r-in'] = '['.$arrData['r-in'].']{2}'; }
+	} else {
+		if(isset($_GET['frp-in'])) { $arrData['r-in'] = $_GET['frp-in']; }
+	}
 	
 	$arrData['r-approved'] = $approved_p = '';
 	if ($xls === FALSE) {
@@ -152,43 +168,25 @@ if(isset($_GET['data-pr'])){
 	
 	$pr = $_GET['data-pr'];
 	
-	/*switch(base64_decode($pr)){
-		case 'DE':
-			$rpde = new ReportsGeneralDE($arrData, $pr, $flag, $xls);
-			
-			if ($rpde->err === FALSE) {
-				$rpde->set_result();
-			} else {
-				echo 'No se puede obtener el reporte';
-			}
-			break;
-		case 'AU':
-			$rpau = new ReportsGeneralAU($arrData, $pr, $flag, $xls);
-			
-			if ($rpau->err === FALSE) {
-				$rpau->set_result();
-			} else {
-				echo 'No se puede obtener el reporte';
-			}
-			break;
-		case 'TRD':
-			$rptrd = new ReportsGeneralTRD($arrData, $pr, $flag, $xls);
-			
-			if ($rptrd->err === FALSE) {
-				$rptrd->set_result();
-			} else {
-				echo 'No se puede obtener el reporte';
-			}
-			break;
-		case 'TRM':
-			$rptrm = new ReportsGeneralTRM($arrData, $pr, $flag, $xls);
-			
-			if ($rptrm->err === FALSE) {
-				$rptrm->set_result();
-			} else {
-				echo 'No se puede obtener el reporte';
-			}
-			break;
-	}*/
+	switch($pr){
+	case 'DE':
+		$rpDe = new ReportGeneralController($pr, $arrData, $xls);
+		
+		if ($rpDe->err === false) {
+			$rpDe->setResult();
+		} else {
+			echo 'No se puede obtener el reporte';
+		}
+		break;
+	case 'AU':
+		
+		break;
+	case 'TRD':
+		
+		break;
+	case 'TRM':
+		
+		break;
+	}
 }
 ?>
