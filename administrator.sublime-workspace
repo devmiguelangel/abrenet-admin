@@ -1,1 +1,552 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bas",
+				"base64_decode"
+			],
+			[
+				"bit",
+				"birth_flag"
+			],
+			[
+				"roa",
+				"rowAge  (variable)"
+			],
+			[
+				"arr",
+				"arrDE"
+			],
+			[
+				"no",
+				"no_emision"
+			],
+			[
+				"denu",
+				"denuncia_email"
+			],
+			[
+				"ci",
+				"circunstancia"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 219.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/xampp/htdocs/administrator"
+	],
+	"file_history":
+	[
+		"/D/xampp/htdocs/ecofuturo/admin-remember.php",
+		"/D/xampp/htdocs/ecofuturo/emision_anular_desgravamen.php",
+		"/D/xampp/htdocs/ecofuturo/automotores.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_anular_certificados.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/envio_automotores.php",
+		"/D/xampp/htdocs/ecofuturo/enviarmail.php",
+		"/D/xampp/htdocs/ecofuturo/ecoseguro.php",
+		"/D/xampp/htdocs/ecofuturo/anular_emision_auto.php",
+		"/D/xampp/htdocs/ecofuturo/rep_auto_nj_excel.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_reporte_facultativo_anulado.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_reporte_provida.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_reporte_eco_sud.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/reportescert.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_repo_desgravamen.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_reportes.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_facultativo.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_slideshow.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_reporte_sol_pr.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_repo_triesgo_emp.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_repo_desgravamen_14-06-2013-old.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_desgravamenproductos.php",
+		"/D/xampp/htdocs/ecofuturo/generar_reporte_excel.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_reporte_credinform.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_reportesOLD.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/generar_reporte_excel_cert_emp.php",
+		"/D/xampp/htdocs/ecofuturo/generar_reporte_excel_fac_anulado.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/reporte_ejecutivo.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_compania.php",
+		"/D/xampp/htdocs/ecofuturo/sgc.php",
+		"/D/xampp/htdocs/ecofuturo/serialize.php",
+		"/D/xampp/htdocs/ecofuturo/sgc_automotores.php",
+		"/D/xampp/htdocs/ecofuturo/rep_auto_excel.php",
+		"/D/xampp/htdocs/ecofuturo/rep_fecha.php",
+		"/D/xampp/htdocs/ecofuturo/recordatorio.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/preaprobadas_de.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/preaprobadas_auto.php",
+		"/D/xampp/htdocs/ecofuturo/proceso_edita_agrega_edad_limite.php",
+		"/D/xampp/htdocs/ecofuturo/process_emp.php",
+		"/D/xampp/htdocs/ecofuturo/pdf_certificado_desgravamen_reportes_sgc.php",
+		"/D/xampp/htdocs/ecofuturo/phpinfo.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/emision_facultativo.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/emision_busqueda.php",
+		"/D/xampp/htdocs/ecofuturo/edita_monto_cotizaemite.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/emision_anulacion.php",
+		"/D/xampp/htdocs/ecofuturo/emision_auto_rep_doc.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_emision_masivos.php",
+		"/D/xampp/htdocs/ecofuturo/ws_server.php",
+		"/D/xampp/htdocs/ecofuturo/js/jquery.wt-rotator.min.js",
+		"/D/xampp/htdocs/ecofuturo/config.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/config.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/lib/configuracion.inc.php",
+		"/D/xampp/htdocs/ecofuturo/contratarOLD.php",
+		"/D/xampp/htdocs/ecofuturo/config2.php",
+		"/D/xampp/htdocs/crecer/js/jquery.mgm_validate-form.js",
+		"/D/xampp/htdocs/crecer/fancybox/jquery.fancybox.css",
+		"/D/xampp/htdocs/idepro/DE-issue-record.php",
+		"/D/xampp/htdocs/idepro/DE-customer-record.php",
+		"/D/xampp/htdocs/idepro/sibas-db.class.php",
+		"/D/xampp/htdocs/crecer/DE-reports-general.class.php",
+		"/D/xampp/htdocs/crecer/DE-customer-record.php",
+		"/D/xampp/htdocs/crecer/header.inc.php",
+		"/D/xampp/htdocs/crecer/index.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM.inc.php",
+		"/D/xampp/htdocs/crecer/DE-data-customer.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-PES.inc.php",
+		"/D/xampp/htdocs/crecer/cancel-policy.php",
+		"/D/xampp/htdocs/crecer/DE-result-quote.php",
+		"/D/xampp/htdocs/crecer/fac-de-email.class.php",
+		"/D/xampp/htdocs/crecer/de-quote.php",
+		"/D/xampp/htdocs/ecoseguro/script.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-TRD-EM.inc.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-TRD-CP.inc.php",
+		"/D/xampp/htdocs/crecer/sibas-db.class.php",
+		"/D/xampp/htdocs/crecer/ws_idepro.php",
+		"/D/xampp/htdocs/crecer/admin/sgc_ingreso_usuario.php",
+		"/D/xampp/htdocs/crecer/session.class.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM-MO.inc.php",
+		"/D/xampp/htdocs/crecer/certificate-detail.php",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas-query.class.php",
+		"/C/Users/miguel/Desktop/miguelangel_mgm/s_usuario.sql",
+		"/C/Users/miguel/Desktop/miguelangel_mgm/s_siniestro_detalle.sql",
+		"/C/Users/miguel/Desktop/miguelangel_mgm/s_siniestro.sql",
+		"/C/Users/miguel/Desktop/configuration.class.php",
+		"/D/xampp/htdocs/idepro/rc-send-sinister.php",
+		"/C/Users/miguel/Desktop/miguelangel_mgm/crecer (1).sql",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas.class.php",
+		"/D/xampp/htdocs/crecer/certificate-policy.php",
+		"/D/xampp/htdocs/crecer/medical-certificate.php",
+		"/D/xampp/htdocs/crecer/provisional-certificate.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-AU-EM.inc.php",
+		"/C/Users/miguel/Desktop/miguelangel_mgm/actualizacion/header.inc.php",
+		"/D/xampp/htdocs/crecer/.idea/vcs.xml",
+		"/D/python-projects/projects/proj_02/proj_02/wsgi.py"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\xampp\\htdocs\\ecofuturo"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"$nombre",
+			"Left Join tbl_des_facultativo AS tbldf ON tbldf.id_emision = tbledc.id_emision",
+			"tbl_emision_des_personas AS tbledp",
+			".php",
+			"tbl_emision_des_personas AS tbledp",
+			".php",
+			"tbl_emision_des_personas AS tbledp",
+			"tbl_emision_des_personas as tbledp",
+			"tbl_emision_des_personas AS tbledp",
+			"$temp_data",
+			"'.",
+			"$rowAge",
+			"idE",
+			"$birth_mess",
+			"$client",
+			"birth_mess",
+			"sqlAge",
+			"cl_nombre",
+			"birth_flag",
+			"$birth_flag",
+			"year",
+			"edad",
+			"verifyYearUser",
+			"'cl-date'",
+			"verifyYea",
+			"$bc",
+			"echo",
+			"$birth_flag",
+			"verifyYearUser",
+			"'amount'",
+			"saldo",
+			"$data[",
+			"$temp_data['amount_bc']",
+			"$temp_data['amount']",
+			"getExtenssionCode",
+			"exit",
+			"exi",
+			"$arrDE[1]",
+			"$DC",
+			"$arrDE[1]",
+			"$coverage",
+			"$arrDE[1]",
+			"$arrDE[2]",
+			"solici",
+			"interv",
+			"interval",
+			"diff",
+			"datetime1",
+			"page",
+			"<page",
+			"fecha",
+			"tipo",
+			"pla",
+			"opera",
+			"pro",
+			"circu",
+			"ci_cl",
+			"set_query_de_sc",
+			"get_query_sc"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "administrator.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"enviode",
+				"064cf398ca384f04af3b4fa4b43dea66\\envio_desgravamen.php"
+			],
+			[
+				"anularcer",
+				"sgc_anular_certificados.php"
+			],
+			[
+				"repofaca",
+				"sgc_reporte_facultativo_anulado.php"
+			],
+			[
+				"sgcrepode",
+				"sgc_repo_desgravamen.php"
+			],
+			[
+				"reporecs",
+				"sgc_reporte_eco_sud.php"
+			],
+			[
+				"reporsolpr",
+				"sgc_reporte_sol_pr.php"
+			],
+			[
+				"sgcrepor",
+				"sgc_reportes.php"
+			],
+			[
+				"sgcfac",
+				"sgc_facultativo.php"
+			],
+			[
+				"repopro",
+				"sgc_reporte_provida.php"
+			],
+			[
+				"reporcre",
+				"sgc_reporte_credinform.php"
+			],
+			[
+				"sgcrepoecoa",
+				"sgc_reporte_facultativo_anulado.php"
+			],
+			[
+				"sgcreporec",
+				"sgc_reporte_eco_sud.php"
+			],
+			[
+				"reporteec",
+				"sgc_reporte_eco_sud.php"
+			],
+			[
+				"reporsol",
+				"sgc_reporte_sol_pr.php"
+			],
+			[
+				"sgc.php",
+				"sgc.php"
+			],
+			[
+				"sgc_repode",
+				"sgc_repo_desgravamen.php"
+			],
+			[
+				"reporteeje",
+				"064cf398ca384f04af3b4fa4b43dea66\\reporte_ejecutivo.php"
+			],
+			[
+				"reportesce",
+				"064cf398ca384f04af3b4fa4b43dea66\\reportescert.php"
+			],
+			[
+				"preap",
+				"064cf398ca384f04af3b4fa4b43dea66\\preaprobadas_de.php"
+			],
+			[
+				"emisionfac",
+				"064cf398ca384f04af3b4fa4b43dea66\\emision_facultativo.php"
+			],
+			[
+				"emibus",
+				"064cf398ca384f04af3b4fa4b43dea66\\emision_busqueda.php"
+			],
+			[
+				"emision_anu",
+				"064cf398ca384f04af3b4fa4b43dea66\\emision_anulacion.php"
+			],
+			[
+				"emisionbus",
+				"064cf398ca384f04af3b4fa4b43dea66\\emision_busqueda.php"
+			],
+			[
+				"configura",
+				"064cf398ca384f04af3b4fa4b43dea66\\lib\\configuracion.inc.php"
+			],
+			[
+				"config",
+				"064cf398ca384f04af3b4fa4b43dea66\\config.php"
+			],
+			[
+				"jva",
+				"js\\jquery.mgm_validate-form.js"
+			],
+			[
+				"deis",
+				"DE-issue-record.php"
+			],
+			[
+				"decus",
+				"DE-customer-record.php"
+			],
+			[
+				"sib",
+				"sibas-db.class.php"
+			],
+			[
+				"deda",
+				"DE-data-customer.php"
+			],
+			[
+				"he",
+				"header.inc.php"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
+				"dedatc",
+				"DE-data-customer.php"
+			],
+			[
+				"cerdee",
+				"includes-ce\\certificate-DE-EM.inc.php"
+			],
+			[
+				"decusre",
+				"DE-customer-record.php"
+			],
+			[
+				"dere",
+				"DE-reports-general.class.php"
+			],
+			[
+				"si",
+				"sibas-db.class.php"
+			],
+			[
+				"cerdeem",
+				"includes-ce\\certificate-DE-EM.inc.php"
+			],
+			[
+				"certsibq",
+				"classes\\certificate-sibas-query.class.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"admini",
+				"D:\\xampp\\htdocs\\administrator\\administrator.sublime-project"
+			],
+			[
+				"admi",
+				"D:\\xampp\\htdocs\\administrator\\administrator.sublime-project"
+			],
+			[
+				"id",
+				"D:\\xampp\\htdocs\\idepro\\idepro.sublime-project"
+			],
+			[
+				"adni",
+				"D:\\xampp\\htdocs\\administrator\\administrator.sublime-project"
+			],
+			[
+				"ide",
+				"D:\\xampp\\htdocs\\idepro\\idepro.sublime-project"
+			],
+			[
+				"adn",
+				"D:\\xampp\\htdocs\\administrator\\administrator.sublime-project"
+			],
+			[
+				"admin",
+				"D:\\xampp\\htdocs\\administrator\\administrator.sublime-project"
+			],
+			[
+				"",
+				"D:\\xampp\\htdocs\\supradmin\\superadmin.sublime-project"
+			],
+			[
+				"dj",
+				"D:\\python-projects\\projects\\django_projects.sublime-project"
+			],
+			[
+				"dja",
+				"D:\\python-projects\\projects\\django_projects.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
