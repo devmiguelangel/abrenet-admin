@@ -42,16 +42,20 @@ foreach ($depto as $key => $value) {
             <div>
 <?php
 $ef = array();
-if ($pr->getEFProduct('AU') === true) {
+if ($pr->getEFProduct('AU', $_SESSION['id_user']) === true) {
     $ef = $pr->data;
 
+    $nef = 0;
     foreach ($ef as $key => $value) {
+        $nef += 1;
         echo '<label class="lbl-cb">
-            <input type="checkbox" id="frp-ef-' . $value['ef_codigo'] 
-                . '" name="frp-ef-' . $value['ef_codigo'] . '" value="' 
-                . $value['ef_codigo'] . '">' . $value['ef_nombre'] . '
+            <input type="checkbox" id="frp-ef-' . $nef 
+                . '" name="frp-ef-' . $nef . '" value="' 
+                . $value['ef_codigo'] . '" checked> ' . $value['ef_nombre'] . ' 
         </label> ';
     }
+
+    echo '<input type="hidden" id="nef" name="nef" value="' . $nef . '" >';
 }
 ?>
             </div>

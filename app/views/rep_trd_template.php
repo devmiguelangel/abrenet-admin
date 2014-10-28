@@ -1,6 +1,9 @@
 <div class="rp-pr-container" id="rp-tab-trd" style=" <?=$display;?> ">
 	<form class="f-reports">
-    	
+    	<label>Prefijo: </label>
+        <input type="text" id="frp-prefix" name="frp-prefix" value="" autocomplete="off"
+            style="width: 50px;">
+        
         <label>No. de Certificado: </label>
         <input type="text" id="frp-nc" name="frp-nc" value="" autocomplete="off">
 
@@ -40,17 +43,20 @@ foreach ($depto as $key => $value) {
             <div>
 <?php
 $ef = array();
-if ($pr->getEFProduct('TRD') === true) {
+if ($pr->getEFProduct('TRD', $_SESSION['id_user']) === true) {
     $ef = $pr->data;
 
+    $nef = 0;
     foreach ($ef as $key => $value) {
+        $nef += 1;
         echo '<label class="lbl-cb">
-            <input type="checkbox" id="frp-ef-' . $value['ef_codigo'] 
-                . '" name="frp-ef-' . $value['ef_codigo'] . '" value="' 
-                . base64_encode($value['ef_id']) . '">
-            ' . $value['ef_nombre'] . '
+            <input type="checkbox" id="frp-ef-' . $nef 
+                . '" name="frp-ef-' . $nef . '" value="' 
+                . $value['ef_codigo'] . '" checked> ' . $value['ef_nombre'] . ' 
         </label> ';
     }
+
+    echo '<input type="hidden" id="nef" name="nef" value="' . $nef . '" >';
 }
 ?>
             </div>
