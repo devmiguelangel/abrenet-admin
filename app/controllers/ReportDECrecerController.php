@@ -3,18 +3,17 @@
 * Reportes Desgravamen Crecer
 */
 
-require '/../views/rep_de_crecer.php';
-
 class ReportDECrecerController
 {
-	private $cx, $sql, $sqlDt, $data, $xls;
+	private $cx, $sql, $sqlDt, $data, $db, $xls;
 
-	private $rs, $rsDt;
+	private $row, $rowDt, $rs, $rsDt;
 
-	function __construct($cx, $data, $xls)
+	function __construct($cx, $data, $db, $xls)
 	{
 		$this->cx = $cx;
 		$this->data = $data;
+		$this->db = $db;
 		$this->xls = $xls;
 	}
 
@@ -23,13 +22,9 @@ class ReportDECrecerController
 		if (($this->queryCrecerEm()) === true) {
 			$swBG = FALSE;
 			$arr_state = array('txt' => '', 'action' => '', 'obs' => '', 'link' => '', 'bg' => '');
-			$bgCheck = '';
+
 			while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
 				$nCl = (int)$this->row['no_cl'];
-				$nFc = (int)$this->row['noFc'];
-				$nAp = (int)$this->row['noAp'];
-				$nFa = (int)$this->row['noFa'];
-				$nPr = (int)$this->row['noPr'];
 
 				$bc = (boolean)$this->row['bc'];
 
@@ -63,12 +58,10 @@ class ReportDECrecerController
 							$rowSpan = '';
 						}
 
-						$idd = '';
 						$arr_detf = array();
 						$arr_detp = array();
 
 						if ($bc === true) {
-							$idd = 'data-dd="' . base64_encode($this->rowDt['id_detalle']) . '"';
 							$arr_detp = json_decode($this->rowDt['detalle_p'], true);
 							$arr_detf = json_decode($this->rowDt['detalle_f'], true);
 
@@ -129,7 +122,7 @@ class ReportDECrecerController
 							}
 						}
 
-						echo rep_de_crecer($this->row, $this->rowDt, $arr_state, $bg, $rowSpan);
+						echo rep_de_crecer($this->row, $this->rowDt, $this->db, $arr_state, $bg, $rowSpan);
 					}
 				}
 
@@ -149,10 +142,6 @@ class ReportDECrecerController
 		$this->sql = 'select 
 			sde.id_emision as ide,
 			count(sc.id_cliente) as no_cl,
-			sum(if(sdd.facultativo = true, 1, 0)) as noFc,
-			sum(if(sdd.aprobado = true and sdd.detalle_f = "", 1, 0)) as noAp,
-			sum(if(sdd.aprobado = true and sdd.detalle_f != "", 1, 0)) as noFa,
-			sum(if(sdd.aprobado = false and sdd.detalle_f != "", 1, 0)) as noPr,
 			if(lower(spc.nombre) = "banca comunal", 1, 0) as bc,
 			sef.id_ef as idef,
 			sef.nombre as ef_nombre,

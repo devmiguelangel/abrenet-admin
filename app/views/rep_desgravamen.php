@@ -1,10 +1,11 @@
 <?php
-function rep_de_crecer($row, $rowDt, $arr_state, $bg, $rowSpan) {
+function rep_de_crecer($row, $rowDt, $db, $arr_state, $bg, $rowSpan) {
     ob_start();
 ?>
 <tr style=" <?=$bg;?> ">
     <td <?=$rowSpan;?>><?=$row['r_prefijo'] . '-' . $row['r_no_emision'];?></td>
-    <td <?=$rowSpan;?>><?=$row['ef_nombre'];?></td>
+    <td <?=$rowSpan;?>><?=$db['ef_nombre'];?></td>
+    <td <?=$rowSpan;?>><?=$db['in_nombre'];?></td>
     <td><?=htmlentities($rowDt['cl_nombre'], ENT_QUOTES, 'UTF-8');?></td>
     <td><?=$rowDt['cl_ci'].$rowDt['cl_complemento'].' '.$rowDt['cl_extension'];?></td>
     <td><?=$rowDt['cl_genero'];?></td>

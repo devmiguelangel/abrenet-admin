@@ -70,6 +70,7 @@ class ReportGeneralController extends Administrator
         <tr>
             <td>No. Certificado</td>
             <td>Entidad Financiera</td>
+            <td>Aseguradora</td>
             <td>Cliente</td>
             <td>CI</td>
             <td><?=htmlentities('Género', ENT_QUOTES, 'UTF-8');?></td>
@@ -194,7 +195,7 @@ class ReportGeneralController extends Administrator
 		group by sef.id
 		order by sef.id asc
 		;';
-		// echo $this->sql;
+		
 		if (($this->rs = $this->query($this->sql, MYSQLI_STORE_RESULT)) !== false) {
 			if ($this->rs->num_rows > 0) {
 				return true;

@@ -2,6 +2,8 @@
 /**
 * Reportes Desgravamen
 */
+require '/../views/rep_desgravamen.php';
+
 class ReportDEController
 {
 	private $db, $sql, $rs, $row, $sqlDt, $rsDt, $rowDt, 
@@ -35,7 +37,7 @@ class ReportDEController
 		switch ($this->db['ef_codigo']) {
 		case 'EC':
 			require 'ReportDEEcofuturoController.php';
-			$ecofuturo = new ReportDEEcofuturoController($this->cx, $this->data, $this->xls);
+			$ecofuturo = new ReportDEEcofuturoController($this->cx, $this->data, $this->db, $this->xls);
 			$ecofuturo->setResultEcofuturo();
 			
 			$this->cx->close();
@@ -54,7 +56,7 @@ class ReportDEController
 			break;
 		case 'CR':
 			require 'ReportDECrecerController.php';
-			$crecer = new ReportDECrecerController($this->cx, $this->data, $this->xls);
+			$crecer = new ReportDECrecerController($this->cx, $this->data, $this->db, $this->xls);
 			$crecer->setResultCrecer();		
 
 			$this->cx->close();
