@@ -34,34 +34,73 @@ class ReportDEController
 			header("Expires: 0");
 		}
 
+		$result = '';
+
 		switch ($this->db['ef_codigo']) {
 		case 'EC':
 			require 'ReportDEEcofuturoController.php';
 			$ecofuturo = new ReportDEEcofuturoController($this->cx, $this->data, $this->db, $this->xls);
 			$ecofuturo->setResultEcofuturo();
+
+			$result .= $ecofuturo->result;
+			unset($ecofuturo->result);
 			
 			$this->cx->close();
 			break;
 		case 'SS':
-			
+			require 'ReportDESartawiController.php';
+			$sartawi = new ReportDESartawiController($this->cx, $this->data, $this->db, $this->xls);
+			$sartawi->setResultSartawi();
+
+			$result .= $sartawi->result;
+			unset($sartawi->result);
+
+			$this->cx->close();
 			break;
 		case 'EM':
-			
+			require 'ReportDEEmprenderController.php';
+			$emprender = new ReportDEEmprenderController($this->cx, $this->data, $this->db, $this->xls);
+			$emprender->setResultEmprender();
+
+			$result .= $emprender->result;
+			unset($emprender->result);
+
+			$this->cx->close();
 			break;
 		case 'PV':
-			
+			require 'ReportDEPauloviController.php';
+			$paulovi = new ReportDEPauloviController($this->cx, $this->data, $this->db, $this->xls);
+			$paulovi->setResultPaulovi();
+
+			$result .= $paulovi->result;
+			unset($paulovi->result);
+
+			$this->cx->close();
 			break;
 		case 'ID':
-			
+			require 'ReportDEIdeproController.php';
+			$idepro = new ReportDEIdeproController($this->cx, $this->data, $this->db, $this->xls);
+			$idepro->setResultIdepro();
+
+			$result .= $idepro->result;
+			unset($idepro->result);
+
+			$this->cx->close();
 			break;
 		case 'CR':
 			require 'ReportDECrecerController.php';
 			$crecer = new ReportDECrecerController($this->cx, $this->data, $this->db, $this->xls);
-			$crecer->setResultCrecer();		
+			$crecer->setResultCrecer();
+
+			$result .= $crecer->result;
+			unset($crecer->result);
 
 			$this->cx->close();
 			break;
 		}
+
+		echo $result;
+		unset($result);
 	}
 }
 

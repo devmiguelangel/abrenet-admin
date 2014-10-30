@@ -81,7 +81,7 @@ insert into sa_entidad_financiera values
 	(1414006201, 'Ecofuturo', 'EC', 'localhost', 'ecofuturo', 'root', '', true),
 	(1414006202, 'Sembrar Sartawi', 'SS', 'localhost', 'sartawi', 'root', '', true),
 	(1414006203, 'Bisa Leasing', 'BL', 'localhost', 'bisaleasing', 'root', '', true),
-	(1414006204, 'Emprender', 'EM', 'localhost', 'empreder', 'root', '', true),
+	(1414006204, 'Emprender', 'EM', 'localhost', 'emprender', 'root', '', true),
 	(1414006205, 'Paulo VI', 'PV', 'localhost', 'paulo', 'root', '', true),
 	(1414006206, 'Idepro', 'ID', 'localhost', 'idepro', 'root', '', true),
 	(1414006207, 'Crecer', 'CR', 'localhost', 'crecer', 'root', '', true);
@@ -104,7 +104,9 @@ insert into sa_ef_producto values
 	(1414006205, 1414006203, 1414006202),
 	(1414006206, 1414006203, 1414006203),
 	(1414006207, 1414006206, 1414006201),
-	(1414006208, 1414006202, 1414006201);
+	(1414006208, 1414006202, 1414006201),
+	(1414006209, 1414006204, 1414006201),
+	(1414006210, 1414006205, 1414006201);
 
 drop table if exists sa_aseguradora;
 create table if not exists sa_aseguradora(
@@ -135,7 +137,11 @@ insert into sa_ef_aseguradora values
 	(1414006201, 1414006207, 1414006205),
 	(1414006202, 1414006201, 1414006201),
 	(1414006203, 1414006201, 1414006202),
-	(1414006204, 1414006201, 1414006205);
+	(1414006204, 1414006201, 1414006205),
+	(1414006205, 1414006202, 1414006201),
+	(1414006206, 1414006204, 1414006201),
+	(1414006207, 1414006205, 1414006204),
+	(1414006208, 1414006206, 1414006204);
 
 drop table if exists sa_ef_usuario;
 create table if not exists sa_ef_usuario(
@@ -152,4 +158,7 @@ insert into sa_ef_usuario values
 	(1414006202, 1414006201, 1414006201),
 	(1414006203, 1414006201, 1414006201),
 	(1414006204, 1414006201, 1414006201),
-	(1414006205, 1414006201, 1414006202);
+	(1414006205, 1414006201, 1414006202),
+	(1414006206, 1414006201, 1414006204),
+	(1414006207, 1414006201, 1414006205),
+	(1414006208, 1414006201, 1414006206);

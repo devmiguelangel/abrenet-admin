@@ -1,8 +1,8 @@
 <?php
 /**
-* Reportes Desgravamen Ecofuturo
+* Reportes Emprender
 */
-class ReportDEEcofuturoController
+class ReportDEEmprenderController
 {
 	private $cx, $sql, $sqlDt, $data, $db, $xls;
 
@@ -18,9 +18,9 @@ class ReportDEEcofuturoController
 		$this->xls = $xls;
 	}
 
-	public function setResultEcofuturo()
+	public function setResultEmprender()
 	{
-		if ($this->queryEcofuturoEm() === true) {
+		if ($this->queryEmprenderEm() === true) {
 			$swBG = FALSE;
 			$arr_state = array('txt' => '', 'action' => '', 'obs' => '', 'link' => '', 'bg' => '');
 
@@ -45,7 +45,7 @@ class ReportDEEcofuturoController
 
 				get_state($arr_state, $this->row, 2, 'DE', false);
 
-				if ($this->queryEcofuturoDt($nCl) === true) {
+				if ($this->queryEmprenderDt($nCl) === true) {
 					while ($this->rowDt = $this->rsDt->fetch_array(MYSQLI_ASSOC)) {
 						if ($rowSpan === true) {
 							$rowSpan = 'rowspan="' . $nCl . '"';
@@ -75,14 +75,11 @@ class ReportDEEcofuturoController
 		}
 	}
 
-	private function queryEcofuturoEm()
+	private function queryEmprenderEm()
 	{
 		$this->sql = "SELECT 
 		    tedc.id_emision AS ide,
 		    COUNT(tc.id_client) AS no_cl,
-		    1 AS noAp,
-		    0 noFa,
-		    0 noPr,
 		    0 bc,
 		    tedc.id_emision AS r_no_emision,
 		    tedc.prefijo_producto AS r_prefijo,
@@ -112,9 +109,9 @@ class ReportDEEcofuturoController
 		        WHEN 'cochabamba' THEN 'Cochabamba'
 		        WHEN 'pando' THEN 'Pando'
 		        WHEN 'beni' THEN 'Beni'
-		        WHEN 'santacruz' THEN 'Santa Cruz'
+		        WHEN 'sc' THEN 'Santa Cruz'
 		    END) AS r_sucursal,
-		    tag.desc_agencia AS r_agencia,
+		    tag.agencia AS r_agencia,
 		    (CASE tedc.anulada
 		        WHEN 'true' THEN 'SI'
 		        WHEN 'false' THEN 'NO'
@@ -275,7 +272,7 @@ class ReportDEEcofuturoController
 		return false;
 	}
 
-	private function queryEcofuturoDt($nCl)
+	private function queryEmprenderDt($nCl)
 	{
 		$this->sqlDt = "SELECT 
 		    tdc.id_client AS idCl,

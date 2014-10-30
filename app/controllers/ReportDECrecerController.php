@@ -9,6 +9,8 @@ class ReportDECrecerController
 
 	private $row, $rowDt, $rs, $rsDt;
 
+	public $result = '';
+
 	function __construct($cx, $data, $db, $xls)
 	{
 		$this->cx = $cx;
@@ -122,7 +124,8 @@ class ReportDECrecerController
 							}
 						}
 
-						echo rep_de_crecer($this->row, $this->rowDt, $this->db, $arr_state, $bg, $rowSpan);
+						$this->result .= rep_de_crecer($this->row, $this->rowDt, 
+							$this->db, $arr_state, $bg, $rowSpan);
 					}
 				}
 
@@ -315,6 +318,7 @@ class ReportDECrecerController
 				and if(sde.anulado = true, "AN", "R") regexp "' . $this->data["r-canceled"] . '" 
 		group by sde.id_emision
 		order by sde.id_emision desc
+		-- limit 0, 100
 		;';
 
 		if (($this->rs = $this->cx->query($this->sql, MYSQLI_STORE_RESULT)) !== false) {

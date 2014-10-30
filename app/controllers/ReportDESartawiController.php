@@ -1,8 +1,8 @@
 <?php
 /**
-* Reportes Desgravamen Ecofuturo
+* Reporte Sartawi
 */
-class ReportDEEcofuturoController
+class ReportDESartawiController
 {
 	private $cx, $sql, $sqlDt, $data, $db, $xls;
 
@@ -18,9 +18,9 @@ class ReportDEEcofuturoController
 		$this->xls = $xls;
 	}
 
-	public function setResultEcofuturo()
+	public function setResultSartawi()
 	{
-		if ($this->queryEcofuturoEm() === true) {
+		if ($this->querySartawiEm() === true) {
 			$swBG = FALSE;
 			$arr_state = array('txt' => '', 'action' => '', 'obs' => '', 'link' => '', 'bg' => '');
 
@@ -45,7 +45,7 @@ class ReportDEEcofuturoController
 
 				get_state($arr_state, $this->row, 2, 'DE', false);
 
-				if ($this->queryEcofuturoDt($nCl) === true) {
+				if ($this->querySartawiDt($nCl) === true) {
 					while ($this->rowDt = $this->rsDt->fetch_array(MYSQLI_ASSOC)) {
 						if ($rowSpan === true) {
 							$rowSpan = 'rowspan="' . $nCl . '"';
@@ -75,14 +75,11 @@ class ReportDEEcofuturoController
 		}
 	}
 
-	private function queryEcofuturoEm()
+	private function querySartawiEm()
 	{
 		$this->sql = "SELECT 
 		    tedc.id_emision AS ide,
 		    COUNT(tc.id_client) AS no_cl,
-		    1 AS noAp,
-		    0 noFa,
-		    0 noPr,
 		    0 bc,
 		    tedc.id_emision AS r_no_emision,
 		    tedc.prefijo_producto AS r_prefijo,
@@ -104,24 +101,17 @@ class ReportDEEcofuturoController
 		    DATE_FORMAT(tedc.fecha_creacion, '%d/%m/%Y') AS r_fecha_creacion,
 		    tedc.fecha_creacion,
 		    (CASE tu.departamento
-		        WHEN 'lapaz' THEN 'La Paz'
-		        WHEN 'oruro' THEN 'Oruro'
-		        WHEN 'potosi' THEN 'Potosi'
-		        WHEN 'tarija' THEN 'Tarija'
-		        WHEN 'sucre' THEN 'Chuquisaca'
-		        WHEN 'cochabamba' THEN 'Cochabamba'
-		        WHEN 'pando' THEN 'Pando'
-		        WHEN 'beni' THEN 'Beni'
-		        WHEN 'santacruz' THEN 'Santa Cruz'
+		        WHEN 'lpor' THEN 'Regional La Paz - Oruro'
+		        WHEN 'sur' THEN 'Regional Sur'
+		        WHEN 'cbba' THEN 'Regional Cochabamba'
+		        WHEN 'sc' THEN 'Regional Santa Cruz'
 		    END) AS r_sucursal,
-		    tag.desc_agencia AS r_agencia,
+		    tag.agencia AS r_agencia,
 		    (CASE tedc.anulada
 		        WHEN 'true' THEN 'SI'
 		        WHEN 'false' THEN 'NO'
 		    END) AS r_anulado,
-		    IF(tedc.anulada = 'true',
-		        tua.nombre,
-		        '') AS r_anulado_nombre,
+		    IF(tedc.anulada = 'true', '', '') AS r_anulado_nombre,
 		    IF(tedc.anulada = 'true',
 		        DATE_FORMAT(tedc.fecha_anulacion, '%d/%m/%Y'),
 		        '') AS r_anulado_fecha,
@@ -204,8 +194,6 @@ class ReportDEEcofuturoController
 		    tblusuarios AS tu ON (tu.idusuario = tedc.creadopor)
 		        LEFT JOIN
 		    tblagencia AS tag ON (tag.id_agencia = tu.id_agencia)
-		        LEFT JOIN
-		    tblusuarios AS tua ON (tua.idusuario = tedc.anulado_por)
 		WHERE
 		    tedc.id_emision LIKE '" . $this->data['nc'] . "'
 		        AND tedc.prefijo_producto LIKE '%" . $this->data['prefix'] . "%'
@@ -265,7 +253,7 @@ class ReportDEEcofuturoController
 		ORDER BY tedc.id_emision DESC
 		-- LIMIT 0 , 100
 		;";
-
+		
 		if (($this->rs = $this->cx->query($this->sql, MYSQLI_STORE_RESULT)) !== false) {
 			if ($this->rs->num_rows > 0) {
 				return true;
@@ -275,7 +263,7 @@ class ReportDEEcofuturoController
 		return false;
 	}
 
-	private function queryEcofuturoDt($nCl)
+	private function querySartawiDt($nCl)
 	{
 		$this->sqlDt = "SELECT 
 		    tdc.id_client AS idCl,
@@ -349,5 +337,6 @@ class ReportDEEcofuturoController
 
 		return false;
 	}
+
 }
 ?>

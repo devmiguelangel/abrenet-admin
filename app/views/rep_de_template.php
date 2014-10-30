@@ -55,7 +55,7 @@ if ($pr->getEFProduct('DE', $_SESSION['id_user']) === true) {
         echo '<label class="lbl-cb">
             <input type="checkbox" id="frp-ef-' . $nef 
                 . '" name="frp-ef-' . $nef . '" value="' 
-                . $value['ef_codigo'] . '" checked> ' . $value['ef_nombre'] . ' 
+                . $value['ef_codigo'] . '" > ' . $value['ef_nombre'] . ' 
         </label> ';
     }
 

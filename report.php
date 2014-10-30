@@ -168,25 +168,12 @@ if(isset($_GET['data-pr'])){
 	
 	$pr = $_GET['data-pr'];
 	
-	switch($pr){
-	case 'DE':
-		$rpDe = new ReportGeneralController($pr, $arrData, $xls);
-		
-		if ($rpDe->err === false) {
-			$rpDe->setResult();
-		} else {
-			echo 'No se puede obtener el reporte';
-		}
-		break;
-	case 'AU':
-		
-		break;
-	case 'TRD':
-		
-		break;
-	case 'TRM':
-		
-		break;
+	$rpDe = new ReportGeneralController($pr, $arrData, $xls);
+	
+	if ($rpDe->err === false) {
+		$rpDe->setResult();
+	} else {
+		echo 'No se puede obtener el reporte';
 	}
 }
 ?>
