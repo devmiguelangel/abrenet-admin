@@ -73,7 +73,7 @@ class ReportDECrecerController
 							$arr_state['txt'] = '';
 							$arr_state['bg'] = '';
 
-							$arr_state['txt'] = 'Aprobado';
+							$arr_state['txt'] = 'Aprobado Free Cover';
 							$arr_state['bg'] = 'background: #FF3C3C; color: #FFF;';
 
 							$this->row['extra_prima'] = 0;
@@ -122,9 +122,11 @@ class ReportDECrecerController
 									$this->row['dias_proceso'] = $interval2->format('%a');
 								}
 							}
+
+							$this->row['r_monto_solicitado'] = $this->rowDt['monto_bc'];
 						}
 
-						$this->result .= rep_de_crecer($this->row, $this->rowDt, 
+						$this->result .= rep_desgravamen($this->row, $this->rowDt, 
 							$this->db, $arr_state, $bg, $rowSpan);
 					}
 				}
@@ -261,6 +263,8 @@ class ReportDECrecerController
 			s_entidad_financiera as sef ON (sef.id_ef = sde.id_ef)
 				inner join
     		s_producto_cia as spc on (spc.id_prcia = sde.id_prcia)
+    			inner join
+    		s_departamento as sdepc ON (sdepc.id_depto = sc.extension)
 		where
 			sde.no_emision like "' . $this->data['nc'] . '"
 				and sde.prefijo like "%' . $this->data['prefix'] . '%"
@@ -271,7 +275,7 @@ class ReportDECrecerController
 					sc.materno) like "%' . $this->data['client'] . '%"
 				and sc.ci like "%' . $this->data['dni'] . '%"
 				and sc.complemento like "%' . $this->data['comp'] . '%"
-				and sc.extension like "%' . $this->data['ext'] . '%"
+				and sdepc.codigo like "%' . $this->data['ext'] . '%"
 				and sde.fecha_creacion 
 					between "' . $this->data['date-begin'] . '" and "' . $this->data['date-end'] . '"
 				and if(sdf.aprobado is null,
@@ -287,12 +291,14 @@ class ReportDECrecerController
 				"R") regexp "' . $this->data["r-pendant"] . '"
 				and if(sds.id_estado is not null
 					and sde.emitir = false
-					and sde.facultativo = true,
-				sds.id_estado,
+					and sde.facultativo = true
+					and sdf.aprobado is null,
+				sds.codigo,
 				"0") regexp "' . $this->data["r-state"] . '"
 				and if(sdf.aprobado is null,
 				if(sde.emitir = true
-						and sde.anulado = false,
+						and sde.anulado = false
+						and sde.facultativo = false,
 					"FC",
 					"R"),
 				case sdf.aprobado
@@ -358,6 +364,7 @@ class ReportDECrecerController
 			sdd.porcentaje_credito as cl_participacion,
 			(year(curdate()) - year(sdc.fecha_nacimiento)) as cl_edad,
 			sdd.id_detalle,
+			sdd.monto_banca_comunal as monto_bc,
 			sdd.detalle_f,
 			sdd.detalle_p
 		from
@@ -375,8 +382,8 @@ class ReportDECrecerController
 					sdc.materno) like "%' . $this->data["client"] . '%"
 				and sdc.ci like "%' . $this->data["dni"] . '%"
 				and sdc.complemento like "%' . $this->data["comp"] . '%"
-				and sdc.extension like "%' . $this->data["ext"] . '%"
-		order by sdc.id_cliente asc
+				and sdep.codigo like "%' . $this->data["ext"] . '%"
+		order by sdd.id_detalle asc
 		;';
 
 		if (($this->rsDt = $this->cx->query($this->sqlDt, MYSQLI_STORE_RESULT)) !== false) {

@@ -18,13 +18,15 @@
         <input type="text" id="frp-comp" name="frp-comp" value="" autocomplete="off" style="width:40px;">
 
         <label style="width:auto;">Extensión: </label>
-        <select id="frp-ext" name="frp-ext">
+        <input type="text" id="frp-ext" name="frp-ext" value="" autocomplete="off" style="width:40px;">
+        <!-- <select id="frp-ext" name="frp-ext">
 <?php
 foreach ($depto as $key => $value) {
     echo '<option value="' . $value['codigo'] . '">' . $value['departamento'] . '</option>';
 }
 ?>
-        </select><br>
+        </select> -->
+        <br>
 
         <label style="">Fecha: </label>
         <label style="width:auto;">desde: </label>
@@ -34,6 +36,7 @@ foreach ($depto as $key => $value) {
         <label style="width:auto;">hasta: </label>
         <input type="text" id="frp-date-e" name="frp-date-e" value=""
             autocomplete="off" class="date" readonly>
+        <input type="hidden" id="data-pr" name="data-pr" value="AU" >
         <input type="hidden" id="pr" name="pr" value="au">
         <br>
 
@@ -51,7 +54,7 @@ if ($pr->getEFProduct('AU', $_SESSION['id_user']) === true) {
         echo '<label class="lbl-cb">
             <input type="checkbox" id="frp-ef-' . $nef 
                 . '" name="frp-ef-' . $nef . '" value="' 
-                . $value['ef_codigo'] . '" checked> ' . $value['ef_nombre'] . ' 
+                . $value['ef_codigo'] . '" > ' . $value['ef_nombre'] . ' 
         </label> ';
     }
 
@@ -67,16 +70,31 @@ $in = array();
 if ($pr->getInsurer() === true) {
     $in = $pr->data;
 
+    $nin = 0;
     foreach ($in as $key => $value) {
+        $nin += 1;
         echo '<label class="lbl-cb">
-            <input type="checkbox" id="frp-in-' . $value['as_codigo'] 
-                . '" name="frp-in-' . $value['as_codigo'] . '" value="' 
-                . base64_encode($value['as_id']) . '">
-            ' . $value['as_nombre'] . '
+            <input type="checkbox" id="frp-in-' . $nin 
+                . '" name="frp-in-' . $nin . '" value="' 
+                . $value['as_codigo'] . '"> ' . $value['as_nombre'] . '
         </label> ';
     }
+
+    echo '<input type="hidden" id="nin" name="nin" value="' . $nin . '" >';
 }
 ?>
+            </div>
+
+            <h5>Tipo de Cliente</h5>
+            <div>
+                <label class="lbl-cb">
+                    <input type="checkbox" id="frp-customer-type-1" name="frp-customer-type-1" value="NAT">
+                    Natural
+                </label>
+                <label class="lbl-cb">
+                    <input type="checkbox" id="frp-customer-type-2" name="frp-customer-type-2" value="JUR">
+                    Jurídico
+                </label>
             </div>
 
             <h5>Pendiente</h5>

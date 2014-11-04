@@ -112,7 +112,21 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).find(":submit").prop('disabled', true);
         var pr = $(this).find('#pr').prop('value').toLowerCase();
+
         var _data = $(this).serialize();
+
+        if (pr === 'cl') {
+            ci = $('#frp-dni').prop('value');
+            ext = $('#frp-ext').prop('value');
+
+            if (ci.length === 0 || ext.length === 0) {
+                $('#err_cl').show();
+                $(".f-reports :submit").prop('disabled', false);
+                return false;
+            }
+
+            $('#err_cl').hide();
+        }
 
         $.ajax({
             url:'report.php',

@@ -19,14 +19,16 @@
         <input type="text" id="frp-comp" name="frp-comp" value="" autocomplete="off" style="width:40px;">
 
         <label style="width:auto;">Extensión: </label>
-        <select id="frp-ext" name="frp-ext">
+        <input type="text" id="frp-ext" name="frp-ext" value="" autocomplete="off" style="width:40px;">
+        <!-- <select id="frp-ext" name="frp-ext">
             <option value="">Seleccione...</option>
 <?php
 foreach ($depto as $key => $value) {
     echo '<option value="' . $value['codigo'] . '">' . $value['departamento'] . '</option>';
 }
 ?>
-        </select><br>
+        </select> -->
+        <br>
 
         <label style="">Fecha: </label>
         <label style="width:auto;">desde: </label>
@@ -102,17 +104,17 @@ if ($pr->getInsurer() === true) {
                 </label><br>
                 
                 <label class="lbl-cb">
-                    <input type="checkbox" id="frp-estado-14" name="frp-estado-14" 
-                        value="14">&nbsp;Examenes Medicos y/o Requisitos</label> 
+                    <input type="checkbox" id="frp-estado-1" name="frp-estado-1" 
+                        value="EM">&nbsp;Examenes Medicos y/o Requisitos</label> 
                 <label class="lbl-cb">
-                    <input type="checkbox" id="frp-estado-15" name="frp-estado-15" 
-                        value="15">&nbsp;Reaseguro</label>
+                    <input type="checkbox" id="frp-estado-2" name="frp-estado-2" 
+                        value="RA">&nbsp;Reaseguro</label>
                 <label class="lbl-cb">
-                    <input type="checkbox" id="frp-estado-16" name="frp-estado-16" 
-                        value="16">&nbsp;Aclaraciones</label>
+                    <input type="checkbox" id="frp-estado-3" name="frp-estado-3" 
+                        value="AC">&nbsp;Aclaraciones</label>
                 <label class="lbl-cb">
-                    <input type="checkbox" id="frp-estado-17" name="frp-estado-17" 
-                        value="17">&nbsp;Error en Datos</label>
+                    <input type="checkbox" id="frp-estado-4" name="frp-estado-4" 
+                        value="ED">&nbsp;Error en Datos</label>
             </div>
 
             <h5>Aprobado</h5>

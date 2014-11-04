@@ -59,7 +59,7 @@ class ReportDEEcofuturoController
 							$rowSpan = '';
 						}
 
-						$this->result .= rep_de_crecer($this->row, $this->rowDt, 
+						$this->result .= rep_desgravamen($this->row, $this->rowDt, 
 							$this->db, $arr_state, $bg, $rowSpan);
 					}
 				}
@@ -80,9 +80,6 @@ class ReportDEEcofuturoController
 		$this->sql = "SELECT 
 		    tedc.id_emision AS ide,
 		    COUNT(tc.id_client) AS no_cl,
-		    1 AS noAp,
-		    0 noFa,
-		    0 noPr,
 		    0 bc,
 		    tedc.id_emision AS r_no_emision,
 		    tedc.prefijo_producto AS r_prefijo,
@@ -216,7 +213,17 @@ class ReportDEEcofuturoController
 		            tc.ap_materno) LIKE '%" . $this->data['client'] . "%'
 		        AND tc.ci_persona LIKE '%" . $this->data['dni'] . "%'
 		        AND tc.complemento LIKE '%" . $this->data['comp'] . "%'
-		        AND tc.ci_ext LIKE '%" . $this->data['ext'] . "%'
+		        AND (CASE tc.ci_ext
+				        WHEN 'lapaz' THEN 'LP'
+				        WHEN 'oruro' THEN 'OR'
+				        WHEN 'potosi' THEN 'PT'
+				        WHEN 'tarija' THEN 'TJ'
+				        WHEN 'sucre' THEN 'CH'
+				        WHEN 'cochabamba' THEN 'CB'
+				        WHEN 'pando' THEN 'PA'
+				        WHEN 'beni' THEN 'BN'
+				        WHEN 'santacruz' THEN 'SC'
+				    END) LIKE '%" . $this->data['ext'] . "%'
 		        AND tedc.fecha_creacion BETWEEN '" . $this->data['date-begin'] . "' 
 		        	AND '" . $this->data['date-end'] . "'
 		        AND IF(tdf.aprobado IS NULL,
@@ -233,7 +240,12 @@ class ReportDEEcofuturoController
 				AND IF(tds.id_estado IS NOT NULL
 		            AND tedc.emitir = 'false'
 		            AND tedc.caso_facultativo = 'true',
-		        tds.id_estado,
+		        (CASE tds.id_estado
+		        	WHEN 1 THEN 'EM'
+		        	WHEN 2 THEN 'RA'
+		        	WHEN 3 THEN 'AC'
+		        	WHEN 4 THEN 'ED'
+		        END),
 		        '0') REGEXP '" . $this->data["r-state"] . "'
 				AND IF(tdf.aprobado IS NULL,
 		        IF(tedc.emitir = 'true'
@@ -337,8 +349,18 @@ class ReportDEEcofuturoController
 		            tdc.ap_materno) LIKE '%" . $this->data["client"] . "%'
 		        AND tdc.ci_persona LIKE '%" . $this->data["dni"] . "%'
 		        AND tdc.complemento LIKE '%" . $this->data["comp"] . "%'
-		        AND tdc.ci_ext LIKE '%" . $this->data["ext"] . "%'
-		ORDER BY tdc.id_client ASC
+		        AND (CASE tdc.ci_ext
+				        WHEN 'lapaz' THEN 'LP'
+				        WHEN 'oruro' THEN 'OR'
+				        WHEN 'potosi' THEN 'PT'
+				        WHEN 'tarija' THEN 'TJ'
+				        WHEN 'sucre' THEN 'CH'
+				        WHEN 'cochabamba' THEN 'CB'
+				        WHEN 'pando' THEN 'PA'
+				        WHEN 'beni' THEN 'BN'
+				        WHEN 'santacruz' THEN 'SC'
+				    END) LIKE '%" . $this->data["ext"] . "%'
+		ORDER BY tedp.id_des_personas ASC
 		;";
 
 		if (($this->rsDt = $this->cx->query($this->sqlDt, MYSQLI_STORE_RESULT)) !== false) {

@@ -2,9 +2,16 @@
 /**
 * Reportes Desgravamen
 */
-require '/../views/rep_desgravamen.php';
+require '/../views/rep_client.php';
+require 'ReportCLEcofuturoController.php';
+require 'ReportCLSartawiController.php';
+require 'ReportCLBisaLeasingController.php';
+require 'ReportCLEmprenderController.php';
+require 'ReportCLPauloviController.php';
+require 'ReportCLIdeproController.php';
+require 'ReportCLCrecerController.php';
 
-class ReportDEController
+class ReportClientDBController
 {
 	private $db, $data, $xls, $cx;
 	public $err;
@@ -28,7 +35,7 @@ class ReportDEController
 	{
 		if($this->xls === true){
 			header("Content-Type:   application/vnd.ms-excel; charset=iso-8859-1");
-			header("Content-Disposition: attachment; filename=Reportes_Desgravamen.xls");
+			header("Content-Disposition: attachment; filename=Reportes_Clientes.xls");
 			header("Pragma: no-cache");
 			header("Expires: 0");
 		}
@@ -37,8 +44,7 @@ class ReportDEController
 
 		switch ($this->db['ef_codigo']) {
 		case 'EC':
-			require 'ReportDEEcofuturoController.php';
-			$ecofuturo = new ReportDEEcofuturoController($this->cx, $this->data, $this->db, $this->xls);
+			$ecofuturo = new ReportCLEcofuturoController($this->cx, $this->data, $this->db, $this->xls);
 			$ecofuturo->setResultEcofuturo();
 
 			$result .= $ecofuturo->result;
@@ -47,54 +53,46 @@ class ReportDEController
 			$this->cx->close();
 			break;
 		case 'SS':
-			require 'ReportDESartawiController.php';
-			$sartawi = new ReportDESartawiController($this->cx, $this->data, $this->db, $this->xls);
+			$sartawi = new ReportCLSartawiController($this->cx, $this->data, $this->db, $this->xls);
 			$sartawi->setResultSartawi();
 
 			$result .= $sartawi->result;
 			unset($sartawi->result);
+			break;
+		case 'BL':
+			$bisa = new ReportCLBisaLeasingController($this->cx, $this->data, $this->db, $this->xls);
+			$bisa->setResultBisaLeasing();
 
-			$this->cx->close();
+			$result .= $bisa->result;
+			unset($bisa->result);
 			break;
 		case 'EM':
-			require 'ReportDEEmprenderController.php';
-			$emprender = new ReportDEEmprenderController($this->cx, $this->data, $this->db, $this->xls);
+			$emprender = new ReportCLEmprenderController($this->cx, $this->data, $this->db, $this->xls);
 			$emprender->setResultEmprender();
 
 			$result .= $emprender->result;
 			unset($emprender->result);
-
-			$this->cx->close();
 			break;
 		case 'PV':
-			require 'ReportDEPauloviController.php';
-			$paulovi = new ReportDEPauloviController($this->cx, $this->data, $this->db, $this->xls);
+			$paulovi = new ReportCLPauloviController($this->cx, $this->data, $this->db, $this->xls);
 			$paulovi->setResultPaulovi();
 
 			$result .= $paulovi->result;
 			unset($paulovi->result);
-
-			$this->cx->close();
 			break;
 		case 'ID':
-			require 'ReportDEIdeproController.php';
-			$idepro = new ReportDEIdeproController($this->cx, $this->data, $this->db, $this->xls);
+			$idepro = new ReportCLIdeproController($this->cx, $this->data, $this->db, $this->xls);
 			$idepro->setResultIdepro();
 
 			$result .= $idepro->result;
 			unset($idepro->result);
-
-			$this->cx->close();
 			break;
 		case 'CR':
-			require 'ReportDECrecerController.php';
-			$crecer = new ReportDECrecerController($this->cx, $this->data, $this->db, $this->xls);
+			$crecer = new ReportCLCrecerController($this->cx, $this->data, $this->db, $this->xls);
 			$crecer->setResultCrecer();
 
 			$result .= $crecer->result;
 			unset($crecer->result);
-
-			$this->cx->close();
 			break;
 		}
 

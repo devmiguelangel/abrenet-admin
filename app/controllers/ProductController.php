@@ -85,6 +85,37 @@ class ProductController extends Administrator
 		return false;
 	}
 
+	public function getEFProductClient($id_user)
+	{
+		$sql = 'select 
+			sef.id as ef_id,
+			sef.nombre as ef_nombre,
+			sef.codigo as ef_codigo
+		from 
+			sa_entidad_financiera as sef
+				inner join
+			sa_ef_usuario as seu ON (seu.entidad_financiera = sef.id)
+				inner join
+			sa_usuario as su ON (su.id = seu.usuario)
+		where
+			su.id = "' . base64_decode($id_user) . '"
+		order by sef.id asc
+		;';
+		
+		if (($rs = $this->query($sql, MYSQLI_STORE_RESULT)) !== false) {
+			if ($rs->num_rows > 0) {
+				$this->data = array();
+				while ($row = $rs->fetch_array(MYSQLI_ASSOC)) {
+					$this->data[] = $row;
+				}
+
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	public function getInsurer($id = '')
 	{
 		$sql = 'select 

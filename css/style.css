@@ -293,11 +293,16 @@ nav{
 	border:1px solid #E8E8E8;
 }
 
-.error-text{
+.error-text, .error{
 	color:#00BEFD;
 	font-weight:bold;
 	font-size:11px;
 	text-align:center;
+}
+
+.error{
+	margin: 10px 0;
+	color:#e54242;
 }
 
 .loading{

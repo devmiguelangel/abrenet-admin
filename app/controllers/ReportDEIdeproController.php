@@ -59,7 +59,7 @@ class ReportDEIdeproController
 							$rowSpan = '';
 						}
 
-						$this->result .= rep_de_crecer($this->row, $this->rowDt, 
+						$this->result .= rep_desgravamen($this->row, $this->rowDt, 
 							$this->db, $arr_state, $bg, $rowSpan);
 					}
 				}
@@ -196,6 +196,8 @@ class ReportDEIdeproController
 		    s_entidad_financiera AS sef ON (sef.id_ef = sde.id_ef)
 		        INNER JOIN
 		    s_producto_cia AS spc ON (spc.id_prcia = sde.id_prcia)
+		    	INNER JOIN
+    		s_departamento as sdepc ON (sdepc.id_depto = sc.extension)
 		WHERE
 		    sde.no_emision LIKE '" . $this->data['nc'] . "'
 		        AND sde.prefijo LIKE '%" . $this->data['prefix'] . "%'
@@ -206,7 +208,7 @@ class ReportDEIdeproController
 		            sc.materno) LIKE '%" . $this->data['client'] . "%'
 		        AND sc.ci LIKE '%" . $this->data['dni'] . "%'
 		        AND sc.complemento LIKE '%" . $this->data['comp'] . "%'
-		        AND sc.extension LIKE '%" . $this->data['ext'] . "%'
+		        AND sdepc.codigo LIKE '%" . $this->data['ext'] . "%'
 		        AND sde.fecha_creacion 
 		        	BETWEEN '" . $this->data['date-begin'] . "' AND '" . $this->data['date-end'] . "'
 		        AND IF(sdf.aprobado IS NULL,
@@ -222,8 +224,9 @@ class ReportDEIdeproController
 		        'R') REGEXP '" . $this->data['r-pendant'] . "'
 		        AND IF(sds.id_estado IS NOT NULL
 		            AND sde.emitir = FALSE
-		            AND sde.facultativo = TRUE,
-		        sds.id_estado,
+		            AND sde.facultativo = TRUE
+		            AND sdf.aprobado IS NULL,
+		        sds.codigo,
 		        '0') REGEXP '" . $this->data['r-state'] . "'
 		        AND IF(sdf.aprobado IS NULL,
 		        IF(sde.emitir = TRUE
@@ -309,8 +312,8 @@ class ReportDEIdeproController
 		            sdc.materno) LIKE '%" . $this->data['client'] . "%'
 		        AND sdc.ci LIKE '%" . $this->data['dni'] . "%'
 		        AND sdc.complemento LIKE '%" . $this->data['comp'] . "%'
-		        AND sdc.extension LIKE '%" . $this->data['ext'] . "%'
-		ORDER BY sdc.id_cliente ASC";
+		        AND sdep.codigo LIKE '%" . $this->data['ext'] . "%'
+		ORDER BY sdd.id_detalle ASC";
 
 		if (($this->rsDt = $this->cx->query($this->sqlDt, MYSQLI_STORE_RESULT)) !== false) {
 			if ($this->rsDt->num_rows === $nCl) {

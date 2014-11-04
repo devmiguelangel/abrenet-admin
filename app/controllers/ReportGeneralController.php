@@ -5,10 +5,12 @@
 
 require_once '/../config/administrator.php';
 require_once 'ReportDEController.php';
+require_once 'ReportAUController.php';
+require_once 'ReportTRDController.php';
 
 class ReportGeneralController extends Administrator
 {
-	private $sql, $rs, $row, $sqlCl, $rsCl, $rowCl, $product,
+	private $sql, $rs, $row, $product,
             $xls, $xlsTitle; 
 	private $ef = array(), $in = array();
 
@@ -47,6 +49,8 @@ class ReportGeneralController extends Administrator
 		$this->data['r-issued'] = $this->real_escape_string(trim($data['r-issued']));
 		$this->data['r-rejected'] = $this->real_escape_string(trim($data['r-rejected']));
 		$this->data['r-canceled'] = $this->real_escape_string(trim($data['r-canceled']));
+
+		$this->data['r-customer-type'] = $this->real_escape_string(trim($data['r-customer-type']));
 
 		if (empty($this->data['r-ef']) === false) {
 			$this->ef = str_split($this->data['r-ef'], 2);
@@ -112,7 +116,125 @@ class ReportGeneralController extends Administrator
 				}
 ?>
 	</tbody>
-    <tfoot>
+    
+<?php
+			} else {
+				$this->err = false;
+			}
+
+			break;
+		case 'AU':
+			if ($this->getEFProduct($this->product) === true) {
+?>
+	<thead>
+        <tr>
+			<td>No. de Certificado</td>
+			<td>Entidad Financiera</td>
+			<td>Aseguradora</td>
+			<td>Tipo de Cliente</td>
+			<td>Cliente</td>
+			<td>C.I.</td>
+			<td>Ciudad</td>
+			<td><?=htmlentities('Género', ENT_QUOTES, 'UTF-8');?></td>
+			<td><?=htmlentities('Teléfono', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Celular</td>
+			<td>Email</td>
+			<td>Avenida o calle</td>
+			<td><?=htmlentities('Dirección', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Numero domicilio</td>
+			<td><?=htmlentities('Tipo de vehículo', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Marca</td>
+			<td>Modelo</td>
+			<td><?=htmlentities('Año', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Placa</td>
+			<td><?=htmlentities('Uso de vehículo', ENT_QUOTES, 'UTF-8');?></td>
+			<td><?=htmlentities('Tracción', ENT_QUOTES, 'UTF-8');?></td>
+			<td>0 km</td>
+			<td>Valor asegurado</td>
+			<td>Forma de pago</td>
+			<td>Creado por</td>
+			<td>Fecha de ingreso</td>
+			<td>Sucursal</td>
+			<td>Estado</td>
+			<td>Certificados anulados</td>
+        </tr>
+    </thead>
+    <tbody>
+<?php
+				while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
+					$au = new ReportAUController($this->row, $this->data, $this->xls);
+
+				}
+?>
+	</tbody>
+<?php
+			} else {
+				$this->err = false;
+			}
+			break;
+		case 'TRD':
+			if ($this->getEFProduct($this->product) === true) {
+?>
+	<thead>
+        <tr>
+			<td>No. Certificado</td>
+			<td>Entidad Financiera</td>
+			<td>Aseguradora</td>
+			<td>Tipo de Cliente</td>
+			<td>Cliente</td>
+			<td>CI</td>
+			<td><?=htmlentities('Género', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Ciudad</td>
+			<td><?=htmlentities('Teléfono', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Celular</td>
+			<td>Email</td>
+			<td>Avenida o calle</td>
+			<td><?=htmlentities('Dirección', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Numero domicilio</td>
+			<td>Materia Asegurada</td>
+			<td>Valor Asegurado</td>
+  	        <td>Tipo inmueble</td>
+			<td>Uso</td>
+			<td>Estado</td>
+			<td>Departamento</td>
+			<td>Zona</td>
+			<td><?=htmlentities('Dirección', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Monto inmueble</td>
+  	        <td><?=htmlentities('Tipo vehículo', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Marca</td>
+			<td>Modelo</td>
+			<td>Placa</td>
+			<td><?=htmlentities('Uso vehículo', ENT_QUOTES, 'UTF-8');?></td>
+			<td><?=htmlentities('Tracción', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Cero KM </td>
+			<td><?=htmlentities('Monto vehículo', ENT_QUOTES, 'UTF-8');?></td>
+			<td><?=htmlentities('Plazo crédito', ENT_QUOTES, 'UTF-8');?></td>
+			<td>Forma Pago</td>
+			<td>Creado por</td>
+			<td>Fecha de ingreso</td>
+			<td>Sucursal</td>
+			<td>Estado</td>
+			<td>Certificados anulados</td>
+        </tr>
+    </thead>
+    <tbody>
+<?php
+				while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
+					$trd = new ReportTRDController($this->row, $this->data, $this->xls);
+				}
+?>
+	</tbody>
+<?php
+			} else {
+				$this->err = false;
+			}
+			break;
+		default:
+			$this->err = true;
+			break;
+		}
+?>
+	<tfoot>
     	<tr>
         	<td colspan="29" style="text-align:left;">
 <?php
@@ -136,29 +258,13 @@ class ReportGeneralController extends Administrator
 			. '&frp-issued=' . $this->data['r-issued'] 
 			. '&frp-rejected=' . $this->data['r-rejected'] 
 			. '&frp-canceled=' . $this->data['r-canceled'] 
+			. '&frp-customer-type=' . $this->data['r-customer-type']
 			. '" class="send-xls" target="_blank">Exportar a Formato Excel</a>';
 	}
 ?>
 			</td>
         </tr>
     </tfoot>
-<?php
-			} else {
-				$this->err = false;
-			}
-
-			break;
-		case 'AU':
-			
-			break;
-		case 'TRD':
-			
-			break;
-		default:
-			$this->err = true;
-			break;
-		}
-?>
 </table>
 <?php
 	}

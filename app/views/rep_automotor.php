@@ -1,48 +1,46 @@
 <?php
-function rep_desgravamen($row, $rowDt, $db, $arr_state, $bg, $rowSpan) {
+function rep_automotor($row, $rowDt, $db, $arr_state, $bg, $rowSpan) {
     ob_start();
 ?>
 <tr style=" <?=$bg;?> ">
     <td <?=$rowSpan;?>><?=$row['r_prefijo'] . '-' . $row['r_no_emision'];?></td>
     <td <?=$rowSpan;?>><?=$db['ef_nombre'];?></td>
     <td <?=$rowSpan;?>><?=$db['in_nombre'];?></td>
-    <td><?=htmlentities($rowDt['cl_nombre'], ENT_QUOTES, 'UTF-8');?></td>
-    <td><?=$rowDt['cl_ci'].$rowDt['cl_complemento'].' '.$rowDt['cl_extension'];?></td>
-    <td><?=$rowDt['cl_genero'];?></td>
-    <td><?=$rowDt['cl_ciudad'];?></td>
-    <td><?=$rowDt['cl_telefono'];?></td>
-    <td><?=$rowDt['cl_celular'];?></td>
-    <td><?=$rowDt['cl_email'];?></td>
-    <td><?=number_format($row['r_monto_solicitado'],2,'.',',');?></td>
-    <td><?=$row['r_moneda'];?></td>
-    <td><?=$row['r_plazo'].' '.htmlentities($row['r_tipo_plazo'], ENT_QUOTES, 'UTF-8');?></td>
-    <td><?=$rowDt['cl_estatura'];?></td>
-    <td><?=$rowDt['cl_peso'];?></td>
-    <td><?=(int)$rowDt['cl_participacion'];?></td>
-    <td><?=$rowDt['cl_titular'];?></td>
-    <td><?=$rowDt['cl_edad'];?></td>
-    <td><?=htmlentities($row['r_creado_por'], ENT_QUOTES, 'UTF-8');?></td>
-    <td><?=$row['r_fecha_creacion'];?></td>
-    <td><?=$row['r_sucursal'];?></td>
-    <td><?=htmlentities($row['r_agencia'], ENT_QUOTES, 'UTF-8');?></td>
-    <td><?=$row['r_anulado'];?></td>
-    <td><?=htmlentities($row['r_anulado_nombre'], ENT_QUOTES, 'UTF-8');?></td>
-    <td><?=$row['r_anulado_fecha'];?></td>
-    <td><?=htmlentities($arr_state['txt'], ENT_QUOTES, 'UTF-8');?></td>
-    <td><?=$arr_state['txt_bank'];?></td>
-    <td><?=$arr_state['obs'];?></td>
-    <td><?=$row['extra_prima'];?></td>
-    <td><?=$row['fecha_resp_final_cia'];?></td>
-    <td><?=$row['dias_proceso'];?></td>
-    <td><?=$row['dias_ultima_modificacion'];?></td>
-    <td><?=htmlentities($row['duracion_caso'].' días', ENT_QUOTES, 'UTF-8');?></td>
+    <td <?=$rowSpan;?>><?=$row['cl_tipo_cliente'];?></td>
+    <td <?=$rowSpan;?>><?=htmlentities($row['cl_nombre'], ENT_QUOTES, 'UTF-8');?></td>
+    <td <?=$rowSpan;?>><?=$row['cl_cinit'];?><? if (isset($row['cl_complemento'])) { echo $row['cl_complemento'];}?></td>
+    <td <?=$rowSpan;?>><?=$row['cl_ciudad'];?></td>
+    <td <?=$rowSpan;?>><? if (isset($row['cl_genero'])) { echo $row['cl_genero'];}?></td>
+    <td <?=$rowSpan;?>><?=$row['cl_telefono'];?></td>
+    <td <?=$rowSpan;?>><? if (isset($row['cl_celular'])) { echo $row['cl_celular'];}?></td>
+    <td <?=$rowSpan;?>><?=$row['cl_email'];?></td>
+    <td <?=$rowSpan;?>><?=$row['cl_avenida_calle'];?></td>
+    <td <?=$rowSpan;?>><?=htmlentities($row['cl_dir_domicilio'], ENT_QUOTES, 'UTF-8');?></td>
+    <td <?=$rowSpan;?>><?=$row['cl_num_domicilio'];?></td>
+
+    <td><?=$rowDt['vh_tipo'];?></td>
+    <td><?=$rowDt['vh_marca'];?></td>
+    <td><?=$rowDt['vh_modelo'];?></td>
+    <td><?=(int)$rowDt['vh_anio'];?></td>
+    <td><?=$rowDt['vh_placa'];?></td>
+    <td><?=$rowDt['vh_uso'];?></td>
+    <td><?=$rowDt['vh_traccion'];?></td>
+    <td><?=$rowDt['vh_km'];?></td>
+    <td><?=number_format($rowDt['vh_valor_asegurado'],2,'.',',');?> USD</td>
+
+    <td <?=$rowSpan;?>><?=$row['r_forma_pago'];?></td>
+    <td <?=$rowSpan;?>><?=htmlentities($rowDt['r_creado_por'], ENT_QUOTES, 'UTF-8');?></td>
+    <td <?=$rowSpan;?>><?=$rowDt['r_fecha_creacion'];?></td>
+    <td <?=$rowSpan;?>><?=$rowDt['r_sucursal'];?></td>
+    <td <?=$rowSpan;?>><?=$row['r_estado'];?></td>
+    <td <?=$rowSpan;?>><?=$row['r_num_anulado'];?></td>
 </tr>
 <?php
     $html = ob_get_clean();
     return $html;
 }
-
-function get_state(&$arr_state, $row, $token, $product, $issue)
+/*
+function get_state_1(&$arr_state, $row, $token, $product, $issue)
     {
         $state_bank = 0;
         if($token === 2) {
@@ -56,25 +54,25 @@ function get_state(&$arr_state, $row, $token, $product, $issue)
                 if($token < 2){
                     if ($issue === TRUE) {
                         $arr_state['action'] = 'Emitir';
-                        $arr_state['link'] = 'fac-issue-policy.php?ide=' . base64_encode($row['ide']) 
+                        $arr_state['link'] = 'fac-issue-policy.php?ide=' . base64_encode($row['ide'])
                             . '&pr=' . base64_encode($product);
                     }
                 }
                 $arr_state['obs'] = 'APROBADO';
                 $arr_state['bg'] = '';
-                
+
                 if($token === 4){
                     $arr_state['action'] = 'Anular Certificado';
-                    $arr_state['link'] = 'cancel-policy.php?ide=' . base64_encode($row['ide']) 
+                    $arr_state['link'] = 'cancel-policy.php?ide=' . base64_encode($row['ide'])
                         . '&pr=' . base64_encode($product);
                 }
-                
+
                 break;
             case 'R':
                 $arr_state['txt'] = 'RECHAZADO';
                 $arr_state['obs'] = 'RECHAZADO';
                 $arr_state['bg'] = '';
-                
+
                 break;
             case 'O':
                 $arr_state['txt'] = 'OBSERVADO';
@@ -116,9 +114,9 @@ function get_state(&$arr_state, $row, $token, $product, $issue)
                 if($token === 3){
                     PreApprove:
                     $arr_state['action'] = 'Editar Datos';
-                    $arr_state['link'] = $pr . '-quote.php?ms=' . md5('MS_' . $product) 
-                        . '&page=91a74b6d637860983cc6c1d33bf4d292&pr=' 
-                        . base64_encode($product . '|05') . '&ide=' . base64_encode($row['ide']) 
+                    $arr_state['link'] = $pr . '-quote.php?ms=' . md5('MS_' . $product)
+                        . '&page=91a74b6d637860983cc6c1d33bf4d292&pr='
+                        . base64_encode($product . '|05') . '&ide=' . base64_encode($row['ide'])
                         . '&flag=' . md5('i-read') . '&cia=' . base64_encode($row['id_compania']);
                 } elseif($token === 4){
                     $arr_state['action'] = 'Anular Certificado';
@@ -130,7 +128,7 @@ function get_state(&$arr_state, $row, $token, $product, $issue)
                 }
                 break;
         }
-        
+
         if($row['observacion'] === 'E' && $row['estado'] !== 'A'){
             $arr_state['obs'] = $row['estado_pendiente'];
             if($token === 1){
@@ -162,12 +160,12 @@ function get_state(&$arr_state, $row, $token, $product, $issue)
             }
         }elseif($row['observacion'] === NULL && $row['estado'] !== 'A' && $row['estado'] !== 'R'){
             $arr_state['obs'] = 'NINGUNA';
-            
+
             if ($token === 5) {
-                
+
             }
         }
-        
+
         if($token === 2){
             switch($state_bank){
                 case 1: $arr_state['txt_bank'] = 'ANULADO'; break;
@@ -175,15 +173,16 @@ function get_state(&$arr_state, $row, $token, $product, $issue)
                 case 3: $arr_state['txt_bank'] = 'NO EMITIDO'; break;
             }
         }
-        
+
         if ($token === 4 && ($product === 'AU' || $product === 'TRD')) {
             $arr_state['action'] = 'Anular Certificado';
             $arr_state['link'] = 'cancel-policy.php?ide=' . base64_encode($row['ide']) . '&pr=' . base64_encode($product);
         }
-        
+
         if ($token === 6 && ($product === 'AU' || $product === 'TRD')) {
             $arr_state['action'] = '<br>Cambiar Certificado Provisional';
             $arr_state['link'] = 'provisional-certificate.php?ide='.base64_encode($row['ide']).'&pr='.base64_encode($product);
         }
     }
+    */
 ?>

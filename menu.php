@@ -17,7 +17,7 @@ if ($user->getDataUser($_SESSION['id_user']) === true) {
 					<a href="index.php" class="item-uniq">Inicio</a>
 				</li>
 				<li>
-					<a href="" class="item-uniq">Usuario</a>
+					<a href="?user=1" class="item-uniq">Usuario(s)</a>
 				</li>
 				<li><a href="logout.php" class="item-uniq">Salir</a></li>
 			</ul>
