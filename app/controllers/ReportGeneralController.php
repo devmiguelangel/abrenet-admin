@@ -26,7 +26,8 @@ class ReportGeneralController extends Administrator
 		$this->setData($data);
 	}
 
-	private function setData($data){
+	private function setData($data)
+	{
 		$this->data['nc'] = $this->real_escape_string(trim($data['r-nc']));
 		$this->data['prefix'] = $this->real_escape_string(trim($data['r-prefix']));
 		if(empty($this->data['nc']) === true) $this->data['nc'] = '%%';
@@ -110,7 +111,6 @@ class ReportGeneralController extends Administrator
     <tbody>
 <?php
 				while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
-					// echo $this->row['ef_codigo'];
 					$de = new ReportDEController($this->row, $this->data, $this->xls);
 					
 				}
@@ -119,9 +119,8 @@ class ReportGeneralController extends Administrator
     
 <?php
 			} else {
-				$this->err = false;
+				$this->err = true;
 			}
-
 			break;
 		case 'AU':
 			if ($this->getEFProduct($this->product) === true) {
@@ -169,7 +168,7 @@ class ReportGeneralController extends Administrator
 	</tbody>
 <?php
 			} else {
-				$this->err = false;
+				$this->err = true;
 			}
 			break;
 		case 'TRD':
@@ -226,38 +225,40 @@ class ReportGeneralController extends Administrator
 	</tbody>
 <?php
 			} else {
-				$this->err = false;
+				$this->err = true;
 			}
 			break;
 		default:
 			$this->err = true;
 			break;
 		}
+
+		if ($this->err === false) {
 ?>
 	<tfoot>
     	<tr>
-        	<td colspan="29" style="text-align:left;">
+        	<td colspan="10" style="text-align:left;">
 <?php
 	if ($this->xls === false) {
 		echo '<a href="report.php?data-pr=' . $this->product
-			. '&xls=' . md5('TRUE') 
-			. '&frp-nc=' . $this->data['nc'] 
-			. '&frp-prefix=' . $this->data['prefix'] 
-			. '&frp-client=' . $this->data['client'] 
-			. '&frp-dni=' . $this->data['dni'] 
-			. '&frp-comp=' . $this->data['comp'] 
-			. '&frp-ext=' . $this->data['ext'] 
-			. '&frp-date-b=' . $this->data['date-begin'] 
-			. '&frp-date-e=' . $this->data['date-end'] 
-			. '&frp-ef=' . $this->data['r-ef'] 
-			. '&frp-in=' . $this->data['r-in'] 
-			. '&frp-pendant=' . $this->data['r-pendant'] 
-			. '&frp-state=' . $this->data['r-state'] 
-			. '&frp-free-cover=' . $this->data['r-free-cover'] 
-			. '&frp-extra-premium=' . $this->data['r-extra-premium'] 
-			. '&frp-issued=' . $this->data['r-issued'] 
-			. '&frp-rejected=' . $this->data['r-rejected'] 
-			. '&frp-canceled=' . $this->data['r-canceled'] 
+			. '&xls=' . md5('TRUE')
+			. '&frp-nc=' . $this->data['nc']
+			. '&frp-prefix=' . $this->data['prefix']
+			. '&frp-client=' . $this->data['client']
+			. '&frp-dni=' . $this->data['dni']
+			. '&frp-comp=' . $this->data['comp']
+			. '&frp-ext=' . $this->data['ext']
+			. '&frp-date-b=' . $this->data['date-begin']
+			. '&frp-date-e=' . $this->data['date-end']
+			. '&frp-ef=' . $this->data['r-ef']
+			. '&frp-in=' . $this->data['r-in']
+			. '&frp-pendant=' . $this->data['r-pendant']
+			. '&frp-state=' . $this->data['r-state']
+			. '&frp-free-cover=' . $this->data['r-free-cover']
+			. '&frp-extra-premium=' . $this->data['r-extra-premium']
+			. '&frp-issued=' . $this->data['r-issued']
+			. '&frp-rejected=' . $this->data['r-rejected']
+			. '&frp-canceled=' . $this->data['r-canceled']
 			. '&frp-customer-type=' . $this->data['r-customer-type']
 			. '" class="send-xls" target="_blank">Exportar a Formato Excel</a>';
 	}
@@ -265,6 +266,9 @@ class ReportGeneralController extends Administrator
 			</td>
         </tr>
     </tfoot>
+<?php
+		}
+?>
 </table>
 <?php
 	}

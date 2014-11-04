@@ -59,6 +59,7 @@ class ReportClientController extends Administrator
 
 	public function setResult()
 	{
+		if ($this->getEFProduct($this->product) === true) {
 ?>
 <table class="result-list" id="result-cl">
     <thead>
@@ -79,12 +80,10 @@ class ReportClientController extends Administrator
         </tr>
     </thead>
     <tbody>
-<?php
-		if ($this->getEFProduct($this->product) === true) {
+<?php			
 			while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
 				$cl = new ReportClientDBController($this->row, $this->data, $this->xls);
 			}
-		}
 ?>
     </tbody>
     <tfoot>
@@ -119,6 +118,9 @@ class ReportClientController extends Administrator
     </tfoot>
 </table>
 <?php
+		} else {
+			$this->err = true;
+		}
 	}
 
 	private function getEFProduct($pr)

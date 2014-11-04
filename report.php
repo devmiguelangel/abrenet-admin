@@ -198,20 +198,20 @@ if(isset($_GET['data-pr'])){
 	switch ($pr) {
 	case 'CL':
 		$rpCl = new ReportClientController($pr, $arrData, $xls);
+		$rpCl->setResult();
 
-		if ($rpCl->err === false) {
-			$rpCl->setResult();
-		} else {
+		if ($rpCl->err === true) {
 			echo 'No se puede obtener el reporte';
+		} else {
 		}
 		break;
 	default:
 		$rpDe = new ReportGeneralController($pr, $arrData, $xls);
+		$rpDe->setResult();
 
-		if ($rpDe->err === false) {
-			$rpDe->setResult();
-		} else {
+		if ($rpDe->err === true) {
 			echo 'No se puede obtener el reporte';
+		} else {
 		}
 		break;
 	}
