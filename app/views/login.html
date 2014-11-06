@@ -44,8 +44,8 @@ $(document).ready(function(e) {
 						$("#result-login").removeClass('loading-01');
 					},
 					success: function(result){
+						$("#result-login").html(result['msg']);
 						if (result['key'] === true) {
-							$("#result-login").html(result['msg']);
 							location.href = result['lnk'];
 						} else {
 							$("#form-login :submit").attr('disabled', false);

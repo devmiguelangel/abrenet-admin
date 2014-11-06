@@ -6,19 +6,30 @@ if ($session->err === true) {
 		$rp = (int)$_GET['rp'];
 
 		switch ($rp) {
-			case 1:		// Generales
+		case 1:		// Generales
+			if ($user->menu[1]['active'] === true) {
 				require '/app/views/rep_general.php';
-				break;
-			case 2:		// Clientes
+			} else {
+				goto Index;
+			}
+			break;
+		case 2:		// Clientes
+			if ($user->menu[2]['active'] === true) {
 				require '/app/views/rep_general.php';
-				break;
-			default:
-				header('Location: index.php');
-				break;
+			} else {
+				goto Index;
+			}
+			break;
+		case 3:		// Usuarios
+			require '/app/views/admin_user.php';
+			break;
+		default:
+			Index:
+			header('Location: index.php');
+			break;
 			
 		}
 	}
-
 	
 }
 ?>

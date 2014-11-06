@@ -9,6 +9,8 @@ require_once '/app/controllers/ReportClientController.php';
 require_once '/app/controllers/ReportGeneralController.php';
 
 if(isset($_GET['data-pr'])){
+	$ef_token = true;
+
 	$xls = false;
 	if(isset($_GET['xls'])) {
 		if($_GET['xls'] === md5('TRUE')) {
@@ -48,17 +50,21 @@ if(isset($_GET['data-pr'])){
 
 	$arrData['r-ef'] = '';
 	if ($xls === false) {
-		$nef = (int)$_GET['nef'];
+		if (isset($_GET['nef'])) {
+			$nef = (int)$_GET['nef'];
 
-		for ($i = 1; $i <= $nef; $i++) { 
-			if (isset($_GET['frp-ef-' . $i])) {
-				$arrData['r-ef'] .= $_GET['frp-ef-' . $i];
+			for ($i = 1; $i <= $nef; $i++) { 
+				if (isset($_GET['frp-ef-' . $i])) {
+					$arrData['r-ef'] .= $_GET['frp-ef-' . $i];
+				}
 			}
-		}
 
-		$arrData['r-ef'] = '['.$arrData['r-ef'].']{2}';
-		/*if(empty($arrData['r-ef']) === TRUE) { $arrData['r-ef'] = '.'; }
-		else { $arrData['r-ef'] = '['.$arrData['r-ef'].']{2}'; }*/
+			$arrData['r-ef'] = '['.$arrData['r-ef'].']{2}';
+			/*if(empty($arrData['r-ef']) === TRUE) { $arrData['r-ef'] = '.'; }
+			else { $arrData['r-ef'] = '['.$arrData['r-ef'].']{2}'; }*/
+		} else {
+			$ef_token = false;
+		}
 	} else {
 		if(isset($_GET['frp-ef'])) { $arrData['r-ef'] = $_GET['frp-ef']; }
 	}
@@ -206,12 +212,16 @@ if(isset($_GET['data-pr'])){
 		}
 		break;
 	default:
-		$rpDe = new ReportGeneralController($pr, $arrData, $xls);
-		$rpDe->setResult();
+		if ($ef_token === true) {
+			$rpDe = new ReportGeneralController($pr, $arrData, $xls);
+			$rpDe->setResult();
 
-		if ($rpDe->err === true) {
-			echo 'No se puede obtener el reporte';
+			if ($rpDe->err === true) {
+				echo 'No se puede obtener el reporte';
+			} else {
+			}
 		} else {
+			echo 'Usted no tiene permisos para ver este reporte';
 		}
 		break;
 	}

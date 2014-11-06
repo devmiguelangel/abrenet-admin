@@ -17,7 +17,19 @@ class UserController extends Administrator
 		$passwordUpdate,
 
 		$data = array(),
-		$dataDepto = array()
+		$dataDepto = array(),
+		$menu = array(
+			1 => array(
+				'key'	=> 1,
+				'title'	=> 'Reportes Generales',
+				'active'	=> false
+				),
+			2 => array(
+				'key'	=> 2,
+				'title'	=> 'Reportes Clientes',
+				'active'	=> false
+				),
+			)
 		;
 
 	private $cx;

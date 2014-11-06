@@ -15,27 +15,27 @@ if ($pr->getProduct() === true) {
     }
 
     switch ($rp) {
-        case 1:
-            echo '<h3 class="h3">Reportes Generales</h3>';
+    case 1:
+        echo '<h3 class="h3">Reportes Generales</h3>';
 
-            $active = 'rp-active';
-            $k = 0;
+        $active = 'rp-active';
+        $k = 0;
 ?>
 <table class="rp-link-container">
     <tr>
 <?php
-            foreach ($product as $key => $value) {
-                $k += 1;
+        foreach ($product as $key => $value) {
+            $k += 1;
 
-                if ($k !== 1) {
-                    $active = '';
-                }
-
-                echo '<td style="width:20%;">
-                    <a href="#" class="rp-link ' . $active . '" rel="' 
-                    . strtolower($value['codigo']) . '">' . $value['producto'] . '</a>
-                </td>';
+            if ($k !== 1) {
+                $active = '';
             }
+
+            echo '<td style="width:20%;">
+                <a href="#" class="rp-link ' . $active . '" rel="' 
+                . strtolower($value['codigo']) . '">' . $value['producto'] . '</a>
+            </td>';
+        }
 ?>
         <td style="width:20%; border-bottom:1px solid #CECECE;">
             <input type="hidden" id="flag" name="flag" value="bac953e88f6d79514b0b6fc42eb6f3b7">
@@ -43,10 +43,10 @@ if ($pr->getProduct() === true) {
     </tr>
 </table>
 <?php
-            break;
-        case 2:
-            echo '<h3 class="h3">Reportes Clientes</h3>';
-            break;
+        break;
+    case 2:
+        echo '<h3 class="h3">Reportes Clientes</h3>';
+        break;
     }
 ?>
 <div class="rc-records">
@@ -63,6 +63,8 @@ if ($pr->getProduct() === true) {
             }
 
             require_once 'rep_' . $prefix . '_template.php';
+            /*if ($pr->getEFProduct(strtoupper($prefix), $_SESSION['id_user']) === true) {
+            }*/
         }
     } else {
         require_once 'rep_cl_template.php';

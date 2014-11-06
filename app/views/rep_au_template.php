@@ -177,41 +177,6 @@ if ($pr->getInsurer() === true) {
     <div class="result-container">
         <div class="result-loading rl-au"></div>
         <div class="result-search rs-au">
-            <table class="result-list" id="result-de">
-                <thead>
-                    <tr>
-                        <td>No. de Certificado</td>
-                        <td>Entidad Financiera</td>
-                        <td>Cliente</td>
-                        <td>C.I.</td>
-                        <td>Ciudad</td>
-                        <td><?=htmlentities('Género', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Teléfono', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Celular</td>
-                        <td>Email</td>
-                        <td>Avenida o calle</td>
-                        <td><?=htmlentities('Dirección', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Numero domicilio</td>
-                        <td><?=htmlentities('Opción', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Tipo de vehículo', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Marca</td>
-                        <td>Modelo</td>
-                        <td><?=htmlentities('Año', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Placa</td>
-                        <td><?=htmlentities('Uso de vehículo', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Tracción', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Valor asegurado</td>
-                        <td><?=htmlentities('No Póliza', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Forma de pago</td>
-                        <td>Creado por</td>
-                        <td>Fecha de ingreso</td>
-                        <td>Sucursal</td>
-                        <td>Agencia</td>
-                        <td>Emitido</td>
-                        <td>Certificados anulados</td>
-                    </tr>
-                </thead>
-            </table>
         </div>
     </div>
 </div>

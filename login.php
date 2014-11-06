@@ -18,7 +18,8 @@ if(isset($_POST['fl-user']) && isset($_POST['fl-pass'])){
 		$session = new Session();
 
 		if ($session->err === true) {
-			startSession:
+			StartSession:
+
 			$session->startSession($user->id);
 			$result = array(
 				'key' => true,
@@ -27,8 +28,14 @@ if(isset($_POST['fl-user']) && isset($_POST['fl-pass'])){
 				);
 		} else {
 			$session->removeSession();
-			goto startSession;
+			goto StartSession;
 		}
+	} else {
+		$result = array(
+			'key' => false,
+			'msg' => $user->result['msg'],
+			'lnk' => 'index.php'
+			);
 	}
 }
 

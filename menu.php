@@ -3,6 +3,24 @@ require_once '/app/controllers/UserController.php';
 $user = new UserController();
 
 if ($user->getDataUser($_SESSION['id_user']) === true) {
+	switch ($user->permission['codigo']) {
+	case 'ROOT':
+		Report:
+		$user->menu[1]['active'] = true;
+		$user->menu[2]['active'] = true;
+		break;
+	case 'RGR':
+		$user->menu[1]['active'] = true;
+		break;
+	case 'RCL':
+		$user->menu[2]['active'] = true;
+		break;
+	case 'RGC':
+		goto Report;
+		break;
+	}
+
+
 ?>
 <nav>
 	<ul id="main-menu">
@@ -17,19 +35,22 @@ if ($user->getDataUser($_SESSION['id_user']) === true) {
 					<a href="index.php" class="item-uniq">Inicio</a>
 				</li>
 				<li>
-					<a href="?user=1" class="item-uniq">Usuario(s)</a>
+					<a href="?rp=3" class="item-uniq">Usuario(s)</a>
 				</li>
 				<li><a href="logout.php" class="item-uniq">Salir</a></li>
 			</ul>
 		</li>
 		<li><a href="#" style="width: auto;">Reportes</a>
 			<ul>
-				<li>
-					<a href="?rp=1" class="item-uniq">Generales</a>
-				</li>
-				<li>
-					<a href="?rp=2" class="item-uniq">Clientes</a>
-				</li>
+<?php
+	foreach ($user->menu as $key => $value) {
+		if ($value['active'] === true) {
+			echo '<li>
+				<a href="?rp=' . $value['key'] . '" class="item-uniq">' . $value['title'] . '</a>
+			</li>';
+		}
+	}
+?>
 			</ul>
 		</li>
 	</ul>

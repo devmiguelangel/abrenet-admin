@@ -758,6 +758,78 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 	color:#FFF;
 }
 
+/* =========================USER=================================== */
+
+
+.user-result{
+	width:100%;
+	font-size:80%;
+}
+
+.user-result td{
+	text-align:center;
+	border:1px solid #FFF;
+	padding:3px;
+	font-weight:bold;
+}
+
+.user-result thead{
+	background:#46A3FF;
+	color:#FFF;
+}
+
+.user-result tbody{
+	background:#B9FFDC;
+	color:#000;
+}
+
+.user-result tbody td{
+	font-weight:normal;
+	font-family:Arial;
+	font-size:85%;
+}
+
+.permission{
+	width:80%;
+	margin:1px auto;
+	padding: 2px 0;
+	background:#A4E1FF;
+}
+
+/* */
+.action-user, .action-user-02{
+	display:block;
+	width:100px;
+	height:70px;
+	margin:5px auto;
+	padding:0;
+	text-decoration:none;
+	border:0 none;
+	border:1px solid #FFF;
+	font-size:70%;
+	text-align:center;
+	color:#000;
+}
+
+.action-user-02{
+	display:inline-block;
+	*display: inline;
+	_display:inline;
+	width:50px;
+	height:60px;
+	margin:3px auto;
+	vertical-align:top;
+	zoom: 1;
+}
+
+.action-user img, .action-user-02 img{
+	border:0 none;
+}
+
+.action-user:hover, .action-user-02:hover{
+	border:1px solid #C4E1FF;
+}
+
 /* ===========================FOOTER============================ */
 footer{
 	width:100%;

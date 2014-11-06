@@ -137,55 +137,6 @@ if ($pr->getInsurer() === true) {
     <div class="result-container">
         <div class="result-loading rl-trd"></div>
         <div class="result-search rs-trd">
-			<table class="result-list" id="result-de">
-                <thead>
-                    <tr>
-                        <td>No. Certificado</td>
-                        <td>Entidad Financiera</td>
-                        <td>Cliente</td>
-                        <td>CI</td>
-                        <td><?=htmlentities('Género', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Ciudad</td>
-                        <td><?=htmlentities('Teléfono', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Celular</td>
-                        <td>Email</td>
-                        <td>Avenida o calle</td>
-                        <td><?=htmlentities('Dirección', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Numero domicilio</td>
-                        <td>Email</td>
-                        <td><?=htmlentities('Teléfono', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Opción', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Tipo inmueble</td>
-                        <td>Uso</td>
-                        <td>Estado</td>
-                        <td>Departamento</td>
-                        <td>Zona</td>
-                        <td><?=htmlentities('Dirección', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Monto inmueble</td>
-                        <td><?=htmlentities('Tipo vehículo', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Marca</td>
-                        <td>Modelo</td>
-                        <td>Placa</td>
-                        <td><?=htmlentities('Uso vehículo', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Tracción', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Cero KM </td>
-                        <td><?=htmlentities('Monto vehículo', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Plazo crédito', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('No. póliza', ENT_QUOTES, 'UTF-8');?></td>
-                        <td>Forma Pago</td>
-                        <td>Emitido</td>
-                        <td>Sucursal</td>
-                        <td>Agencia</td>
-                        <td>Creado por</td>
-                        <td>Fecha de ingreso</td>
-                        <td>Certificados anulados</td>
-                        <td>Certificado inmueble</td>
-                        <td><?=htmlentities('Certificado vehículo', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Cotización inmueble', ENT_QUOTES, 'UTF-8');?></td>
-                        <td><?=htmlentities('Cotización vehículo', ENT_QUOTES, 'UTF-8');?></td>
-				    </tr>
-                </thead>
-			</table>
         </div>
     </div>
 </div>
