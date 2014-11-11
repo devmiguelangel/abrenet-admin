@@ -30,6 +30,26 @@ if ($session->err === true) {
 			
 		}
 	}
+
+	if (isset($_GET['adm'])) {
+		if ($user->permission['codigo'] === 'ROOT') {
+			$adm = (int)$_GET['adm'];
+
+			switch ($adm) {
+			case 1:
+				require '/app/views/admin_bank.php';
+				break;
+			case 2:
+				# code...
+				break;
+			default:
+				header('Location: index.php');
+				break;
+			}
+		} else {
+			header('Location: index.php');
+		}
+	}
 	
 }
 ?>

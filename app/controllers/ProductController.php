@@ -68,6 +68,7 @@ class ProductController extends Administrator
 		where
 			spr.codigo = "' . $pr . '"
 				and su.id = "' . base64_decode($id_user) . '"
+				and sef.activado = true
 		order by sef.id asc
 		;';
 
@@ -99,6 +100,7 @@ class ProductController extends Administrator
 			sa_usuario as su ON (su.id = seu.usuario)
 		where
 			su.id = "' . base64_decode($id_user) . '"
+				and sef.activado = true
 		order by sef.id asc
 		;';
 		

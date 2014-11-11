@@ -431,7 +431,7 @@ form{
 
 .f-admin-user label, .f-admin-user input[type="text"],
 .f-admin-user input[type="password"], .f-admin-user select,
-#fa-adduser, .cancel-action, #fd-deluser{
+#fa-adduser, .cancel-action, #fd-deluser, #fb_add{
 	display:inline-block;
 	*display:inline;
 	_display:inline;
@@ -463,7 +463,7 @@ form{
 	font-size:105%;
 }
 
-#fa-adduser, .cancel-action, #fd-deluser{
+#fa-adduser, .cancel-action, #fd-deluser, #fb_add{
 	margin:5px auto;
 	border:0 none;
 	background:#e5603b;
@@ -472,7 +472,8 @@ form{
 	vertical-align:top;
 }
 
-#fa-adduser:hover, #fd-deluser:hover{
+#fa-adduser:hover, #fd-deluser:hover, #fb_add:hover
+{
 	background:#DD491E;
 }
 
@@ -828,6 +829,73 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 
 .action-user:hover, .action-user-02:hover{
 	border:1px solid #C4E1FF;
+}
+
+/* ===========================ENTIDAD FINANCIERA================ */
+.bank {
+	width: 80%;
+	height: auto;
+	margin: 5px auto;
+	padding: 10px;
+	border: 1px solid #6ed3c4;
+	box-shadow: 5px 5px 10px rgba(0, 127, 110, 0.5);
+	font-size: 80%;
+}
+
+.bank_active {
+	border: 1px solid #fcb8bf;
+	box-shadow: 5px 5px 10px rgba(226, 111, 122, 0.5);
+}
+
+.bank .bank_title {
+	background: #166596;
+	color: #FFF;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.bank_title a {
+	color: #effcf9;
+}
+
+.bank .bank_data_title {
+	color: #333;
+	font-weight: bold;
+	margin: 3px 0;
+}
+
+.bank .bank_data {
+	width: 100%;
+	margin: 5px 0;
+	border: 1px solid #DDD;
+}
+
+.bank_data td {
+	text-align: center;
+	font-weight: bold;
+	font-size: 90%;
+	padding: 3px;
+}
+
+.bank_edit, .bank_add{
+	display: block;
+	border-radius: 5px;
+	width: 130px;
+	height: auto;
+	padding: 10px 10px;
+	background: #0698a0;
+	text-decoration: none;
+	color: #FFF;
+	text-align: center;
+}
+
+.bank_edit:hover, .bank_add:hover {
+	color: #FFF;
+	background: #057e84;
+}
+
+.bank_add {
+	margin: 0 auto;
 }
 
 /* ===========================FOOTER============================ */

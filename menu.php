@@ -53,6 +53,18 @@ if ($user->getDataUser($_SESSION['id_user']) === true) {
 ?>
 			</ul>
 		</li>
+<?php
+	if ($user->permission['codigo'] === 'ROOT') {
+?>
+		<li><a href="" style="width: auto;">Administración</a>
+			<ul>
+				<li><a href="?adm=1" class="item-uniq">Entidad Financiera</a></li>
+				<li><a href="?adm=2" class="item-uniq">Aseguradora</a></li>
+			</ul>
+		</li>
+<?php
+	}
+?>
 	</ul>
 </nav>
 <?php
