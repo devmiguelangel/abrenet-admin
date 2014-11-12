@@ -122,7 +122,7 @@ if ($action === 2) {
 	<input type="submit" id="fb_add" name="fb_add" value="<?=$form_title;?>">
 	<a href="<?=$_SERVER['HTTP_REFERER'];?>" class="cancel-action">Cancelar</a>
 	<br>
-	<div id="result_fbank" class="loading loading-02" style="color:#414141;">s</div>
+	<div id="result_fbank" class="loading loading-02" style="color:#414141;"></div>
 </form>
 <script type="text/javascript">
 $(document).ready(function(){
