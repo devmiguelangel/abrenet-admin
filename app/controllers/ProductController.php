@@ -71,7 +71,7 @@ class ProductController extends Administrator
 				and sef.activado = true
 		order by sef.id asc
 		;';
-
+		
 		if (($rs = $this->query($sql, MYSQLI_STORE_RESULT)) !== false) {
 			if ($rs->num_rows > 0) {
 				$this->data = array();

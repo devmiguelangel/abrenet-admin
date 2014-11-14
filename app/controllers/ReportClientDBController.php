@@ -22,7 +22,7 @@ class ReportClientDBController
 		$this->data = $data;
 		$this->xls = $xls;
 
-		$this->cx = new mysqli($db['db_host'], $db['db_user'], $db['db_password'], $db['db_database']);
+		@$this->cx = new mysqli($db['db_host'], $db['db_user'], $db['db_password'], $db['db_database']);
 		
 		if ($this->cx->connect_error) {
 			die('Error de Conexion (' . $this->cx->connect_errno . ' ) ' . $this->cx->connect_error);
