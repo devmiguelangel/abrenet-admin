@@ -32,15 +32,12 @@ class UserController extends Administrator
 			)
 		;
 
-	private $cx;
-
 	public $result = array(
 		'msg' => ''
 	);
 	
 	public function __construct()
 	{
-		// $this->cx = new Administrator();
 		parent::__construct();
 	}
 

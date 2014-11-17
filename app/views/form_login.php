@@ -1,3 +1,18 @@
+<?php
+require_once '/../controllers/ClientController.php';
+
+$client_token = false;
+if (isset($_GET['cl'])) {
+	$cl = new ClientController();
+
+	$cl->code = strtoupper($cl->real_escape_string(trim($_GET['cl'])));
+
+	if ($cl->getClientByCode() === true) {
+		$client_token = true;
+	}
+}
+?>
+
 <link type="text/css" href="css/jquery.realperson.css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.realperson.js"></script>
 <script type="text/javascript">
@@ -44,6 +59,8 @@ $(document).ready(function(e) {
 						$("#result-login").removeClass('loading-01');
 					},
 					success: function(result){
+						// $("#result-login").html(result);
+						
 						$("#result-login").html(result['msg']);
 						if (result['key'] === true) {
 							location.href = result['lnk'];
@@ -69,7 +86,11 @@ $(document).ready(function(e) {
 
 <form id="form-login" name="form-login" method="post" action="">
 	<div id="fl-header">Accede a tu cuenta</div>
-	
+<?php
+if ($client_token === true) {
+	echo '<input type="hidden" id="Client-id" name="Client-id" value="' . base64_encode($cl->id) . '">';
+}
+?>	
 	<label>Usuario</label>
 	<span class="fl-icon"></span><input type="text" id="fl-user" name="fl-user" 
 		value="" autocomplete="off" placeholder="Tu Usuario" class="fl-text" />
@@ -86,7 +107,6 @@ $(document).ready(function(e) {
 			style="width:100px; margin:5px auto; font-size:100%; color:#000;" maxlength="10" autocomplete="off" >
 		<div class="error-text"></div>
 	</div>
-	
 	<input type="submit" id="fl-sin" name="fl-sin" value="Ingresar" />
 	<div id="result-login" class="loading"></div>
 </form>

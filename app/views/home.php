@@ -1,6 +1,6 @@
 <?php
 if ($session->err === true) {
-	require 'login.html';
+	require 'form_login.php';
 } else {
 	if (isset($_GET['rp'])) {
 		$rp = (int)$_GET['rp'];
@@ -50,6 +50,5 @@ if ($session->err === true) {
 			header('Location: index.php');
 		}
 	}
-	
 }
 ?>

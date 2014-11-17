@@ -4,10 +4,17 @@
 */
 class Session
 {
-	public $idUser, $userAgent, $err = false;
+	public $idUser, $userAgent,
+		$user = '',
+		$name = '',
+		$permission = '',
+		$token = false, 
+		$err = false;
 	
-	public function __construct()
+	public function __construct($token = false)
 	{
+		$this->token = $token;
+
 		session_start();
 
 		if (isset($_SESSION['id_user']) && isset($_SESSION['user_agent'])) {
@@ -25,6 +32,12 @@ class Session
 		$_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
 		$_SESSION['last_activity'] = $_SERVER['REQUEST_TIME'];
 		$_SESSION['session_time'] = 30000;
+
+		if ($this->token === true) {
+			$_SESSION['user'] = base64_encode($this->user);
+			$_SESSION['name'] = base64_encode($this->name);
+			$_SESSION['permission'] = base64_encode($this->permission);
+		}
 
 		$this->setDataCookie();
 	}
@@ -47,6 +60,7 @@ class Session
 			/*$data['user'] = htmlspecialchars($_COOKIE['sud_admin[user]']);
 			$data['ef'] = htmlspecialchars($_COOKIE['sud_admin[ef]']);*/
 			$data_user = htmlspecialchars($data['user']);
+
 			$this->startSession(base64_decode($data_user));
 
 			$this->err = false;

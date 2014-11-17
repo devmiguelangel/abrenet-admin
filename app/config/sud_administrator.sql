@@ -167,6 +167,7 @@ CREATE TABLE IF NOT EXISTS `sa_entidad_financiera` (
   `id` int(21) NOT NULL,
   `nombre` varchar(140) NOT NULL,
   `codigo` varchar(10) NOT NULL,
+  `dominio` varchar(140) NOT NULL,
   `db_host` varchar(140) NOT NULL,
   `db_database` varchar(140) NOT NULL,
   `db_user` varchar(140) NOT NULL,
@@ -178,14 +179,14 @@ CREATE TABLE IF NOT EXISTS `sa_entidad_financiera` (
 -- Volcado de datos para la tabla `sa_entidad_financiera`
 --
 
-INSERT INTO `sa_entidad_financiera` (`id`, `nombre`, `codigo`, `db_host`, `db_database`, `db_user`, `db_password`, `activado`) VALUES
-(1414006201, 'Ecofuturo', 'EC', 'localhost', 'ecofuturo', 'root', '', 1),
-(1414006202, 'Sembrar Sartawi', 'SS', 'localhost', 'sartawi', 'root', '', 1),
-(1414006203, 'Bisa Leasing', 'BL', 'localhost', 'bisa', 'root', '', 1),
-(1414006204, 'Emprender', 'EM', 'localhost', 'emprender', 'root', '', 1),
-(1414006205, 'Paulo VI', 'PV', 'localhost', 'paulo', 'root', '', 1),
-(1414006206, 'Idepro', 'ID', 'localhost', 'idepro', 'root', '', 1),
-(1414006207, 'Crecer', 'CR', 'localhost', 'crecer', 'root', '', 1);
+INSERT INTO `sa_entidad_financiera` (`id`, `nombre`, `codigo`, `dominio`, `db_host`, `db_database`, `db_user`, `db_password`, `activado`) VALUES
+(1414006201, 'Ecofuturo', 'EC', 'ecofuturo', 'localhost', 'ecofuturo', 'root', '', 1),
+(1414006202, 'Sembrar Sartawi', 'SS', 'sembrarsartawi', 'localhost', 'sartawi', 'root', '', 1),
+(1414006203, 'Bisa Leasing', 'BL', 'bisaleasing', 'localhost', 'bisa', 'root', '', 1),
+(1414006204, 'Emprender', 'EM', 'emprender', 'localhost', 'emprender', 'root', '', 1),
+(1414006205, 'Paulo VI', 'PV', 'paulovi', 'localhost', 'paulo', 'root', '', 1),
+(1414006206, 'Idepro', 'ID', 'idepro', 'localhost', 'idepro', 'root', '', 1),
+(1414006207, 'Crecer', 'CR', 'crecer', 'localhost', 'crecer', 'root', '', 1);
 
 -- --------------------------------------------------------
 
@@ -299,7 +300,7 @@ ALTER TABLE `sa_ef_usuario`
 -- Indices de la tabla `sa_entidad_financiera`
 --
 ALTER TABLE `sa_entidad_financiera`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `codigo` (`codigo`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY (`codigo`, `dominio`);
 
 --
 -- Indices de la tabla `sa_producto`
