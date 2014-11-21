@@ -1,6 +1,10 @@
 <?php
 //PROCESOS DE ADMINISTRACION DE USUARIOS
-require_once('/../controllers/AdminUserController.php');
+if (!isset($_SESSION['dir'])) {
+	session_start();
+}
+
+require_once $_SESSION['dir'] . '/app/controllers/AdminUserController.php';
 $adminUser = new AdminUserController();
 
 if(isset($_GET['rel']) && isset($_GET['data'])){

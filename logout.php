@@ -1,5 +1,5 @@
 <?php
-require '/app/controllers/SessionController.php';
+require 'app/controllers/SessionController.php';
 
 $session = new Session();
 

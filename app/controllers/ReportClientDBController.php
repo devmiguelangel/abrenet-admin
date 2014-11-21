@@ -2,7 +2,7 @@
 /**
 * Reportes Desgravamen
 */
-require '/../views/rep_client.php';
+require $_SESSION['dir'] . '/app/views/rep_client.php';
 require 'ReportCLEcofuturoController.php';
 require 'ReportCLSartawiController.php';
 require 'ReportCLBisaLeasingController.php';
@@ -34,6 +34,7 @@ class ReportClientDBController
 	private function setResult()
 	{
 		if($this->xls === true){
+			ob_start();
 			header("Content-Type:   application/vnd.ms-excel; charset=iso-8859-1");
 			header("Content-Disposition: attachment; filename=Reportes_Clientes.xls");
 			header("Pragma: no-cache");

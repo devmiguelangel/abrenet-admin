@@ -1,5 +1,5 @@
 <?php
-require_once '/../controllers/ClientController.php';
+require_once $_SESSION['dir'] . '/app/controllers/ClientController.php';
 
 $client_token = false;
 if (isset($_GET['cl'])) {

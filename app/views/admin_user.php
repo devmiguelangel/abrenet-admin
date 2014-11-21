@@ -1,5 +1,5 @@
 <?php
-require_once ('/app/controllers/AdminUserController.php');
+require_once $_SESSION['dir'] . '/app/controllers/AdminUserController.php';
 $adminUser = new AdminUserController();
 
 $id_user = base64_decode($_SESSION['id_user']);

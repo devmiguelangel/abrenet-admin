@@ -1,5 +1,5 @@
 <?php
-require_once '/app/controllers/ClientController.php';
+require_once $_SESSION['dir'] . '/app/controllers/ClientController.php';
 
 $cl = new ClientController();
 

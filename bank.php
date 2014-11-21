@@ -1,5 +1,9 @@
 <?php
-require '/app/controllers/BankController.php';
+if (!isset($_SESSION['dir'])) {
+	session_start();
+}
+
+require $_SESSION['dir'] . '/app/controllers/BankController.php';
 
 if (isset($_POST['fb_action'])) {
 	$action = (int)$_POST['fb_action'];

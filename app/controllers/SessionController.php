@@ -8,13 +8,12 @@ class Session
 		$user = '',
 		$name = '',
 		$permission = '',
+		$ef = '',
 		$token = false, 
 		$err = false;
 	
-	public function __construct($token = false)
+	public function __construct()
 	{
-		$this->token = $token;
-
 		session_start();
 
 		if (isset($_SESSION['id_user']) && isset($_SESSION['user_agent'])) {
@@ -37,6 +36,7 @@ class Session
 			$_SESSION['user'] = base64_encode($this->user);
 			$_SESSION['name'] = base64_encode($this->name);
 			$_SESSION['permission'] = base64_encode($this->permission);
+			$_SESSION['ef'] = base64_encode($this->ef);
 		}
 
 		$this->setDataCookie();

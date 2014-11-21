@@ -42,7 +42,8 @@ foreach ($depto as $key => $value) {
         <input type="hidden" id="data-pr" name="data-pr" value="DE" >
         <input type="hidden" id="pr" name="pr" value="de">
         <br>
-        <div id="accordion" class="accordion">
+
+        <div id="accordion" class="accordion" style="<?=$dis_accordion;?>">
 
             <h5>Entidad Financiera</h5>
             <div>
@@ -62,6 +63,19 @@ if ($pr->getEFProduct('DE', $_SESSION['id_user']) === true) {
     }
 
     echo '<input type="hidden" id="nef" name="nef" value="' . $nef . '" >';
+} else {
+    $bank = new BankController();
+    $bank->code = base64_decode($_SESSION['ef']);
+
+    if ($bank->getBankByCode() === true) {
+        echo '<label class="lbl-cb">
+            <input type="checkbox" id="frp-ef-1" name="frp-ef-1" value="' 
+                . $bank->code . '" ' . $check_option . '> ' . $bank->name . ' 
+        </label> ';
+
+        echo '<input type="hidden" id="nef" name="nef" value="1" >
+            <input type="hidden" id="rprint" name="rprint" value="' . sha1('p') . '" >';
+    }
 }
 ?>
             </div>
@@ -136,7 +150,8 @@ if ($pr->getInsurer() === true) {
                         No Extraprima
                 </label>
                 <label class="lbl-cb">
-                    <input type="checkbox" id="frp-approved-em" name="frp-approved-em" value="EM">
+                    <input type="checkbox" id="frp-approved-em" name="frp-approved-em" value="EM"
+                        <?=$check_option;?>>
                         Emitido
                 </label>
                 <label class="lbl-cb">

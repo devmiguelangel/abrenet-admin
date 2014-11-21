@@ -3,8 +3,8 @@
 * Reportes Clientes
 */
 
-require_once '/../config/administrator.php';
-require_once '/ReportClientDBController.php';
+require_once $_SESSION['dir'] . '/app/config/administrator.php';
+require_once 'ReportClientDBController.php';
 
 class ReportClientController extends Administrator
 {

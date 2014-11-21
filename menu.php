@@ -1,5 +1,6 @@
 <?php
-require_once '/app/controllers/UserController.php';
+require_once $_SESSION['dir'] . '/app/controllers/UserController.php';
+require_once $_SESSION['dir'] . '/app/controllers/BankController.php';
 $user = new UserController();
 
 if ($user->getDataUser($_SESSION['id_user']) === true) {
@@ -20,7 +21,14 @@ if ($user->getDataUser($_SESSION['id_user']) === true) {
 		break;
 	}
 
-
+	$user->token = false;
+} elseif (isset($_SESSION['user']) && isset($_SESSION['permission'])) {
+	$user->token = true;
+	$user->user = base64_decode($_SESSION['user']);
+	$user->name = base64_decode($_SESSION['name']);
+	$user->permission['codigo'] = base64_decode($_SESSION['permission']);
+	$user->ef = base64_decode($_SESSION['ef']);
+}
 ?>
 <nav>
 	<ul id="main-menu">
@@ -34,19 +42,34 @@ if ($user->getDataUser($_SESSION['id_user']) === true) {
 				<li>
 					<a href="index.php" class="item-uniq">Inicio</a>
 				</li>
-				<li>
-					<a href="?rp=3" class="item-uniq">Usuario(s)</a>
-				</li>
+<?php
+	if ($user->token === false) {
+		echo '<li>
+			<a href="?rp=3" class="item-uniq">Usuario(s)</a>
+		</li>';
+	}
+?>
 				<li><a href="logout.php" class="item-uniq">Salir</a></li>
 			</ul>
 		</li>
 		<li><a href="#" style="width: auto;">Reportes</a>
 			<ul>
 <?php
-	foreach ($user->menu as $key => $value) {
-		if ($value['active'] === true) {
+	if ($user->token === false) {
+		foreach ($user->menu as $key => $value) {
+			if ($value['active'] === true) {
+				echo '<li>
+					<a href="?rp=' . $value['key'] . '" class="item-uniq">' . $value['title'] . '</a>
+				</li>';
+			}
+		}
+	} else {
+		$bank = new BankController();
+		$bank->code = $user->ef;
+
+		if ($bank->getBankByCode() === true) {
 			echo '<li>
-				<a href="?rp=' . $value['key'] . '" class="item-uniq">' . $value['title'] . '</a>
+				<a href="?rp=4&ef=' . base64_encode($bank->code) . '" class="item-uniq">' . $bank->name . '</a>
 			</li>';
 		}
 	}
@@ -67,7 +90,3 @@ if ($user->getDataUser($_SESSION['id_user']) === true) {
 ?>
 	</ul>
 </nav>
-<?php
-}
-
-?>

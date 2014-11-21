@@ -1,6 +1,7 @@
 <?php
-require_once '/../controllers/ProductController.php';
-require_once '/../controllers/UserController.php';
+require_once $_SESSION['dir'] . '/app/controllers/ProductController.php';
+require_once $_SESSION['dir'] . '/app/controllers/BankController.php';
+require_once $_SESSION['dir'] . '/app/controllers/UserController.php';
 
 $pr = new ProductController($rp);
 
@@ -13,6 +14,8 @@ if ($pr->getProduct() === true) {
     if ($user->getDepto() === true) {
         $depto = $user->dataDepto;
     }
+
+    $dis_accordion = $check_option = '';
 
     switch ($rp) {
     case 1:
@@ -47,11 +50,45 @@ if ($pr->getProduct() === true) {
     case 2:
         echo '<h3 class="h3">Reportes Clientes</h3>';
         break;
+    case 4:
+        echo '<h3 class="h3">Re-impresión de Certificados</h3>';
+?>
+<table class="rp-link-container">
+    <tr>
+<?php
+        $active = 'rp-active';
+        $k = 0;
+        foreach ($product as $key => $value) {
+            $k += 1;
+            if ($k !== 1) {
+                $active = '';
+            }
+
+            if ($value['codigo'] === 'DE') {
+                echo '<td style="width:20%;">
+                    <a href="#" class="rp-link ' . $active . '" rel="' 
+                    . strtolower($value['codigo']) . '">' . $value['producto'] . '</a>
+                </td>';
+            } else {
+                echo '<td style="width:20%; border-bottom: 1px solid #CECECE;">
+                    
+                </td>';
+            }
+        }
+?>
+        <td style="width:20%; border-bottom:1px solid #CECECE;">
+            <input type="hidden" id="flag" name="flag" value="bac953e88f6d79514b0b6fc42eb6f3b7">
+        </td>
+    </tr>
+</table>
+<?php
+        break;
     }
 ?>
 <div class="rc-records">
 <?php
-    if ($rp === 1) {
+    switch ($rp) {
+    case 1:
         $k = 0;
         $display = 'display:block;';
         foreach ($product as $key => $value) {
@@ -66,8 +103,31 @@ if ($pr->getProduct() === true) {
             /*if ($pr->getEFProduct(strtoupper($prefix), $_SESSION['id_user']) === true) {
             }*/
         }
-    } else {
+        break;
+    case 4:
+        $k = 0;
+        $display = 'display:block;';
+        $dis_accordion = 'display:none;';
+        $check_option = 'checked';
+        
+        foreach ($product as $key => $value) {
+            $k += 1;
+            $prefix = strtolower($value['codigo']);
+
+            if ($k !== 1) {
+                $display = 'display:none;';
+            }
+
+            if ($value['codigo'] === 'DE') {
+                require_once 'rep_' . $prefix . '_template.php';
+            }
+            /*if ($pr->getEFProduct(strtoupper($prefix), $_SESSION['id_user']) === true) {
+            }*/
+        }
+        break;
+    default:
         require_once 'rep_cl_template.php';
+        break;
     }
 ?>
 </div>

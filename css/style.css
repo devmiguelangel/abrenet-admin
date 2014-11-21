@@ -713,7 +713,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 	display:none;
 	width:100%;
 	height:500px;
-	background:#999 url(../img/loading-03.gif) center no-repeat;
+	background:#999 url(../img/loading-03.GIF) center no-repeat;
 }
 
 .result-list{

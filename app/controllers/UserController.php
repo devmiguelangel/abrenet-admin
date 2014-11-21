@@ -2,7 +2,7 @@
 /**
 * User
 */
-require '/../config/administrator.php';
+require $_SESSION['dir'] . '/app/config/administrator.php';
 
 class UserController extends Administrator
 {
@@ -15,6 +15,8 @@ class UserController extends Administrator
 		$permission,
 		$activated,
 		$passwordUpdate,
+		$ef,
+		$token = false,
 
 		$data = array(),
 		$dataDepto = array(),

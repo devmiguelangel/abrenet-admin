@@ -1,9 +1,17 @@
 <?php
-function rep_desgravamen($row, $rowDt, $db, $arr_state, $bg, $rowSpan) {
+function rep_desgravamen($row, $rowDt, $db, $arr_state, $bg, $rowSpan, $rprint = false) {
     ob_start();
 ?>
 <tr style=" <?=$bg;?> ">
     <td <?=$rowSpan;?>><?=$row['r_prefijo'] . '-' . $row['r_no_emision'];?></td>
+<?php
+    if ($rprint === TRUE) {
+        echo '<td ' . $rowSpan . '>
+            <a href="' . $row['host'] . '" target="_blank" 
+            class="fancybox fancybox.ajax view-detail">Certificado</a>
+        </td>';
+    }
+?>    
     <td <?=$rowSpan;?>><?=$db['ef_nombre'];?></td>
     <td <?=$rowSpan;?>><?=$db['in_nombre'];?></td>
     <td><?=htmlentities($rowDt['cl_nombre'], ENT_QUOTES, 'UTF-8');?></td>

@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 'On');
+
 require 'header.php';
 
 if ($session->err === false) {

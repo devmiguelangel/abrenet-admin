@@ -2,7 +2,7 @@
 /**
 * Entidad Financiera
 */
-require_once '/../config/administrator.php';
+require_once $_SESSION['dir'] . '/app/config/administrator.php';
 
 class BankController extends Administrator
 {
@@ -323,6 +323,50 @@ class BankController extends Administrator
 		if (($rs = $this->query($sql, MYSQLI_STORE_RESULT)) !== false) {
 			if ($rs->num_rows > 0) {
 				return $rs;
+			}
+		}
+
+		return false;
+	}
+
+	public function getBankByCode()
+	{
+		$this->sql = '
+		SELECT 
+		    sef.id AS ef_id,
+		    sef.nombre AS ef_nombre,
+		    sef.codigo AS ef_codigo,
+		    sef.db_host,
+		    sef.db_database,
+		    sef.db_user,
+		    sef.db_password,
+		    sef.activado AS ef_activado
+		FROM
+		    sa_entidad_financiera AS sef
+		WHERE
+		    sef.codigo = "' . $this->code . '"
+		ORDER BY sef.id ASC
+		;';
+		// echo $this->sql;
+		if (($this->rs = $this->query($this->sql, MYSQLI_STORE_RESULT)) !== false) {
+			if ($this->rs->num_rows === 1) {
+				$this->row = $this->rs->fetch_array(MYSQLI_ASSOC);
+				$this->rs->free();
+
+				$this->id = $this->row['ef_id'];
+				$this->name = $this->row['ef_nombre'];
+				$this->code = $this->row['ef_codigo'];
+				$this->db_host = $this->row['db_host'];
+				$this->db_database = $this->row['db_database'];
+				$this->db_user = $this->row['db_user'];
+				$this->db_password = $this->row['db_password'];
+				$this->active = $this->row['ef_activado'];
+
+				unset($this->row);
+
+				return true;
+			} elseif ($this->rs->num_rows > 0) {
+				return true;
 			}
 		}
 

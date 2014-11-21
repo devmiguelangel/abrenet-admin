@@ -3,7 +3,7 @@
 * Reportes Generales
 */
 
-require_once '/../config/administrator.php';
+require_once $_SESSION['dir'] . '/app/config/administrator.php';
 require_once 'ReportDEController.php';
 require_once 'ReportAUController.php';
 require_once 'ReportTRDController.php';
@@ -12,6 +12,7 @@ class ReportGeneralController extends Administrator
 {
 	private $sql, $rs, $row, $product,
             $xls, $xlsTitle; 
+
 	private $ef = array(), $in = array();
 
 	public $data = array();
@@ -60,6 +61,8 @@ class ReportGeneralController extends Administrator
 		if (empty($this->data['r-in']) === false) {
 			$this->in = str_split($this->data['r-in'], 2);
 		}
+
+		$this->data['rprint'] = $data['rprint'];
 	}
 
 	public function setResult()
@@ -74,6 +77,11 @@ class ReportGeneralController extends Administrator
 	<thead>
         <tr>
             <td>No. Certificado</td>
+<?php
+			if ($this->data['rprint'] === true) {
+				echo '<td>Certificado</td>';
+			}
+?>
             <td>Entidad Financiera</td>
             <td>Aseguradora</td>
             <td>Cliente</td>
@@ -279,6 +287,7 @@ class ReportGeneralController extends Administrator
 			sef.id as ef_id,
 			sef.nombre as ef_nombre,
 			sef.codigo as ef_codigo,
+			sef.dominio as ef_dominio,
 			sef.db_host,
 			sef.db_database,
 			sef.db_user,
@@ -302,10 +311,11 @@ class ReportGeneralController extends Administrator
 				and sa.codigo regexp "' . $this->data['r-in'] . '"
 				and sef.activado = true
 				and sa.activado = true
+				and spr.activado = true
 		group by sef.id
 		order by sef.id asc
 		;';
-		
+		// echo $this->sql;
 		if (($this->rs = $this->query($this->sql, MYSQLI_STORE_RESULT)) !== false) {
 			if ($this->rs->num_rows > 0) {
 				return true;

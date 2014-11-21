@@ -2,11 +2,11 @@
 /**
 * Reportes Desgravamen
 */
-require '/../views/rep_desgravamen.php';
+require $_SESSION['dir'] . '/app/views/rep_desgravamen.php';
 
 class ReportDEController
 {
-	private $db, $data, $xls, $cx;
+	private $db, $data, $xls, $cx, $url, $host;
 	public $err;
 	
 	function __construct($db, $data, $xls)
@@ -32,6 +32,9 @@ class ReportDEController
 			header("Pragma: no-cache");
 			header("Expires: 0");
 		}
+
+		$this->setBankHost();
+		// echo $this->db['ef_dominio'];
 
 		$result = '';
 
@@ -100,6 +103,24 @@ class ReportDEController
 
 		echo $result;
 		unset($result);
+	}
+
+	private function setBankHost()
+	{
+		$self = $_SERVER['HTTP_HOST'];
+		$this->url = 'http://' . $self . '/';
+		
+		$this->host = $this->db['ef_dominio'] . '.';
+		
+		if (strpos($self, 'localhost') !== false || filter_var($self, FILTER_VALIDATE_IP) !== false) {
+			$this->url .= trim($this->host, '.') . '/';
+		} elseif (strpos($self, $this->host . 'abrenet.com') === false){
+			$this->url .= trim($this->host, '.') . '/';
+		} else {
+			$this->url .= '';
+		}
+
+		$this->db['ef_dominio'] = $this->url;
 	}
 }
 

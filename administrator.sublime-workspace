@@ -3,18 +3,114 @@
 	{
 		"selected_items":
 		[
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"bas",
+				"base64_encode"
+			],
+			[
+				"set",
+				"setBankHost  (function)"
+			],
+			[
+				"arr",
+				"arrData"
+			],
+			[
+				"che",
+				"check_option  (variable)"
+			],
+			[
+				"dis",
+				"dis_accordion  (variable)"
+			],
+			[
+				"ba",
+				"bank"
+			],
+			[
+				"getBank",
+				"getBankByCode  (function)"
+			],
+			[
+				"da",
+				"data_user"
+			],
+			[
+				"_SE",
+				"_SESSION  (variable)"
+			],
+			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"na",
+				"name"
+			],
+			[
+				"per",
+				"permission"
+			],
+			[
+				"log",
+				"loginCrecer  (function)"
+			],
+			[
+				"data",
+				"data_password"
+			],
+			[
+				"Client",
+				"ClientDatabase  (class)"
+			],
+			[
+				"array",
+				"array"
+			],
+			[
+				"pass",
+				"password  (variable)"
+			],
+			[
+				"unse",
+				"unset"
+			],
+			[
+				"cod",
+				"codigo"
+			],
+			[
+				"ec",
+				"echo	echo \"…\""
+			],
+			[
+				"getc",
+				"getClientByCode  (function)"
+			],
+			[
+				"real",
+				"real_escape_string  (function)"
+			],
+			[
+				"getC",
+				"getClientByDomain  (function)"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"req",
+				"req1	require_once …"
+			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "app/config/sud_administrator.sql",
-			"settings":
-			{
-				"buffer_size": 10888,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -58,21 +154,77 @@
 	[
 		"/D/xampp/htdocs/administrator",
 		"/D/xampp/htdocs/administrator/app",
-		"/D/xampp/htdocs/administrator/app/config"
+		"/D/xampp/htdocs/administrator/app/config",
+		"/D/xampp/htdocs/administrator/app/controllers",
+		"/D/xampp/htdocs/administrator/app/models",
+		"/D/xampp/htdocs/administrator/app/views",
+		"/D/xampp/htdocs/administrator/crecer"
 	],
 	"file_history":
 	[
+		"/D/xampp/htdocs/administrator/app/controllers/ClientDBController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ClientController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/SessionController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportClientDBController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportClientController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportAUController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ProductController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/BankController.php",
+		"/D/xampp/htdocs/administrator/app/views/proccess.php",
+		"/D/xampp/htdocs/administrator/app/views/form-change-pass.php",
+		"/D/xampp/htdocs/administrator/app/views/form-add-user.php",
+		"/D/xampp/htdocs/administrator/app/views/delete-user.php",
+		"/D/xampp/htdocs/administrator/app/views/admin_user.php",
+		"/D/xampp/htdocs/administrator/app/views/admin_bank.php",
+		"/D/xampp/htdocs/administrator/app/controllers/UserController.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_desgravamen.php",
+		"/D/xampp/htdocs/administrator/index.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDECrecerController.php",
+		"/D/xampp/htdocs/crecer/certificate-policy.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportTRDController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportGeneralController.php",
+		"/D/xampp/htdocs/administrator/report.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_de_template.php",
+		"/D/xampp/htdocs/administrator/app/views/home.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_general.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_trm_template.php",
+		"/D/xampp/htdocs/administrator/bank.php",
+		"/D/xampp/htdocs/administrator/client.php",
+		"/D/xampp/htdocs/administrator/app/controllers/AdminUserController.php",
+		"/D/xampp/htdocs/administrator/app/views/form_login.php",
+		"/D/xampp/htdocs/administrator/header.php",
+		"/D/xampp/htdocs/administrator/app/views/form_bank.php",
+		"/D/xampp/htdocs/administrator/footer.php",
+		"/D/xampp/htdocs/idepro_02/test02.php",
+		"/C/Users/miguel/Desktop/administrator.php",
+		"/C/Users/miguel/Desktop/djmiguelarango/sud_administrator.sql",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas-html.class.php",
+		"/D/xampp/htdocs/administrator/app/models/rep_eco_dt.sql",
+		"/D/xampp/htdocs/administrator/app/models/rep_pau_dt.sql",
+		"/D/xampp/htdocs/administrator/jQueryAssets/ui/i18n/jquery.ui.datepicker-pl.js",
+		"/D/xampp/htdocs/administrator/login.php",
+		"/D/xampp/htdocs/administrator/menu.php",
+		"/D/xampp/htdocs/administrator/css/style.css",
+		"/D/xampp/htdocs/crecer/USR-login.php",
+		"/D/xampp/htdocs/administrator/crecer/index.php",
+		"/D/xampp/htdocs/administrator/app/views/login.php",
+		"/D/xampp/htdocs/administrator/app/config/sud_administrator.sql",
 		"/D/mongodb/mongod.cfg"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"D:\\xampp\\htdocs\\administrator",
+			"D:\\xampp\\htdocs\\administrator\\app\\views",
+			"D:\\xampp\\htdocs\\administrator\\app\\controllers",
+			"D:\\xampp\\htdocs\\administrator"
 		]
 	},
 	"find_state":
@@ -80,6 +232,65 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"../",
+			"'/../controllers",
+			"requi",
+			"'$_SESSION['dir'] . /app/config/administrator.php'",
+			"'/../config/administrator.php'",
+			"/../config/administrator.php",
+			"$this->host_ws",
+			"url",
+			"rep_desgravamen",
+			"dominio",
+			"$nef",
+			"rp-link",
+			"$this->row",
+			"permission",
+			"$row",
+			"$rs",
+			"$sql",
+			"$row",
+			"$rs",
+			"getDataCookie",
+			"[id]",
+			"'id'",
+			"setcookie",
+			"startSession",
+			"= ",
+			"''",
+			"[user]",
+			"user",
+			"[user]",
+			"user",
+			"[user]",
+			"$user",
+			"cx",
+			",",
+			"err",
+			"userAgent",
+			"idUser",
+			"echo",
+			"Client-id",
+			"sqlUser",
+			"$row",
+			"$rowUSR",
+			"ClientDatabaseController",
+			"ClientDBController",
+			"$token",
+			"$link",
+			"=>",
+			"=> ,",
+			"''",
+			"$db",
+			"db",
+			"$data",
+			"$code",
+			"$cl",
+			"token",
+			"login.php",
+			"sess",
+			"sa_entidad_financiera",
+			"sa_en"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -87,6 +298,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"$_SESSION['dir'] . '/app/controllers",
+			"$_SESSION['dir'] . '/app/config/administrator.php'",
+			"$_SESSION['dir'] . /app/config/administrator.php"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -97,45 +311,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/config/sud_administrator.sql",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10888,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								274,
-								274
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SQL/SQL.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -171,7 +354,7 @@
 	"project": "Administrator.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -179,16 +362,76 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"cliec",
+				"app\\controllers\\ClientController.php"
+			],
+			[
+				"form",
+				"app\\views\\form_login.php"
+			],
+			[
+				"he",
+				"header.php"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
+				"redecre",
+				"app\\controllers\\ReportDECrecerController.php"
+			],
+			[
+				"repdec",
+				"app\\controllers\\ReportDEController.php"
+			],
+			[
+				"reporge",
+				"app\\controllers\\ReportGeneralController.php"
+			],
+			[
+				"repo",
+				"report.php"
+			],
+			[
+				"sty",
+				"css\\style.css"
+			],
+			[
+				"repge",
+				"app\\views\\rep_general.php"
+			],
+			[
+				"userc",
+				"app\\controllers\\UserController.php"
+			],
+			[
+				"hea",
+				"header.php"
+			],
+			[
+				"menu",
+				"menu.php"
+			]
 		],
 		"width": 0.0
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"idepr",
+				"D:\\xampp\\htdocs\\idepro\\Idepro.sublime-project"
+			],
+			[
+				"siba",
+				"D:\\xampp\\htdocs\\sibas.com\\Sibas.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -206,7 +449,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 232.0,
+	"side_bar_width": 258.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

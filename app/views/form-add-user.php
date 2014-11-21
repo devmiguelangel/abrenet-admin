@@ -1,5 +1,5 @@
 <?php
-require_once('/../controllers/AdminUserController.php');
+require_once $_SESSION['dir'] . '/app/controllers/AdminUserController.php';
 $adminUser = new AdminUserController();
 
 $sw;

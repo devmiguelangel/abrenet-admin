@@ -2,7 +2,7 @@
 /**
 * Reportes Todo Riesgo
 */
-require '/../views/rep_todo_riesgo.php';
+require $_SESSION['dir'] . '/app/views/rep_todo_riesgo.php';
 require 'ReportTRDEcofuturoController.php';
 require 'ReportTRDBisaController.php';
 

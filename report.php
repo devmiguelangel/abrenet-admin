@@ -5,8 +5,12 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-require_once '/app/controllers/ReportClientController.php';
-require_once '/app/controllers/ReportGeneralController.php';
+if (!isset($_SESSION['dir'])) {
+	session_start();
+}
+
+require_once $_SESSION['dir'] . '/app/controllers/ReportClientController.php';
+require_once $_SESSION['dir'] . '/app/controllers/ReportGeneralController.php';
 
 if(isset($_GET['data-pr'])){
 	$ef_token = true;
@@ -20,6 +24,13 @@ if(isset($_GET['data-pr'])){
 			
 	$arrData = array();
 	
+	$arrData['rprint'] = false;
+	if (isset($_GET['rprint'])) {
+		if ($_GET['rprint'] === sha1('p')) {
+			$arrData['rprint'] = true;
+		}
+	}
+
 	$arrData['r-nc'] = '';
 	if (isset($_GET['frp-nc'])) {
 		$arrData['r-nc'] = $_GET['frp-nc'];
@@ -55,11 +66,16 @@ if(isset($_GET['data-pr'])){
 
 			for ($i = 1; $i <= $nef; $i++) { 
 				if (isset($_GET['frp-ef-' . $i])) {
-					$arrData['r-ef'] .= $_GET['frp-ef-' . $i];
+					$arrData['r-ef'] .= '[' . $_GET['frp-ef-' . $i] . ']' . '{2}|';
 				}
 			}
 
-			$arrData['r-ef'] = '['.$arrData['r-ef'].']{2}';
+			$arrData['r-ef'] = trim($arrData['r-ef'], '|');
+			if (empty($arrData['r-ef']) === true) {
+				$arrData['r-ef'] = '';
+			} else {
+				$arrData['r-ef'] = '(' . $arrData['r-ef'] . ')';
+			}
 			/*if(empty($arrData['r-ef']) === TRUE) { $arrData['r-ef'] = '.'; }
 			else { $arrData['r-ef'] = '['.$arrData['r-ef'].']{2}'; }*/
 		} else {

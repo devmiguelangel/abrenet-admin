@@ -4,16 +4,14 @@
 */
 class ClientDatabaseController
 {
-	private $db, $cx, $user, $pass, $code;
-	public $err;
+	private $db, $cx, $sql, $rs, $row;
+	public $err,
+		$id, $user, $pass, $name, $permission, $ef;
 	
-	function __construct($db, $user, $pass)
+	function __construct($db)
 	{
 		$this->db = $db;
-		$this->user = $user;
-		$this->pass = $pass;
-
-		$this->code = $this->db['code'];
+		$this->ef = $this->db['code'];
 
 		@$this->cx = new mysqli($this->db['db_host'], $this->db['db_user'], 
 			$this->db['db_password'], $this->db['db_database']);
@@ -25,7 +23,7 @@ class ClientDatabaseController
 
 	public function loginClient()
 	{
-		switch ($this->code) {
+		switch ($this->ef) {
 		case 'EC':
 			# code...
 			break;
@@ -52,12 +50,12 @@ class ClientDatabaseController
 
 	private function loginCrecer()
 	{
-		$sql = 'select 
-			su.id_usuario,
-			su.usuario,
-			su.password,
-			sut.id_tipo as tipo,
-			sut.codigo as tipo_codigo
+		$this->sql = 'select 
+			su.id_usuario as user_id,
+			su.usuario as user_username,
+			su.password as user_pass,
+			su.nombre as user_name,
+			sut.codigo as user_code
 		from
 			s_usuario as su
 				inner join
@@ -74,18 +72,29 @@ class ClientDatabaseController
 		limit 0 , 1
 		;';
 	
-		if (($rs = $this->cx->query($sql, MYSQLI_STORE_RESULT))) {
-			if($rs->num_rows === 1){
-				$row = $rs->fetch_array(MYSQLI_ASSOC);
-				$rs->free();
+		if (($this->rs = $this->cx->query($this->sql, MYSQLI_STORE_RESULT))) {
+			if($this->rs->num_rows === 1){
+				$this->row = $this->rs->fetch_array(MYSQLI_ASSOC);
+				$this->rs->free();
 				
-				if(crypt($this->pass, $row['password']) == $row['password']){
+				if(crypt($this->pass, $this->row['user_pass']) == $this->row['user_pass']){
+					$this->setData();
 					return true;
 				}
 			}
 		}
 
 		return false;
+	}
+
+	private function setData()
+	{
+		$this->id = $this->row['user_id'];
+		$this->user = $this->row['user_username'];
+		$this->name = $this->row['user_name'];
+		$this->permission = $this->row['user_code'];
+
+		unset($this->row);
 	}
 
 }
