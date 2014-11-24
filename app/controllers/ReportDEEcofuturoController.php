@@ -25,6 +25,17 @@ class ReportDEEcofuturoController
 			$arr_state = array('txt' => '', 'action' => '', 'obs' => '', 'link' => '', 'bg' => '');
 
 			while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
+
+				$this->row['host'] = $this->db['ef_dominio'] . '064cf398ca384f04af3b4fa4b43dea66/' 
+					. 'detalle_certificado_desgravamen.php?usuario_admin='
+					. '&idcotizacabecera=' 
+					. '&idcompania=' 
+					. '&tipocobertura=' 
+					. '&idproducto=' 
+					. '&idemision=' . $this->row['ide'] 
+					. '&ciudad_logueado=&content=log'
+					. '&url=' . base64_encode($this->db['ef_dominio']);
+
 				$nCl = (int)$this->row['no_cl'];
 
 				$bc = (boolean)$this->row['bc'];
@@ -60,7 +71,7 @@ class ReportDEEcofuturoController
 						}
 
 						$this->result .= rep_desgravamen($this->row, $this->rowDt, 
-							$this->db, $arr_state, $bg, $rowSpan);
+							$this->db, $arr_state, $bg, $rowSpan, $this->data['rprint']);
 					}
 				}
 

@@ -26,6 +26,9 @@ class ReportDEController
 
 	private function setResult()
 	{
+		ini_set('memory_limit', -1);
+		set_time_limit(0);
+
 		if($this->xls === true){
 			header("Content-Type:   application/vnd.ms-excel; charset=iso-8859-1");
 			header("Content-Disposition: attachment; filename=Reportes_Desgravamen.xls");
@@ -37,7 +40,7 @@ class ReportDEController
 		// echo $this->db['ef_dominio'];
 
 		$result = '';
-		
+
 		switch ($this->db['ef_codigo']) {
 		case 'EC':
 			require 'ReportDEEcofuturoController.php';

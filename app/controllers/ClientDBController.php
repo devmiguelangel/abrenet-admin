@@ -51,25 +51,17 @@ class ClientDatabaseController
 	private function loginEcofuturo()
 	{
 		$this->sql = 'select 
-			su.id_usuario as user_id,
-			su.usuario as user_username,
-			su.password as user_pass,
-			su.nombre as user_name,
-			sut.codigo as user_code
+		    su.idusuario AS user_id,
+		    su.idusuario AS user_username,
+		    su.password AS user_pass,
+		    su.nombre AS user_name,
+		    su.tipo AS user_code
 		from
-			s_usuario as su
-				inner join
-			s_usuario_tipo as sut ON (sut.id_tipo = su.id_tipo)
-				inner join
-			s_ef_usuario as seu ON (seu.id_usuario = su.id_usuario)
-				inner join
-			s_entidad_financiera as sef ON (sef.id_ef = seu.id_ef)
+		    tblusuarios AS su
 		where
-			su.usuario = "'.$this->user.'"
-				and su.activado = true
-				and sef.activado = true
-		order by sef.id_ef asc
-		limit 0 , 1
+		    su.idusuario = "' . $this->user . '"
+		        and su.activado = true
+		LIMIT 0 , 1
 		;';
 
 		if (($this->rs = $this->cx->query($this->sql, MYSQLI_STORE_RESULT))) {
@@ -77,7 +69,7 @@ class ClientDatabaseController
 				$this->row = $this->rs->fetch_array(MYSQLI_ASSOC);
 				$this->rs->free();
 				
-				if(crypt($this->pass, $this->row['user_pass']) == $this->row['user_pass']){
+				if(md5($this->pass) == $this->row['user_pass']){
 					$this->setData();
 					return true;
 				}
@@ -107,7 +99,6 @@ class ClientDatabaseController
 			su.usuario = "'.$this->user.'"
 				and su.activado = true
 				and sef.activado = true
-		order by sef.id_ef asc
 		limit 0 , 1
 		;';
 
@@ -146,7 +137,6 @@ class ClientDatabaseController
 			su.usuario = "'.$this->user.'"
 				and su.activado = true
 				and sef.activado = true
-		order by sef.id_ef asc
 		limit 0 , 1
 		;';
 	
