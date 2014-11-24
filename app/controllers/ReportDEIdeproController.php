@@ -25,6 +25,11 @@ class ReportDEIdeproController
 			$arr_state = array('txt' => '', 'action' => '', 'obs' => '', 'link' => '', 'bg' => '');
 
 			while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
+				$this->row['host'] = $this->db['ef_dominio'] . 'certificate-detail.php?ide=' 
+					. base64_encode($this->row['ide']) . '&type=' 
+					. base64_encode('PRINT') . '&pr=' . base64_encode('DE') 
+					. '&category=' . base64_encode('CE') . '"';
+
 				$nCl = (int)$this->row['no_cl'];
 
 				$bc = (boolean)$this->row['bc'];
@@ -60,7 +65,7 @@ class ReportDEIdeproController
 						}
 
 						$this->result .= rep_desgravamen($this->row, $this->rowDt, 
-							$this->db, $arr_state, $bg, $rowSpan);
+							$this->db, $arr_state, $bg, $rowSpan, $this->data['rprint']);
 					}
 				}
 

@@ -12,6 +12,4 @@ if ($cl->getClientURL($url) === true) {
 } else {
 	header('Location: ../index.php');
 }
-
-
 ?>
