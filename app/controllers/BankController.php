@@ -14,6 +14,7 @@ class BankController extends Administrator
 		$db_database = '',
 		$db_user = '',
 		$db_password = '',
+		$domain = '',
 		$active = false,
 		$product = array(),
 		$insurance = array(),
@@ -40,6 +41,7 @@ class BankController extends Administrator
 		    sef.db_database,
 		    sef.db_user,
 		    sef.db_password,
+		    sef.dominio as ef_dominio,
 		    sef.activado AS ef_activado
 		FROM
 		    sa_entidad_financiera AS sef
@@ -60,6 +62,7 @@ class BankController extends Administrator
 				$this->db_database = $this->row['db_database'];
 				$this->db_user = $this->row['db_user'];
 				$this->db_password = $this->row['db_password'];
+				$this->domain = $this->row['ef_dominio'];
 				$this->active = $this->row['ef_activado'];
 
 				unset($this->row);
@@ -372,5 +375,35 @@ class BankController extends Administrator
 
 		return false;
 	}
+
+	public function checkBankDirectory($dir)
+	{
+		$dir = $GLOBALS['DOCUMENT_ROOT'] . '/' . $dir;
+		if (file_exists($dir) === true) {
+			if (file_exists($dir . '/index.php') === true) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public function setBankDirectory()
+	{
+		if (mkdir($GLOBALS['DOCUMENT_ROOT'] . '/' . $this->domain, 0777) === true) {
+			if (($index = fopen($this->domain . '/index.php', 'w')) !== false) {
+				$string = "<?php require '../client.php'; ?>";
+
+				if (fwrite($index, $string) !== false) {
+					fclose($index);
+					return true;
+				}
+
+			}
+		}
+
+		return false;
+	}
+
 }
 ?>

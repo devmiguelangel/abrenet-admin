@@ -30,6 +30,18 @@ if (isset($_GET['action'])) {
 		}
 		break;
 	case sha1(3):
+		if (isset($_GET['id']) && isset($_GET['dir'])) {
+			$bank->id = $bank->real_escape_string(base64_decode(trim($_GET['id'])));
+			$bank->domain = $bank->real_escape_string(base64_decode(trim($_GET['dir'])));
+			
+			if ($bank->setBankDirectory()) {
+				# code...
+			}
+		}
+
+		goto Adm;
+		break;
+	case sha1(4):
 		if (isset($_GET['id']) && isset($_GET['active'])) {
 			$bank->id = $bank->real_escape_string(base64_decode(trim($_GET['id'])));
 			$bank->active = !(boolean)$bank->real_escape_string(trim($_GET['active']));
@@ -59,6 +71,7 @@ if (empty($action) === true) {
 if ($bank->getBankData() === true) {
 	$active_title = '';
 	$active_class = '';
+	$dir = false;
 
 	while ($bank->row = $bank->rs->fetch_array(MYSQLI_ASSOC)) {
 		$bank->row['ef_activado'] = (boolean)$bank->row['ef_activado'];
@@ -69,23 +82,33 @@ if ($bank->getBankData() === true) {
 			$active_title = 'Activar';
 			$active_class = 'bank_active';
 		}
+
 ?>
 <article class="bank <?=$active_class;?>">
 	<table style="width: 100%;">
 		<tr>
-			<td style="width: 80%;">
+			<td style="width: 60%;">
 				<div class="bank_title"><?=$bank->row['ef_nombre'];?> 
 					<span class="bank_code">(<?=$bank->row['ef_codigo'];?>)</span>
 				</div>
 			</td>
-			<td style="width: 20%;">
-				<div class="bank_title" style="text-align: center;">
-					<a href="index.php?adm=1&action=<?=
-						sha1(3);?>&id=<?=
-						base64_encode($bank->row['ef_id']);?>&active=<?=
-						(int)$bank->row['ef_activado'];?>" >
-						<?=$active_title;?>
-					</a>
+			<td style="width: 40%;">
+				<div class="bank_title" style="text-align: right;">
+<?php
+		if ($bank->checkBankDirectory($bank->row['ef_dominio']) === false) {
+			echo '<a href="index.php?adm=1&action=' . sha1(3) . '&id=' 
+				. base64_encode($bank->row['ef_id']) . '&dir=' 
+				. base64_encode($bank->row['ef_dominio']) . '" style="margin-right: 20px;">
+				Crear Enlace
+			</a>';
+		}
+
+		echo '<a href="index.php?adm=1&action=' . sha1(4) . '&id=' 
+			. base64_encode($bank->row['ef_id']) . '&active=' 
+			. (int)$bank->row['ef_activado'] . '">' 
+			. $active_title . '
+		</a>';
+?>
 				</div>
 			</td>
 		</tr>
