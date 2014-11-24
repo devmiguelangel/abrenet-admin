@@ -5,12 +5,14 @@ header("Cache-Control: no-store, no-cache, must-revalidate");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-require 'app/controllers/SessionController.php';
+$GLOBALS['DOCUMENT_ROOT'] = __dir__;
+
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/SessionController.php';
 
 $session = new Session();
 if ($session->err === true) {
 	$session->getDataCookie();
-	$_SESSION['dir'] = __dir__;
+	// $GLOBALS['DOCUMENT_ROOT'] = __dir__;
 }
 
 ?>
@@ -23,6 +25,7 @@ if ($session->err === true) {
 	<link type="text/css" href="css/style.css" rel="stylesheet" />
 
 	<link type="text/css" href="jQueryAssets/smoothness/jquery.ui.all.css" rel="stylesheet" >
+	<link type="text/css" href="assets/vendors/fancybox/jquery.fancybox.css" rel="stylesheet" media="screen" />
 	
 	<link type="text/css" href="css/tooltip-ui.css" rel="stylesheet" />
 	<link type="text/css" href="css/flat/_all.css" rel="stylesheet" />
@@ -38,12 +41,23 @@ if ($session->err === true) {
 	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.position.js"></script>
 	<script type="text/javascript" src="jQueryAssets/ui/jquery.ui.tooltip.js"></script>
 
+	<script type="text/javascript" src="assets/vendors/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script type="text/javascript" src="assets/vendors/fancybox/jquery.fancybox.pack.js"></script>
+
 	<!--[if lte IE 8]>
 	<script type="text/javascript" src="js/modernizr.custom.17465.js"></script>
 	<![endif]-->
 
 	<script type="text/javascript" src="js/icheck.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(e) {
+	    $(".fancybox").fancybox({
+			
+		});
+	});
+	</script>
 </head>
 <body>
 

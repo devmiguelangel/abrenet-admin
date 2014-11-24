@@ -2,7 +2,7 @@
 /**
 * Administracion de Usuarios
 */
-require_once $_SESSION['dir'] . '/app/config/administrator.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/config/administrator.php';
 
 class AdminUserController extends Administrator
 {

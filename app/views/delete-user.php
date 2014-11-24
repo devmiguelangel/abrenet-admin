@@ -1,5 +1,5 @@
 <?php
-require_once $_SESSION['dir'] . '/app/controllers/AdminUserController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/AdminUserController.php';
 $adminUser = new AdminUserController();
 
 	$mess = '';
@@ -30,7 +30,7 @@ $(document).ready(function(e) {
 		var data_user = $(this).serialize();
 		//alert (data_add);
 		$.ajax({
-			url:"app/views/proccess.php",
+			url:"user.php",
 			async:true,
 			cache:false,
 			type:'POST',

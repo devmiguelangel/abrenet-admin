@@ -2,7 +2,7 @@
 /**
 * Reportes Desgravamen
 */
-require $_SESSION['dir'] . '/app/views/rep_desgravamen.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/views/rep_desgravamen.php';
 
 class ReportDEController
 {
@@ -37,7 +37,7 @@ class ReportDEController
 		// echo $this->db['ef_dominio'];
 
 		$result = '';
-
+		
 		switch ($this->db['ef_codigo']) {
 		case 'EC':
 			require 'ReportDEEcofuturoController.php';

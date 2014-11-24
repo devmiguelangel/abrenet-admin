@@ -1,5 +1,5 @@
 <?php
-require $_SESSION['dir'] . '/app/controllers/UserController.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/UserController.php';
 
 $user = new UserController();
 if ($user->login('admin', 'pw4admin') === true) {

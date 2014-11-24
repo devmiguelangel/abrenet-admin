@@ -898,6 +898,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 	margin: 0 auto;
 }
 
+.view-detail {
+	background: grey;
+	border-radius: 5px;
+	color: white;
+	display: block;
+	font-size: 130%;
+	font-weight: bold;
+	height: auto;
+	margin: 0 auto;
+	padding: 10px 6px;
+	text-align: center;
+	text-decoration: none;
+	width: 70px;
+}
+
+.view-detail:hover {
+	color: white;
+	background: black;
+}
+
+
 /* ===========================FOOTER============================ */
 footer{
 	width:100%;

@@ -1,11 +1,11 @@
 <?php
-require 'app/controllers/SessionController.php';
+$GLOBALS['DOCUMENT_ROOT'] = __dir__;
 
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/UserController.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/SessionController.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/ClientController.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/ClientDBController.php';
 $session = new Session();
-
-require 'app/controllers/UserController.php';
-require 'app/controllers/ClientController.php';
-require 'app/controllers/ClientDBController.php';
 
 $result = array(
 	'key'	=> false,

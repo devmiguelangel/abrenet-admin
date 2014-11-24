@@ -1,5 +1,5 @@
 <?php
-require_once $_SESSION['dir'] . '/app/controllers/BankController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/BankController.php';
 
 $bank = new BankController();
 

@@ -2,7 +2,7 @@
 /**
 * Reportes Desgravamen
 */
-require $_SESSION['dir'] . '/app/views/rep_client.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/views/rep_client.php';
 require 'ReportCLEcofuturoController.php';
 require 'ReportCLSartawiController.php';
 require 'ReportCLBisaLeasingController.php';

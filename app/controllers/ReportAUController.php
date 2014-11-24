@@ -2,7 +2,7 @@
 /**
 * Reportes Automotores
 */
-require $_SESSION['dir'] . '/app/views/rep_automotor.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/views/rep_automotor.php';
 require 'ReportAUEcofuturoController.php';
 require 'ReportAUBisaController.php';
 

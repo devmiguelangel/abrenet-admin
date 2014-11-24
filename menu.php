@@ -1,6 +1,6 @@
 <?php
-require_once $_SESSION['dir'] . '/app/controllers/UserController.php';
-require_once $_SESSION['dir'] . '/app/controllers/BankController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/UserController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/BankController.php';
 $user = new UserController();
 
 if ($user->getDataUser($_SESSION['id_user']) === true) {

@@ -1,5 +1,5 @@
 <?php
-require_once $_SESSION['dir'] . '/app/controllers/AdminUserController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/AdminUserController.php';
 $adminUser = new AdminUserController();
 
 $sw = FALSE;
@@ -51,7 +51,7 @@ $(document).ready(function(e) {
 			var data_cpass = $(this).serialize();
 
 			$.ajax({
-				url:"app/views/proccess.php",
+				url:"user.php",
 				async:true,
 				cache:false,
 				type:'POST',
@@ -125,7 +125,7 @@ $(document).ready(function(e) {
 
 function verifyPass(form,pass){
 	var id = $(form).prop('id');
-	$.get("app/views/proccess.php", {user: '<?=base64_encode($data);?>', pass: pass},function(result){
+	$.get("user.php", {user: '<?=base64_encode($data);?>', pass: pass},function(result){
 		if(parseInt(result) == 1){
 			$("#"+id+" + .error-text").html('La Contraseña es Correcta');
 		}else if(parseInt(result) == 0){

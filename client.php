@@ -1,5 +1,7 @@
 <?php
-require_once $_SESSION['dir'] . '/app/controllers/ClientController.php';
+$GLOBALS['DOCUMENT_ROOT'] = __dir__;
+
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/ClientController.php';
 
 $cl = new ClientController();
 

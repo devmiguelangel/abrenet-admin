@@ -1,9 +1,7 @@
 <?php
-if (!isset($_SESSION['dir'])) {
-	session_start();
-}
+$GLOBALS['DOCUMENT_ROOT'] = __dir__;
 
-require $_SESSION['dir'] . '/app/controllers/BankController.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/BankController.php';
 
 if (isset($_POST['fb_action'])) {
 	$action = (int)$_POST['fb_action'];

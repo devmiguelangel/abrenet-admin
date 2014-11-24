@@ -1,5 +1,5 @@
 <?php
-require_once $_SESSION['dir'] . '/app/controllers/AdminUserController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/AdminUserController.php';
 $adminUser = new AdminUserController();
 
 $sw;
@@ -20,7 +20,7 @@ $mess04 = '';
 
 if ($data == 0) {
 	$sw = false;
-	$action = 'app/views/proccess.php';
+	$action = 'user.php';
 	$token = 'token-adduser';
 	$button = 'Agregar Usuario';
 	$mess01 = 'Usuario Agregado correctamente';
@@ -29,7 +29,7 @@ if ($data == 0) {
 	$mess04 = 'El Usuario no puede ser creado';
 } else {
 	$sw = true;
-	$action = 'app/views/proccess.php';
+	$action = 'user.php';
 	$token = 'token-upduser';
 	$button = 'Actualizar Datos';
 	$mess01 = 'Los datos se actualizaron correctamente';
@@ -170,7 +170,7 @@ $(document).ready(function(e) {
 function verifyUserName(id_field){
 	var userName = $.trim($('#'+id_field).prop('value'));
 	if(userName != ''){
-		$.get('app/views/proccess.php', {userName: userName}, function(result){
+		$.get('user.php', {userName: userName}, function(result){
 			if(result != '<?=md5('1');?>'){
 				$('#fa-key').prop("value",0);
 				$('#'+id_field).prop("value",'');

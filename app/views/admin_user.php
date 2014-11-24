@@ -1,5 +1,5 @@
 <?php
-require_once $_SESSION['dir'] . '/app/controllers/AdminUserController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/AdminUserController.php';
 $adminUser = new AdminUserController();
 
 $id_user = base64_decode($_SESSION['id_user']);
@@ -22,13 +22,14 @@ $(document).ready(function(e) {
 	e.preventDefault();
 	var rel = $(this).prop('rel');
 	var data = $(this).attr('data-rel');
+	var dir = $('#dir').prop('value');
 
 	$.ajax({
 		type:"GET",
-		url:"app/views/proccess.php",
+		url:"user.php",
 		async:true,
 		cache:false,
-		data:'rel='+rel+'&data='+data,
+		data:'rel=' + rel + '&data=' + data + '&dir=' + dir,
 		beforeSend: function(){
 			$("#container-user").hide();
 		},
@@ -51,6 +52,7 @@ $(document).ready(function(e) {
 	<a href="#" class="action-user" rel="<?=md5('1');?>" data-rel="0">
 	<img src="img/add-user-icon.png" width="48" height="48" alt="Agregar Usuario" title="Agregar Usuario" /><br>
 	<span>Agregar Usuario</span>
+	<input type="hidden" id="dir" name="dir" value="<?=base64_encode($GLOBALS['DOCUMENT_ROOT']);?>">
 	</a>
 <?php
 		}

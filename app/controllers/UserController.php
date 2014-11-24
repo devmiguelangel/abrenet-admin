@@ -2,7 +2,7 @@
 /**
 * User
 */
-require $_SESSION['dir'] . '/app/config/administrator.php';
+require $GLOBALS['DOCUMENT_ROOT'] . '/app/config/administrator.php';
 
 class UserController extends Administrator
 {

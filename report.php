@@ -5,12 +5,10 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-if (!isset($_SESSION['dir'])) {
-	session_start();
-}
+$GLOBALS['DOCUMENT_ROOT'] = __dir__;
 
-require_once $_SESSION['dir'] . '/app/controllers/ReportClientController.php';
-require_once $_SESSION['dir'] . '/app/controllers/ReportGeneralController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/ReportClientController.php';
+require_once $GLOBALS['DOCUMENT_ROOT'] . '/app/controllers/ReportGeneralController.php';
 
 if(isset($_GET['data-pr'])){
 	$ef_token = true;

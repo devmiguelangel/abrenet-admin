@@ -35,9 +35,17 @@ foreach ($depto as $key => $value) {
         <input type="text" id="frp-date-b" name="frp-date-b" value=""
             autocomplete="off" class="date" readonly>
 
-        <label style="width:auto;">hasta: </label>
-        <input type="text" id="frp-date-e" name="frp-date-e" value=""
-            autocomplete="off" class="date" readonly>
+<?php
+if ($rp === 4) {
+    echo '<label style="width:auto;">hasta: </label>
+    <input type="text" id="frp-date-e" name="frp-date-e" value="2014-12-31"
+        autocomplete="off" class="" readonly>';
+} else {
+    echo '<label style="width:auto;">hasta: </label>
+    <input type="text" id="frp-date-e" name="frp-date-e" value=""
+        autocomplete="off" class="date" readonly>';
+}
+?>
 
         <input type="hidden" id="data-pr" name="data-pr" value="DE" >
         <input type="hidden" id="pr" name="pr" value="de">
