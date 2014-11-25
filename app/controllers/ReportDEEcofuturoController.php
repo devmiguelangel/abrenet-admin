@@ -25,7 +25,6 @@ class ReportDEEcofuturoController
 			$arr_state = array('txt' => '', 'action' => '', 'obs' => '', 'link' => '', 'bg' => '');
 
 			while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
-
 				$this->row['host'] = $this->db['ef_dominio'] . '064cf398ca384f04af3b4fa4b43dea66/' 
 					. 'detalle_certificado_desgravamen.php?usuario_admin='
 					. '&idcotizacabecera=' 

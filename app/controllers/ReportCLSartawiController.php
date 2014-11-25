@@ -63,7 +63,10 @@ class ReportCLSartawiController
 		$this->sql = "(SELECT 
 		    tedc.id_emision AS ide,
 		    'Desgravamen' AS r_ramo,
-		    tedc.numero_certificado AS r_no_emision,
+		    (CASE tedc.tipo_prefijo
+				WHEN 'V' THEN nc_vg
+				WHEN 'DE' THEN nc_de
+		    END) AS r_no_emision,
 		    tedc.tipo_prefijo AS r_prefijo,
 		    tedc.monto_solicitado AS r_monto_solicitado,
 		    (CASE tedc.moneda
@@ -122,7 +125,7 @@ class ReportCLSartawiController
 		        WHEN 'codeudor' THEN 'Codeudor'
 		    END) AS cl_titular
 		FROM
-		    tbl_emision_des_cabecera AS tedc
+		    tbl_emision_des_cabecera2 AS tedc
 		        INNER JOIN
 		    tbl_emision_des_personas AS tedp ON (tedp.id_emision = tedc.id_emision)
 		        INNER JOIN

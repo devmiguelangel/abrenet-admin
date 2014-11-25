@@ -24,7 +24,28 @@ class ReportDESartawiController
 			$swBG = FALSE;
 			$arr_state = array('txt' => '', 'action' => '', 'obs' => '', 'link' => '', 'bg' => '');
 
+			$user = '';
+			if ($this->data['rprint'] === true) {
+				session_start();
+				$user = base64_decode($_SESSION['user']);
+			}
+
 			while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
+				$this->row['host'] = $this->db['ef_dominio'] . '064cf398ca384f04af3b4fa4b43dea66/' 
+					. 'formulario_desgravamen_detalle.php?usuario_admin=' . $user 
+					. '&idcotizacabecera=' . $this->row['idc'] 
+					. '&idcompania=' 
+					. '&tipocobertura=' 
+					. '&idproducto=' 
+					. '&idemision=' . $this->row['ide'] 
+					. '&ciudad_logueado=' 
+					. '&verdetalle=3&conect=log"'
+					. '&url=' . base64_encode($this->db['ef_dominio']);
+
+				if ($this->row['r_prefijo'] === 'V') {
+					$this->row['host'] = '';
+				}
+
 				$nCl = (int)$this->row['no_cl'];
 
 				$bc = (boolean)$this->row['bc'];
@@ -60,7 +81,7 @@ class ReportDESartawiController
 						}
 
 						$this->result .= rep_desgravamen($this->row, $this->rowDt, 
-							$this->db, $arr_state, $bg, $rowSpan);
+							$this->db, $arr_state, $bg, $rowSpan, $this->data['rprint']);
 					}
 				}
 
@@ -79,9 +100,13 @@ class ReportDESartawiController
 	{
 		$this->sql = "SELECT 
 		    tedc.id_emision AS ide,
+		    tedc.id_cotiza AS idc,
 		    COUNT(tc.id_client) AS no_cl,
 		    0 bc,
-		    tedc.numero_certificado AS r_no_emision,
+		    (CASE tedc.tipo_prefijo
+				WHEN 'V' THEN nc_vg
+				WHEN 'DE' THEN nc_de
+		    END) AS r_no_emision,
 		    tedc.tipo_prefijo AS r_prefijo,
 		    tedc.id_compania,
 		    tedc.monto_solicitado AS r_monto_solicitado,
@@ -118,7 +143,7 @@ class ReportDESartawiController
 		    (SELECT 
 		            COUNT(tedc1.id_emision)
 		        FROM
-		            tbl_emision_des_cabecera AS tedc1
+		            tbl_emision_des_cabecera2 AS tedc1
 		        WHERE
 		            tedc1.id_cotiza = tedc.id_cotiza
 		                AND tedc1.anulada = 'true') AS r_num_anulado,
@@ -179,7 +204,7 @@ class ReportDESartawiController
 		    DATE_FORMAT(tdp.fecha_creacion, '%d/%m/%Y') AS fecha_ultima_respuesta,
 		    IF(tedc.emitir = 'false', 0, 1) AS solicitud
 		FROM
-		    tbl_emision_des_cabecera AS tedc
+		    tbl_emision_des_cabecera2 AS tedc
 		        INNER JOIN
 		    tbl_emision_des_personas AS tedp ON (tedp.id_emision = tedc.id_emision)
 		        INNER JOIN
@@ -195,7 +220,10 @@ class ReportDESartawiController
 		        LEFT JOIN
 		    tblagencia AS tag ON (tag.id_agencia = tu.id_agencia)
 		WHERE
-		    tedc.numero_certificado LIKE '" . $this->data['nc'] . "'
+		    (CASE tedc.tipo_prefijo
+				WHEN 'V' THEN nc_vg
+				WHEN 'DE' THEN nc_de
+		    END) LIKE '" . $this->data['nc'] . "'
 		        AND tedc.tipo_prefijo LIKE '%" . $this->data['prefix'] . "%'
 		        AND CONCAT(tc.nombres,
 		            ' ',

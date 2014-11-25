@@ -25,22 +25,22 @@ class ClientDatabaseController
 	{
 		switch ($this->ef) {
 		case 'EC':
-			return $this->loginEcofuturo();
+			return $this->loginEcSsEmPv();
 			break;
 		case 'SS':
-			# code...
+			return $this->loginEcSsEmPv();
 			break;
 		case 'EM':
-			# code...
+			return $this->loginEcSsEmPv();
 			break;
 		case 'PV':
-			# code...
+			return $this->loginEcSsEmPv();
 			break;
 		case 'ID':
-			return $this->loginIdepro();
+			return $this->loginCrecerIdepro();
 			break;
 		case 'CR':
-			return $this->loginCrecer();
+			return $this->loginCrecerIdepro();
 			break;
 		default:
 			return false;
@@ -48,7 +48,7 @@ class ClientDatabaseController
 		}
 	}
 
-	private function loginEcofuturo()
+	private function loginEcSsEmPv()
 	{
 		$this->sql = 'select 
 		    su.idusuario AS user_id,
@@ -79,45 +79,7 @@ class ClientDatabaseController
 		return false;
 	}
 
-	private function loginIdepro()
-	{
-		$this->sql = 'select 
-			su.id_usuario as user_id,
-			su.usuario as user_username,
-			su.password as user_pass,
-			su.nombre as user_name,
-			sut.codigo as user_code
-		from
-			s_usuario as su
-				inner join
-			s_usuario_tipo as sut ON (sut.id_tipo = su.id_tipo)
-				inner join
-			s_ef_usuario as seu ON (seu.id_usuario = su.id_usuario)
-				inner join
-			s_entidad_financiera as sef ON (sef.id_ef = seu.id_ef)
-		where
-			su.usuario = "'.$this->user.'"
-				and su.activado = true
-				and sef.activado = true
-		limit 0 , 1
-		;';
-
-		if (($this->rs = $this->cx->query($this->sql, MYSQLI_STORE_RESULT))) {
-			if($this->rs->num_rows === 1){
-				$this->row = $this->rs->fetch_array(MYSQLI_ASSOC);
-				$this->rs->free();
-				
-				if(crypt($this->pass, $this->row['user_pass']) == $this->row['user_pass']){
-					$this->setData();
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
-	private function loginCrecer()
+	private function loginCrecerIdepro()
 	{
 		$this->sql = 'select 
 			su.id_usuario as user_id,

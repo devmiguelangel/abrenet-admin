@@ -24,7 +24,24 @@ class ReportDEEmprenderController
 			$swBG = FALSE;
 			$arr_state = array('txt' => '', 'action' => '', 'obs' => '', 'link' => '', 'bg' => '');
 
+			$user = '';
+			if ($this->data['rprint'] === true) {
+				session_start();
+				$user = base64_decode($_SESSION['user']);
+			}
+
 			while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
+				$this->row['host'] = $this->db['ef_dominio'] . '064cf398ca384f04af3b4fa4b43dea66/' 
+					. 'formulario_desgravamen_detalle.php?usuario_admin=' . $user 
+					. '&idcotizacabecera=' . $this->row['idc'] 
+					. '&idcompania=' 
+					. '&tipocobertura=' 
+					. '&idproducto=' 
+					. '&idemision=' . $this->row['ide'] 
+					. '&ciudad_logueado=' 
+					. '&verdetalle=3&conect=log'
+					. '&url=' . base64_encode($this->db['ef_dominio']);
+
 				$nCl = (int)$this->row['no_cl'];
 
 				$bc = (boolean)$this->row['bc'];
@@ -60,7 +77,7 @@ class ReportDEEmprenderController
 						}
 
 						$this->result .= rep_desgravamen($this->row, $this->rowDt, 
-							$this->db, $arr_state, $bg, $rowSpan);
+							$this->db, $arr_state, $bg, $rowSpan, $this->data['rprint']);
 					}
 				}
 
@@ -79,6 +96,7 @@ class ReportDEEmprenderController
 	{
 		$this->sql = "SELECT 
 		    tedc.id_emision AS ide,
+		    tedc.id_cotiza AS idc,
 		    COUNT(tc.id_client) AS no_cl,
 		    0 bc,
 		    tedc.id_emision AS r_no_emision,
