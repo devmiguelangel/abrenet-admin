@@ -23,7 +23,7 @@ if ($session->err === true) {
 		case 3:		// Usuarios
 			require $GLOBALS['DOCUMENT_ROOT'] . '/app/views/admin_user.php';
 			break;
-		case 4:
+		case 4:		// Reportes APS
 			if (isset($_GET['ef'])) {
 				require $GLOBALS['DOCUMENT_ROOT'] . '/app/views/rep_general.php';
 			}

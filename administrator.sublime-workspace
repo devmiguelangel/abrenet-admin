@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"id_co",
+				"id_cotiza"
+			],
+			[
+				"l",
+				"loginEcSsEmPv  (function)"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"lo",
+				"loginEcofuturo  (function)"
+			],
+			[
+				"bas",
+				"base64_decode"
+			],
+			[
+				"idco",
+				"id_cotiza"
+			],
+			[
+				"sett",
+				"set_time_limit  (function)"
+			],
+			[
+				"hos",
+				"host_ws  (variable)"
+			],
+			[
+				"idc",
+				"idcia  (variable)"
+			],
+			[
+				"ca",
+				"category"
+			],
+			[
+				"loc",
+				"loginIdepro  (function)"
+			],
+			[
+				"margin",
+				"margin-right:   (property)"
+			],
+			[
+				"glo",
+				"GLOBALS"
+			],
+			[
+				"row",
+				"rowPo  (variable)"
+			],
+			[
+				"BAS64",
+				"base64_encode"
+			],
+			[
 				"font",
 				"font-weight"
 			],
@@ -32,10 +92,6 @@
 				"session_start"
 			],
 			[
-				"bas",
-				"base64_encode"
-			],
-			[
 				"set",
 				"setBankHost  (function)"
 			],
@@ -58,10 +114,6 @@
 			[
 				"getBank",
 				"getBankByCode  (function)"
-			],
-			[
-				"da",
-				"data_user"
 			],
 			[
 				"_SE",
@@ -132,66 +184,10 @@
 	"buffers":
 	[
 		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 220,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "app/views/home.php",
 			"settings":
 			{
-				"buffer_size": 1132,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/rep_general.php",
-			"settings":
-			{
-				"buffer_size": 5842,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "report.php",
-			"settings":
-			{
-				"buffer_size": 8617,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/ReportGeneralController.php",
-			"settings":
-			{
-				"buffer_size": 9949,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/ReportDEController.php",
-			"settings":
-			{
-				"buffer_size": 3171,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/rep_desgravamen.php",
-			"settings":
-			{
-				"buffer_size": 8996,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/rep_de_template.php",
-			"settings":
-			{
-				"buffer_size": 7430,
+				"buffer_size": 1194,
 				"line_ending": "Windows"
 			}
 		}
@@ -222,6 +218,7 @@
 		"height": 126.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
 			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
@@ -237,72 +234,109 @@
 	"expanded_folders":
 	[
 		"/D/xampp/htdocs/administrator",
-		"/D/xampp/htdocs/administrator/assets",
-		"/D/xampp/htdocs/administrator/assets/vendors"
+		"/D/xampp/htdocs/administrator/app"
 	],
 	"file_history":
 	[
-		"/D/PostgreSQL/9.3/data/pg_hba.conf",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDECrecerController.php",
-		"/D/xampp/htdocs/administrator/css/style.css",
-		"/D/xampp/htdocs/administrator/header.php",
-		"/D/xampp/htdocs/crecer/certificate-policy.php",
-		"/D/xampp/htdocs/crecer/header.inc.php",
+		"/D/xampp/htdocs/administrator/app/controllers/BankController.php",
+		"/D/xampp/htdocs/administrator/app/views/admin_bank.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_desgravamen.php",
 		"/D/xampp/htdocs/administrator/app/views/rep_de_template.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDEController.php",
-		"/D/xampp/htdocs/administrator/report.php",
-		"/D/xampp/htdocs/administrator/app/views/delete-user.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDEPauloviController.php",
-		"/D/xampp/htdocs/administrator/app/views/rep_automotor.php",
-		"/D/xampp/htdocs/administrator/client.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ClientController.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_cl_template.php",
+		"/D/xampp/htdocs/administrator/app/views/form_login.php",
+		"/D/xampp/htdocs/administrator/app/views/form_bank.php",
+		"/D/xampp/htdocs/administrator/app/views/form-add-user.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportTRDBisaController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportGeneralController.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportClientController.php",
-		"/C/Users/miguel/Desktop/administrator.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportCLIdeproController.php",
-		"/D/xampp/htdocs/administrator/app/views/rep_client.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportCLBisaLeasingController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportCLSartawiController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportCLPauloviController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportClientDBController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportClientController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportCLIdeproController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportCLEmprenderController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportCLEcofuturoController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportCLCrecerController.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportAUController.php",
-		"/D/xampp/htdocs/administrator/app/views/rep_general.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportCLBisaLeasingController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportAUBisaController.php",
-		"/D/xampp/htdocs/administrator/app/views/home.php",
+		"/D/xampp/htdocs/administrator/client.php",
+		"/D/xampp/htdocs/administrator/login.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ClientDBController.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_general.php",
+		"/D/xampp/htdocs/administrator/report.php",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas-html.class.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM.inc.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEPauloviController.php",
+		"/D/xampp/htdocs/paulovi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEEmprenderController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDESartawiController.php",
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
+		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/emision_seguro_desgravamen_certificado.php",
+		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEEcofuturoController.php",
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/emision_seguro_desgravamen_certificado.php",
+		"/D/xampp/htdocs/administrator/menu.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDECrecerController.php",
+		"/D/xampp/htdocs/sembrarsartawi/db/sartawi.sql",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/emision_seguro_desgravamen_certificado.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/envia_email_emision_desgravamen.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/proceso_envio_emision_des.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEIdeproController.php",
+		"/D/xampp/htdocs/idepro/classes/certificate-sibas.class.php",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas.class.php",
+		"/D/xampp/htdocs/idepro/classes/certificate-sibas-html.class.php",
+		"/D/xampp/htdocs/idepro/classes/certificate-sibas-query.class.php",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas-query.class.php",
+		"/D/xampp/htdocs/idepro/session.class.php",
+		"/D/xampp/htdocs/idepro/sibas-db.class.php",
+		"/D/xampp/htdocs/idepro/header.inc.php",
+		"/D/xampp/htdocs/idepro/certificate-policy.php",
+		"/D/xampp/htdocs/administrator/app/models/rep_ide_dt.sql",
+		"/D/xampp/htdocs/administrator/app/models/rep_ide_em.sql",
+		"/D/xampp/htdocs/administrator/app/controllers/ClientController.php",
+		"/D/xampp/htdocs/administrator/header.php",
+		"/D/xampp/htdocs/administrator/crecer/index.php",
+		"/D/xampp/htdocs/crecer/img/icon-mail-01.png",
+		"/D/xampp/htdocs/crecer/img/icon-print-01.png",
+		"/D/xampp/htdocs/crecer/img/icon-pdf-01.png",
+		"/D/xampp/htdocs/crecer/sibas-db.class.php",
+		"/D/xampp/htdocs/administrator/index.php",
+		"/D/xampp/htdocs/administrator/user.php",
 		"/D/xampp/htdocs/administrator/app/views/proccess.php",
 		"/D/xampp/htdocs/administrator/app/views/admin_user.php",
-		"/C/Users/miguel/Desktop/djmiguelarango/Administrador.txt",
-		"/D/xampp/htdocs/administrator/login.php",
-		"/D/xampp/htdocs/administrator/app/controllers/SessionController.php",
-		"/D/xampp/htdocs/administrator/app/views/form_login.php",
+		"/D/xampp/htdocs/administrator/app/views/delete-user.php",
+		"/D/xampp/htdocs/administrator/app/views/form-change-pass.php",
+		"/D/xampp/htdocs/administrator/bank.php",
+		"/D/xampp/htdocs/administrator/css/flat/red.css",
+		"/D/xampp/htdocs/administrator/pass.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportTRDController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ProductController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportAUController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/AdminUserController.php",
+		"/D/xampp/htdocs/administrator/app/views/home.php",
 		"/D/xampp/htdocs/administrator/app/controllers/UserController.php",
 		"/D/xampp/htdocs/administrator/logout.php",
+		"/D/xampp/htdocs/administrator/app/controllers/SessionController.php",
+		"/D/xampp/htdocs/administrator/css/style.css",
+		"/D/PostgreSQL/9.3/data/pg_hba.conf",
+		"/D/xampp/htdocs/crecer/certificate-policy.php",
+		"/D/xampp/htdocs/crecer/header.inc.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_automotor.php",
+		"/C/Users/miguel/Desktop/administrator.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_client.php",
+		"/C/Users/miguel/Desktop/djmiguelarango/Administrador.txt",
 		"/D/xampp/htdocs/administrator/app/models/rep_sar_em.sql",
 		"//pc-2/trabajos/LIST_USUARIOS_ENTIDADES.txt",
-		"/D/xampp/htdocs/administrator/bank.php",
-		"/D/xampp/htdocs/administrator/pass.php",
-		"/D/xampp/htdocs/administrator/app/views/admin_bank.php",
-		"/D/xampp/htdocs/administrator/app/views/form_bank.php",
-		"/D/xampp/htdocs/administrator/index.php",
 		"/D/xampp/htdocs/administrator/Administrator.sublime-project",
-		"/D/xampp/htdocs/administrator/menu.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ClientDBController.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ProductController.php",
-		"/D/xampp/htdocs/administrator/app/controllers/BankController.php",
-		"/D/xampp/htdocs/administrator/app/views/form-change-pass.php",
-		"/D/xampp/htdocs/administrator/app/views/form-add-user.php",
-		"/D/xampp/htdocs/administrator/app/views/rep_desgravamen.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportTRDController.php",
 		"/D/xampp/htdocs/administrator/app/views/rep_trm_template.php",
-		"/D/xampp/htdocs/administrator/app/controllers/AdminUserController.php",
 		"/D/xampp/htdocs/administrator/footer.php",
 		"/D/xampp/htdocs/idepro_02/test02.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/sud_administrator.sql",
-		"/D/xampp/htdocs/crecer/classes/certificate-sibas-html.class.php",
 		"/D/xampp/htdocs/administrator/app/models/rep_eco_dt.sql",
 		"/D/xampp/htdocs/administrator/app/models/rep_pau_dt.sql",
 		"/D/xampp/htdocs/administrator/jQueryAssets/ui/i18n/jquery.ui.datepicker-pl.js",
 		"/D/xampp/htdocs/crecer/USR-login.php",
-		"/D/xampp/htdocs/administrator/crecer/index.php",
 		"/D/xampp/htdocs/administrator/app/views/login.php",
 		"/D/xampp/htdocs/administrator/app/config/sud_administrator.sql",
 		"/D/mongodb/mongod.cfg"
@@ -318,6 +352,8 @@
 		[
 			"D:\\xampp\\htdocs\\administrator",
 			"D:\\xampp\\htdocs\\administrator\\app\\views",
+			"D:\\xampp\\htdocs\\administrator",
+			"D:\\xampp\\htdocs\\administrator\\app\\views",
 			"D:\\xampp\\htdocs\\administrator\\app\\controllers",
 			"D:\\xampp\\htdocs\\administrator"
 		]
@@ -327,6 +363,119 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"echo",
+			". '",
+			"' . ",
+			"echo",
+			" . '",
+			"' . ",
+			"echo",
+			" . '",
+			"' . ",
+			"echo",
+			" . '",
+			"' . ",
+			" . '",
+			"' . ",
+			" . ",
+			"' . ",
+			"echo",
+			". '",
+			"' . ",
+			"echo",
+			"echp",
+			"echo",
+			"ec",
+			". '",
+			"' . ",
+			". '",
+			"' . ",
+			"echo",
+			"get_html_ce",
+			"echo",
+			"set_html_de_em",
+			"get_html_ce",
+			"setBankHost",
+			"PDF",
+			"pdf",
+			"decla",
+			"loginEcofuturo",
+			"loginCrecer",
+			"if (($this->rs = $this->cx->query($this->sql, MYSQLI_STORE_RESULT))) {\n			if($this->rs->num_rows === 1){\n				$this->row = $this->rs->fetch_array(MYSQLI_ASSOC);\n				$this->rs->free();\n				\n				if(crypt($this->pass, $this->row['user_pass']) == $this->row['user_pass']){\n					$this->setData();\n					return true;\n				}\n			}\n		}",
+			"$this->sql = 'select \n			su.id_usuario as user_id,\n			su.usuario as user_username,\n			su.password as user_pass,\n			su.nombre as user_name,\n			sut.codigo as user_code\n		from\n			s_usuario as su\n				inner join\n			s_usuario_tipo as sut ON (sut.id_tipo = su.id_tipo)\n				inner join\n			s_ef_usuario as seu ON (seu.id_usuario = su.id_usuario)\n				inner join\n			s_entidad_financiera as sef ON (sef.id_ef = seu.id_ef)\n		where\n			su.usuario = \"'.$this->user.'\"\n				and su.activado = true\n				and sef.activado = true\n		limit 0 , 1\n		;';\n	\n		if (($this->rs = $this->cx->query($this->sql, MYSQLI_STORE_RESULT))) {\n			if($this->rs->num_rows === 1){\n				$this->row = $this->rs->fetch_array(MYSQLI_ASSOC);\n				$this->rs->free();\n				\n				if(crypt($this->pass, $this->row['user_pass']) == $this->row['user_pass']){\n					$this->setData();\n					return true;\n				}\n			}\n		}\n\n		return false;",
+			"select \n			su.id_usuario as user_id,\n			su.usuario as user_username,\n			su.password as user_pass,\n			su.nombre as user_name,\n			sut.codigo as user_code\n		from\n			s_usuario as su\n				inner join\n			s_usuario_tipo as sut ON (sut.id_tipo = su.id_tipo)\n				inner join\n			s_ef_usuario as seu ON (seu.id_usuario = su.id_usuario)\n				inner join\n			s_entidad_financiera as sef ON (sef.id_ef = seu.id_ef)\n		where\n			su.usuario = \"'.$this->user.'\"\n				and su.activado = true\n				and sef.activado = true\n		limit 0 , 1\n		;",
+			"cert-pdf.php",
+			"cert-pdf.php\n",
+			"ciudad_logueado",
+			"idemision",
+			"idproducto",
+			"tipocobertura",
+			"idcompania",
+			"id_cotiza",
+			"tecc",
+			"idcotizacabecera",
+			"$_GET['usuario_admin']",
+			"usuario_admin",
+			"tbl_emision_des_cabecera",
+			"numero_certificado",
+			"tbl_emision_des_cabecera",
+			"$url",
+			"envia_email_emision_des",
+			"$_GET['usuario_admin']",
+			"ciudad_logueado",
+			"$_GET['usuario_admin']",
+			"usuario_admin",
+			"idemision",
+			"idproducto",
+			"tipocobertura",
+			"idcompania",
+			"$_GET['idcotizacabecera']",
+			"idcotizacabecera",
+			"Ver certificado",
+			"ver cer",
+			"pdf",
+			"idef",
+			"token",
+			"check_session",
+			"getSessionCookie",
+			"get_financial_institution_ins",
+			"get_query_ce",
+			"set_query_de_em",
+			"get_query_ce",
+			"$ide",
+			"rep_desgravamen",
+			"prin",
+			"rpr",
+			"$this->data",
+			"ef_token",
+			"$dir",
+			"dominio",
+			"require_once '",
+			"get_content_html",
+			"verifyModality",
+			"set_query_de_em",
+			"get_query_ce",
+			"getNameHostEF",
+			"idef",
+			"session_start()",
+			"require_once(",
+			"app/views/proccess.php",
+			"El Usuario\n",
+			"el usu",
+			"$_SESSION['dir']",
+			"$adminUser",
+			"action-user",
+			"$_SESSION['dir']",
+			"$_SESSION['dir']\n",
+			"$_SESSION['dir']",
+			"sessio",
+			"'app",
+			"dir",
+			"'app",
+			".php",
+			"$_SESSION['dir']",
+			"dir",
+			"DIR",
 			"fancybox/",
 			"fancybox",
 			"fancy",
@@ -341,65 +490,7 @@
 			"require",
 			"'/",
 			"require",
-			"../",
-			"'/../controllers",
-			"requi",
-			"'$_SESSION['dir'] . /app/config/administrator.php'",
-			"'/../config/administrator.php'",
-			"/../config/administrator.php",
-			"$this->host_ws",
-			"url",
-			"rep_desgravamen",
-			"dominio",
-			"$nef",
-			"rp-link",
-			"$this->row",
-			"permission",
-			"$row",
-			"$rs",
-			"$sql",
-			"$row",
-			"$rs",
-			"getDataCookie",
-			"[id]",
-			"'id'",
-			"setcookie",
-			"startSession",
-			"= ",
-			"''",
-			"[user]",
-			"user",
-			"[user]",
-			"user",
-			"[user]",
-			"$user",
-			"cx",
-			",",
-			"err",
-			"userAgent",
-			"idUser",
-			"echo",
-			"Client-id",
-			"sqlUser",
-			"$row",
-			"$rowUSR",
-			"ClientDatabaseController",
-			"ClientDBController",
-			"$token",
-			"$link",
-			"=>",
-			"=> ,",
-			"''",
-			"$db",
-			"db",
-			"$data",
-			"$code",
-			"$cl",
-			"token",
-			"login.php",
-			"sess",
-			"sa_entidad_financiera",
-			"sa_en"
+			"../"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -407,6 +498,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"user.php",
+			"$GLOBALS['DOCUMENT_ROOT']",
 			"$_SESSION['dir'] . '/app/controllers",
 			"$_SESSION['dir'] . '/app/config/administrator.php'",
 			"$_SESSION['dir'] . /app/config/administrator.php"
@@ -420,52 +513,24 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 220,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								38,
-								38
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "app/views/home.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1132,
+						"buffer_size": 1194,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								616,
-								616
+								526,
+								526
 							]
 						],
 						"settings":
@@ -578,496 +643,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/rep_general.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5842,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3317,
-								3317
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1410.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "report.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8617,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3187.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/controllers/ReportGeneralController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9949,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4513,
-								4513
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 3465.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/controllers/ReportDEController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3171,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								908,
-								908
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 855.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/rep_desgravamen.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8996,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								350,
-								350
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/rep_de_template.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7430,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1384,
-								1384
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1123,6 +699,114 @@
 		"selected_items":
 		[
 			[
+				"repdepa",
+				"app\\controllers\\ReportDEPauloviController.php"
+			],
+			[
+				"repodeemp",
+				"app\\controllers\\ReportDEEmprenderController.php"
+			],
+			[
+				"men",
+				"menu.php"
+			],
+			[
+				"redesar",
+				"app\\controllers\\ReportDESartawiController.php"
+			],
+			[
+				"repdeec",
+				"app\\controllers\\ReportDEEcofuturoController.php"
+			],
+			[
+				"repdeide",
+				"app\\controllers\\ReportDEIdeproController.php"
+			],
+			[
+				"clien",
+				"app\\controllers\\ClientDBController.php"
+			],
+			[
+				"clieco",
+				"app\\controllers\\ClientController.php"
+			],
+			[
+				"hom",
+				"app\\views\\home.php"
+			],
+			[
+				"forad",
+				"app\\views\\form-add-user.php"
+			],
+			[
+				"repor",
+				"report.php"
+			],
+			[
+				"formadd",
+				"app\\views\\form-add-user.php"
+			],
+			[
+				"por",
+				"app\\views\\proccess.php"
+			],
+			[
+				"dele",
+				"app\\views\\delete-user.php"
+			],
+			[
+				"forma",
+				"app\\views\\form-add-user.php"
+			],
+			[
+				"pro",
+				"app\\views\\proccess.php"
+			],
+			[
+				"adminuse",
+				"app\\controllers\\AdminUserController.php"
+			],
+			[
+				"adminus",
+				"app\\views\\admin_user.php"
+			],
+			[
+				"bank",
+				"app\\controllers\\BankController.php"
+			],
+			[
+				"me",
+				"menu.php"
+			],
+			[
+				"for",
+				"app\\views\\form_login.php"
+			],
+			[
+				"usercon",
+				"app\\controllers\\UserController.php"
+			],
+			[
+				"lo",
+				"login.php"
+			],
+			[
+				"cliec",
+				"app\\controllers\\ClientController.php"
+			],
+			[
+				"ses",
+				"app\\controllers\\SessionController.php"
+			],
+			[
+				"form",
+				"app\\views\\form_login.php"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
 				"repdet",
 				"app\\views\\rep_de_template.php"
 			],
@@ -1145,10 +829,6 @@
 			[
 				"repogenc",
 				"app\\controllers\\ReportGeneralController.php"
-			],
-			[
-				"repor",
-				"report.php"
 			],
 			[
 				"sty",
@@ -1203,24 +883,8 @@
 				"app\\controllers\\SessionController.php"
 			],
 			[
-				"for",
-				"app\\views\\form_login.php"
-			],
-			[
-				"pro",
-				"app\\views\\proccess.php"
-			],
-			[
 				"admin",
 				"app\\views\\admin_user.php"
-			],
-			[
-				"hom",
-				"app\\views\\home.php"
-			],
-			[
-				"bank",
-				"bank.php"
 			],
 			[
 				"forba",
@@ -1231,24 +895,8 @@
 				"index.php"
 			],
 			[
-				"form",
-				"app\\views\\form_bank.php"
-			],
-			[
 				"admin_b",
 				"app\\views\\admin_bank.php"
-			],
-			[
-				"me",
-				"menu.php"
-			],
-			[
-				"cliec",
-				"app\\controllers\\ClientController.php"
-			],
-			[
-				"inde",
-				"index.php"
 			],
 			[
 				"redecre",
