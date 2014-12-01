@@ -39,7 +39,7 @@ class ReportDESartawiController
 					. '&idproducto=' 
 					. '&idemision=' . $this->row['ide'] 
 					. '&ciudad_logueado=' 
-					. '&verdetalle=3&conect=log"'
+					. '&verdetalle=3&conect=log'
 					. '&url=' . base64_encode($this->db['ef_dominio']);
 
 				if ($this->row['r_prefijo'] === 'V') {

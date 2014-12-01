@@ -190,6 +190,14 @@
 				"buffer_size": 1194,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "app/controllers/ReportClientDBController.php",
+			"settings":
+			{
+				"buffer_size": 2730,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -234,10 +242,29 @@
 	"expanded_folders":
 	[
 		"/D/xampp/htdocs/administrator",
-		"/D/xampp/htdocs/administrator/app"
+		"/D/xampp/htdocs/administrator/app",
+		"/D/xampp/htdocs/administrator/app/controllers"
 	],
 	"file_history":
 	[
+		"/D/xampp/htdocs/idepro/classes/certificate-sibas-html.class.php",
+		"/D/xampp/htdocs/idepro/classes/certificate-sibas-query.class.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportClientDBController.php",
+		"/D/xampp/htdocs/idepro/classes/certificate-sibas.class.php",
+		"/D/xampp/htdocs/idepro/DE-issue-record.php",
+		"/D/xampp/htdocs/idepro/includes-ce/certificate-DE-EM-APS.inc.php",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas-html.class.php",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas-query.class.php",
+		"/D/xampp/htdocs/crecer/DE-issue-record.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM-APS.inc.php",
+		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/idepro/cambios.txt",
+		"/C/Users/miguel/Desktop/djmiguelarango/sud_administrator.sql",
+		"/C/Users/miguel/Desktop/djmiguelarango/Administrador.txt",
+		"/D/Curso Profesional de Backend/03. Django Avanzado/06. Context Processors en Django.docx",
+		"/C/Users/miguel/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/C/Users/miguel/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/C/Users/miguel/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/C/Users/miguel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/D/xampp/htdocs/administrator/app/controllers/BankController.php",
 		"/D/xampp/htdocs/administrator/app/views/admin_bank.php",
 		"/D/xampp/htdocs/administrator/app/views/rep_desgravamen.php",
@@ -251,7 +278,6 @@
 		"/D/xampp/htdocs/administrator/app/controllers/ReportDEController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportCLSartawiController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportCLPauloviController.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportClientDBController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportClientController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportCLIdeproController.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportCLEmprenderController.php",
@@ -264,7 +290,6 @@
 		"/D/xampp/htdocs/administrator/app/controllers/ClientDBController.php",
 		"/D/xampp/htdocs/administrator/app/views/rep_general.php",
 		"/D/xampp/htdocs/administrator/report.php",
-		"/D/xampp/htdocs/crecer/classes/certificate-sibas-html.class.php",
 		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM.inc.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportDEPauloviController.php",
 		"/D/xampp/htdocs/paulovi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
@@ -283,11 +308,7 @@
 		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/envia_email_emision_desgravamen.php",
 		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/proceso_envio_emision_des.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportDEIdeproController.php",
-		"/D/xampp/htdocs/idepro/classes/certificate-sibas.class.php",
 		"/D/xampp/htdocs/crecer/classes/certificate-sibas.class.php",
-		"/D/xampp/htdocs/idepro/classes/certificate-sibas-html.class.php",
-		"/D/xampp/htdocs/idepro/classes/certificate-sibas-query.class.php",
-		"/D/xampp/htdocs/crecer/classes/certificate-sibas-query.class.php",
 		"/D/xampp/htdocs/idepro/session.class.php",
 		"/D/xampp/htdocs/idepro/sibas-db.class.php",
 		"/D/xampp/htdocs/idepro/header.inc.php",
@@ -325,14 +346,12 @@
 		"/D/xampp/htdocs/administrator/app/views/rep_automotor.php",
 		"/C/Users/miguel/Desktop/administrator.php",
 		"/D/xampp/htdocs/administrator/app/views/rep_client.php",
-		"/C/Users/miguel/Desktop/djmiguelarango/Administrador.txt",
 		"/D/xampp/htdocs/administrator/app/models/rep_sar_em.sql",
 		"//pc-2/trabajos/LIST_USUARIOS_ENTIDADES.txt",
 		"/D/xampp/htdocs/administrator/Administrator.sublime-project",
 		"/D/xampp/htdocs/administrator/app/views/rep_trm_template.php",
 		"/D/xampp/htdocs/administrator/footer.php",
 		"/D/xampp/htdocs/idepro_02/test02.php",
-		"/C/Users/miguel/Desktop/djmiguelarango/sud_administrator.sql",
 		"/D/xampp/htdocs/administrator/app/models/rep_eco_dt.sql",
 		"/D/xampp/htdocs/administrator/app/models/rep_pau_dt.sql",
 		"/D/xampp/htdocs/administrator/jQueryAssets/ui/i18n/jquery.ui.datepicker-pl.js",
@@ -363,6 +382,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$this->implant,",
+			"num_to_string_date",
+			"set_html_de_em",
+			"get_html_ce",
+			"set_query_de_em",
+			"get_query_ce",
+			"set_query_de_em_mo",
+			"get_query_ce",
+			"id_certificado",
+			"$this->implant",
+			"set_html_de_em",
+			"get_html_ce",
+			"id_certificado",
+			"set_query_de_em",
+			"id_certificado",
+			"id_ce",
+			"get_query_ce",
+			"set_query_de_em_mo",
+			"get_query_ce",
 			"echo",
 			". '",
 			"' . ",
@@ -471,26 +509,7 @@
 			"sessio",
 			"'app",
 			"dir",
-			"'app",
-			".php",
-			"$_SESSION['dir']",
-			"dir",
-			"DIR",
-			"fancybox/",
-			"fancybox",
-			"fancy",
-			"view-detail",
-			"excel",
-			"xls",
-			"url",
-			"result-container",
-			"$_SESSION['dir'] . '/",
-			"action-user",
-			".php",
-			"require",
-			"'/",
-			"require",
-			"../"
+			"'app"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -529,8 +548,8 @@
 						"selection":
 						[
 							[
-								526,
-								526
+								381,
+								381
 							]
 						],
 						"settings":
@@ -643,10 +662,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/ReportClientDBController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2730,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2686,
+								2686
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -938,6 +986,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"D:\\python-projects\\sfotipywin\\Sfotipyw.sublime-project"
+			],
 			[
 				"idepr",
 				"D:\\xampp\\htdocs\\idepro\\Idepro.sublime-project"
