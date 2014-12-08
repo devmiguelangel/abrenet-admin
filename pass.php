@@ -94,28 +94,28 @@ class APS extends Administrator
 
                         switch ($this->row['ef_codigo']) {
                         case 'EC':
-                            /*$ecofuturo = new ReportDEEcofuturoController($this->cx, null, null, null);
-                            $token = $ecofuturo->apsEcofuturo($this->qs);*/
+                            $ecofuturo = new ReportDEEcofuturoController($this->cx, null, null, null);
+                            $token = $ecofuturo->apsEcofuturo($this->qs);
                             break;
                         case 'SS':
-                            /*$sartawi = new ReportDESartawiController($this->cx, null, null, null);
-                            $token = $sartawi->apsSartawi($this->qs);*/
+                            $sartawi = new ReportDESartawiController($this->cx, null, null, null);
+                            $token = $sartawi->apsSartawi($this->qs);
                             break;
                         case 'EM':
-                            /*$emprender = new ReportDEEmprenderController($this->cx, null, null, null);
-                            $token = $emprender->apsEmprender($this->qs);*/
+                            $emprender = new ReportDEEmprenderController($this->cx, null, null, null);
+                            $token = $emprender->apsEmprender($this->qs);
                             break;
                         case 'PV':
                             $paulovi = new ReportDEPauloviController($this->cx, null, null, null);
                             $token = $paulovi->apsPauloVI($this->qs);
                             break;
                         case 'ID':
-                            /*$idepro = new ReportDEIdeproController($this->cx, null, null, null);
-                            $token = $idepro->apsIdepro($this->qs);*/
+                            $idepro = new ReportDEIdeproController($this->cx, null, null, null);
+                            $token = $idepro->apsIdepro($this->qs);
                             break;
                         case 'CR':
-                            /*$crecer = new ReportDECrecerController($this->cx, null, null, null);
-                            $token = $crecer->apsCrecer($this->qs);*/
+                            $crecer = new ReportDECrecerController($this->cx, null, null, null);
+                            $token = $crecer->apsCrecer($this->qs);
                             break;
                         }
 
