@@ -381,5 +381,79 @@ class ReportDEEcofuturoController
 
 		return false;
 	}
+
+	public function apsEcofuturo($qs)
+	{
+		$err = false;
+
+		$sql = 'select max(idpregunta) + 1 as idpregunta 
+		from tblpreguntamadrede
+		;';
+
+		if (($rs = $this->cx->query($sql, MYSQLI_STORE_RESULT)) !== false) {
+			if ($rs->num_rows === 1) {
+				$row = $rs->fetch_array(MYSQLI_ASSOC);
+				$rs->free();
+
+				$id = $row['idpregunta'];
+
+				$sql = 'update tblpreguntamadrede
+		        	set activado = false ; 
+				update tbl_certificado_version
+		        	set activo = 0 ;
+		        alter table tblrespuestaesperadade 
+		        	change `idrespuesta` `idrespuesta` int(7) 
+		        		not null auto_increment; 
+		        insert into tbl_certificado_version
+		        	values
+		        	(4, null, null, curdate(), 1);
+		        ';
+
+		        $sql .= '
+		        insert into tblpreguntamadrede
+		            values ';
+				
+				foreach ($qs as $key => $value) {
+					$sql .= '
+					("' . $id . '", "' . $value . '", curdate(), "admin", ' . $key . ', true),';
+
+					$id += 1;
+				}
+
+				$sql = trim($sql, ',') . ' ;';
+
+				$id = $row['idpregunta'];
+
+				$sql .= '
+				insert into tblrespuestaesperadade
+					values ';
+					
+				foreach ($qs as $key => $value) {
+					$sql .= '
+					(null, "' . $id . '", 8, 2, curdate()),';
+					$id += 1;
+				}
+				
+				$sql = trim($sql, ',') . ' ;';
+				
+		        if ($this->cx->multi_query($sql) === true) {
+		        	do {
+		        		if ($this->cx->errno !== 0) {
+		        			$err = true;
+		        		}
+		        	} while ($this->cx->next_result());
+		        } else {
+		        	$err = true;
+		        }
+
+		        if ($err === false) {
+		        	return true;
+		        }
+			}
+		}
+
+        return false;
+	}
+
 }
 ?>

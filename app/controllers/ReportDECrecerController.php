@@ -399,6 +399,43 @@ class ReportDECrecerController
 
 		return false;
 	}
+
+	public function apsCrecer($qs)
+    {
+        $err = false;
+
+        $sql = 'update s_pregunta
+        set activado = false ; ';
+
+        $sql .= '
+        insert into s_pregunta
+            values ';
+		
+		foreach ($qs as $key => $value) {
+			$sql .= '
+			(null, "' . $value . '", ' . $key . ', false, "DE", true, 
+                "@S#1$201353eb94e36af5c6.43056722"),';
+		}
+
+		$sql = trim($sql, ',') . ' ;';
+		
+        if ($this->cx->multi_query($sql) === true) {
+        	do {
+        		if ($this->cx->errno !== 0) {
+        			$err = true;
+        		}
+        	} while ($this->cx->next_result());
+        } else {
+        	$err = true;
+        }
+
+        if ($err === false) {
+        	return true;
+        }
+
+        return false;
+        
+    }
 }
 
 ?>
