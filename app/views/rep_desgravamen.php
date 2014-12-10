@@ -5,9 +5,9 @@ function rep_desgravamen($row, $rowDt, $db, $arr_state, $bg, $rowSpan, $rprint =
 <tr style=" <?=$bg;?> ">
     <td <?=$rowSpan;?>><?=$row['r_prefijo'] . '-' . $row['r_no_emision'];?></td>
 <?php
-    if ($rprint === TRUE) {
+    if ($rprint === true) {
         echo '<td ' . $rowSpan . '>
-            <a href="' . $row['host'] . '" target="_blank" 
+            <a href="' . $row['host'] . '&rp=' . sha1('rprint') . '" target="_blank" 
             class="fancybox fancybox.ajax view-detail">Certificado</a>
         </td>';
     }

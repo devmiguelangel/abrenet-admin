@@ -28,7 +28,7 @@ class ReportDEIdeproController
 				$this->row['host'] = $this->db['ef_dominio'] . 'certificate-detail.php?ide=' 
 					. base64_encode($this->row['ide']) . '&type=' 
 					. base64_encode('PRINT') . '&pr=' . base64_encode('DE') 
-					. '&category=' . base64_encode('CE') . '"';
+					. '&category=' . base64_encode('CE');
 
 				$nCl = (int)$this->row['no_cl'];
 

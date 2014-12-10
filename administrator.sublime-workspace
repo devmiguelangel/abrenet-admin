@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"rp",
+				"rprint"
+			],
+			[
+				"GE",
+				"_GET  (variable)"
+			],
+			[
+				"arr",
+				"arrCertificado"
+			],
+			[
+				"nu",
+				"null"
+			],
+			[
+				"utf",
+				"utf8_decode"
+			],
+			[
 				"MYSQ",
 				"MYSQLI_ASSOC"
 			],
@@ -224,10 +244,6 @@
 				"setBankHost  (function)"
 			],
 			[
-				"arr",
-				"arrData"
-			],
-			[
 				"che",
 				"check_option  (variable)"
 			],
@@ -339,31 +355,7 @@
 			"file": "pass.php",
 			"settings":
 			{
-				"buffer_size": 4857,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/ReportDESartawiController.php",
-			"settings":
-			{
-				"buffer_size": 14447,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_04.php",
-			"settings":
-			{
-				"buffer_size": 76761,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen.php",
-			"settings":
-			{
-				"buffer_size": 24862,
+				"buffer_size": 5457,
 				"line_ending": "Windows"
 			}
 		}
@@ -413,29 +405,53 @@
 		"/D/xampp/htdocs/administrator/app",
 		"/D/xampp/htdocs/administrator/app/config",
 		"/D/xampp/htdocs/administrator/app/controllers",
-		"/D/xampp/htdocs/administrator/app/models"
+		"/D/xampp/htdocs/administrator/app/models",
+		"/D/xampp/htdocs/administrator/app/views"
 	],
 	"file_history":
 	[
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/c_des_v02.php",
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/preguntas_desgravamen.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/plugin/jquery.mgm_validate-form.js",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/add-question-registry-desgravamen.php",
+		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/preguntas_desgravamen.php",
+		"/D/xampp/htdocs/emprender/preguntas_desgravamen.php",
+		"/D/xampp/htdocs/paulovi/064cf398ca384f04af3b4fa4b43dea66/csartawi.class.php",
+		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/csartawi.class.php",
+		"/D/xampp/htdocs/idepro/classes/certificate-sibas-html.class.php",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas-html.class.php",
+		"/D/xampp/htdocs/administrator/app/views/rep_desgravamen.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen.php",
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/csartawi.class.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/certificado.class.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_04.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_03.php",
+		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/deudorcodeudor.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDECrecerController.php",
+		"/D/xampp/htdocs/crecer/certificate-detail.php",
+		"/D/xampp/htdocs/crecer/classes/certificate-sibas.class.php",
+		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM-APS.inc.php",
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen_uno.php",
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen.php",
+		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/detalle-cotizacion/config.class.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEPauloviController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEEmprenderController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDESartawiController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEEcofuturoController.php",
+		"/D/xampp/htdocs/administrator/app/controllers/ReportDEIdeproController.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/ecofuturo/cambios.txt",
 		"//pc-2/trabajos/ECOFUTURO/actualizaciones eco/detalle_certificado_desgravamen.php",
 		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle-cotizacion/config.class.php",
 		"//pc-2/trabajos/ECOFUTURO/tblpreguntamadre.txt",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDEEcofuturoController.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDEIdeproController.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDECrecerController.php",
 		"/D/xampp/htdocs/idepro/includes-ce/certificate-DE-EM-APS.inc.php",
 		"/D/xampp/htdocs/idepro/DE-issue-record.php",
 		"/D/xampp/htdocs/crecer/classes/certificate-sibas-query.class.php",
-		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM-APS.inc.php",
 		"/D/xampp/htdocs/administrator/app/models/aps.sql",
 		"/D/xampp/htdocs/crecer/DE-policy-record.php",
 		"/D/xampp/htdocs/crecer/DE-issue-record.php",
-		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen.php",
-		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_04.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/YUREHJNO1Z1GB/Curso Django 1.6/Temas.txt",
-		"/D/xampp/htdocs/idepro/classes/certificate-sibas-html.class.php",
 		"/D/xampp/htdocs/administrator/app/views/delete-user.php",
 		"/D/xampp/htdocs/administrator/app/views/rep_de_template.php",
 		"/D/xampp/htdocs/crecer/DE-question-record.php",
@@ -450,31 +466,24 @@
 		"/D/xampp/htdocs/paulovi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
 		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/cert-pdf.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/paulovi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
-		"/D/xampp/htdocs/paulovi/064cf398ca384f04af3b4fa4b43dea66/csartawi.class.php",
 		"/D/xampp/htdocs/paulovi/064cf398ca384f04af3b4fa4b43dea66/c_des_v03.php",
 		"/D/xampp/htdocs/paulovi/064cf398ca384f04af3b4fa4b43dea66/c_des_v02.php",
 		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/c_des_v02.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/emprender/cambios.txt",
 		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
-		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/csartawi.class.php",
 		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/file_pdf/cert.pdf.php",
 		"/D/xampp/htdocs/sembrarsartawi/db/sartawi.sql",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/emprender/064cf398ca384f04af3b4fa4b43dea66/file_pdf/cert.pdf.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/idepro/cambios.txt",
 		"/D/xampp/htdocs/idepro/classes/certificate-sibas-query.class.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
-		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/c_des_v02.php",
 		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/c_des_v02-02.12.2014.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/c_des_v02.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion de Reportes/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_04.php",
 		"/D/xampp/htdocs/idepro/includes-ce/certificate-DE-EM-APS.inc-02.12.2014.php",
 		"/D/xampp/htdocs/crecer/includes-ce/certificate-DE-EM-APS.inc-02.12.2014.php",
-		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/csartawi.class.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion_ecofuturo_sembrar/sembrarsartawi/cambios.txt",
-		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
 		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/file_pdf/cert.pdf.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDESartawiController.php",
-		"/D/xampp/htdocs/administrator/app/views/rep_desgravamen.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion_ecofuturo_sembrar/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/formulario_desgravamen_detalle.php",
 		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/c_des_v01.php",
 		"/D/xampp/htdocs/automotoressudsc/sgc_poliza_autos.php",
@@ -490,8 +499,6 @@
 		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/file_pdf/pdf_certificado_desgravamen.php",
 		"/D/xampp/htdocs/ecofuturo/file_pdf/pdf_certificado_desgravamen.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion_ecofuturo_sembrar/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen.php",
-		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/certificado.class.php",
-		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_03.php",
 		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_03-01.12.2014.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/Reimpresion_ecofuturo_sembrar/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_03.php",
 		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/cepe_v_03.php",
@@ -499,7 +506,6 @@
 		"/D/xampp/htdocs/administrator/report.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ReportClientDBController.php",
 		"/D/xampp/htdocs/idepro/classes/certificate-sibas.class.php",
-		"/D/xampp/htdocs/crecer/classes/certificate-sibas-html.class.php",
 		"/C/Users/miguel/Desktop/djmiguelarango/sud_administrator.sql",
 		"/C/Users/miguel/Desktop/djmiguelarango/Administrador.txt",
 		"/D/Curso Profesional de Backend/03. Django Avanzado/06. Context Processors en Django.docx",
@@ -529,22 +535,9 @@
 		"/D/xampp/htdocs/administrator/login.php",
 		"/D/xampp/htdocs/administrator/app/controllers/ClientDBController.php",
 		"/D/xampp/htdocs/administrator/app/views/rep_general.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDEPauloviController.php",
-		"/D/xampp/htdocs/administrator/app/controllers/ReportDEEmprenderController.php",
 		"/D/xampp/htdocs/emprender/064cf398ca384f04af3b4fa4b43dea66/emision_seguro_desgravamen_certificado.php",
 		"/D/xampp/htdocs/sembrarsartawi/064cf398ca384f04af3b4fa4b43dea66/emision_seguro_desgravamen_certificado.php",
-		"/D/xampp/htdocs/administrator/menu.php",
-		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/emision_seguro_desgravamen_certificado.php",
-		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/envia_email_emision_desgravamen.php",
-		"/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/proceso_envio_emision_des.php",
-		"/D/xampp/htdocs/crecer/classes/certificate-sibas.class.php",
-		"/D/xampp/htdocs/idepro/session.class.php",
-		"/D/xampp/htdocs/idepro/sibas-db.class.php",
-		"/D/xampp/htdocs/idepro/header.inc.php",
-		"/D/xampp/htdocs/idepro/certificate-policy.php",
-		"/D/xampp/htdocs/administrator/app/models/rep_ide_dt.sql",
-		"/D/xampp/htdocs/administrator/app/models/rep_ide_em.sql",
-		"/D/xampp/htdocs/administrator/app/controllers/ClientController.php"
+		"/D/xampp/htdocs/administrator/menu.php"
 	],
 	"find":
 	{
@@ -568,6 +561,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"preguntas",
+			"plugin",
+			"script",
+			"set_html_de_em",
+			"get_html_ce",
+			"set_html_de_em",
+			"get_html_ce",
+			".php",
+			"muestra_form_solicitudes",
+			"accionBuscar",
+			"btnBuscar",
+			"txtBuscar",
+			"tipo_prefijo",
+			"mysql_fetch_row",
+			"prefijo",
+			"Output",
+			"implant",
+			"set_html_de_em",
+			"get_html_ce",
+			"insert",
 			"$arrayCl[32]",
 			"$arrayCert[24]",
 			"currency",
@@ -675,27 +688,7 @@
 			"set_query_de_em_mo",
 			"get_query_ce",
 			"echo",
-			". '",
-			"' . ",
-			"echo",
-			" . '",
-			"' . ",
-			"echo",
-			" . '",
-			"' . ",
-			"echo",
-			" . '",
-			"' . ",
-			" . '",
-			"' . ",
-			" . ",
-			"' . ",
-			"echo",
-			". '",
-			"' . ",
-			"echo",
-			"echp",
-			"echo"
+			". '"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -718,7 +711,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -851,7 +844,7 @@
 						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -880,7 +873,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -909,7 +902,7 @@
 						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -918,15 +911,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4857,
+						"buffer_size": 5457,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3348,
-								3348
+								3019,
+								3019
 							]
 						],
 						"settings":
@@ -1040,303 +1033,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1178.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/controllers/ReportDESartawiController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14447,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13514,
-								13514
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5896.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/ceco_v_04.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 76761,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15862,
-								15874
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5137.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/D/xampp/htdocs/ecofuturo/064cf398ca384f04af3b4fa4b43dea66/detalle_certificado_desgravamen.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 24862,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								21924,
-								21924
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 9048.0,
+						"translation.y": 1395.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
