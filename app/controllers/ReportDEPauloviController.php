@@ -405,7 +405,9 @@ class ReportDEPauloviController
 
 				$id = $row['idpregunta'];
 
-				$sql = 'update tblpreguntamadrede
+				$sql = 'alter table tblpreguntamadrede 
+					add (activado boolean not null default false);
+				update tblpreguntamadrede
 		        	set activado = false ; 
 				update tbl_certificado_version
 		        	set activo = 0 ;
@@ -435,7 +437,7 @@ class ReportDEPauloviController
 					
 				foreach ($qs as $key => $value) {
 					$sql .= '
-					(null, "' . $id . '", 8, 2, curdate()),';
+					(null, "' . $id . '", 4, 2, curdate()),';
 					$id += 1;
 				}
 				

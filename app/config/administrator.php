@@ -9,7 +9,7 @@ class Administrator extends mysqli
 	private $data = array('mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'sud_administrator',
+            'database'  => 'administrator',
             'username'  => 'root',
             'password'  => '',
             'charset'   => 'utf8',

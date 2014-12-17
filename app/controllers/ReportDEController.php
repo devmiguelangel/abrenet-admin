@@ -117,7 +117,7 @@ class ReportDEController
 		
 		if (strpos($self, 'localhost') !== false || filter_var($self, FILTER_VALIDATE_IP) !== false) {
 			$this->url .= trim($this->host, '.') . '/';
-		} elseif (strpos($self, $this->host . 'abrenet.com') === false){
+		} elseif (strpos($self, $this->host . 'abrenet.com') === false) {
 			$this->url .= trim($this->host, '.') . '/';
 		} else {
 			$this->url .= '';

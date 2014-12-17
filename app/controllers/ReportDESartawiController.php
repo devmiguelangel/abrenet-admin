@@ -406,7 +406,9 @@ class ReportDESartawiController
 
 				$id = $row['idpregunta'];
 
-				$sql = 'update tblpreguntamadrede
+				$sql = 'alter table tblpreguntamadrede 
+					add (activado boolean not null default false);
+				update tblpreguntamadrede
 		        	set activado = false ; 
 				update tbl_certificado_version
 		        	set activo = 0 ;

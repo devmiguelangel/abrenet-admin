@@ -404,8 +404,10 @@ class ReportDECrecerController
     {
         $err = false;
 
-        $sql = 'update s_pregunta
-        set activado = false ; ';
+        $sql = 'update s_de_em_cabecera
+        	set id_certificado = 1;
+        update s_pregunta
+        	set activado = false ; ';
 
         $sql .= '
         insert into s_pregunta
