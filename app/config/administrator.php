@@ -9,9 +9,9 @@ class Administrator extends mysqli
 	private $data = array('mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'administrator',
-            'username'  => 'root',
-            'password'  => '',
+            'database'  => 'abrenet_admin',
+            'username'  => 'homestead',
+            'password'  => 'secret',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => 'sa_',

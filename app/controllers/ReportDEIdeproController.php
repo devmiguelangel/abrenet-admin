@@ -334,9 +334,12 @@ class ReportDEIdeproController
         $err = false;
 
         $sql = 'update s_de_em_cabecera
-        	set id_certificado = 1;
+        	set id_certificado = 1
+        	where id_certificado = 0;
         update s_pregunta
-        	set activado = false ; ';
+        	set activado = false ;
+        ALTER TABLE s_de_cot_cabecera 
+        	ADD tasa DOUBLE(10,3) NOT NULL AFTER id_prcia ;';
 
         $sql .= '
         insert into s_pregunta

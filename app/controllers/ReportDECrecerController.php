@@ -407,7 +407,12 @@ class ReportDECrecerController
         $sql = 'update s_de_em_cabecera
         	set id_certificado = 1;
         update s_pregunta
-        	set activado = false ; ';
+        	set activado = false ;
+		ALTER TABLE s_de_cot_cabecera 
+			ADD tasa DOUBLE(10,3) NOT NULL AFTER id_prcia;
+		ALTER TABLE s_de_cot_cabecera 
+        	ADD vg BOOLEAN NOT NULL DEFAULT FALSE ;
+		';
 
         $sql .= '
         insert into s_pregunta

@@ -89,33 +89,34 @@ class APS extends Administrator
         if (($this->rs = $this->query($this->queryset, MYSQLI_STORE_RESULT)) !== false) {
             if ($this->rs->num_rows > 0) {
                 while ($this->row = $this->rs->fetch_array(MYSQLI_ASSOC)) {
+                    // var_dump($this->row);
                     if ($this->connectDB() === true) {
                         $token = false;
 
                         switch ($this->row['ef_codigo']) {
                         case 'EC':
-                            $ecofuturo = new ReportDEEcofuturoController($this->cx, null, null, null);
-                            $token = $ecofuturo->apsEcofuturo($this->qs);
+                            // $ecofuturo = new ReportDEEcofuturoController($this->cx, null, null, null);
+                            // $token = $ecofuturo->apsEcofuturo($this->qs);
                             break;
-                        case 'SS':
-                            $sartawi = new ReportDESartawiController($this->cx, null, null, null);
-                            $token = $sartawi->apsSartawi($this->qs);
+                       case 'SS':
+                            // $sartawi = new ReportDESartawiController($this->cx, null, null, null);
+                            // $token = $sartawi->apsSartawi($this->qs);
                             break;
                         case 'EM':
-                            $emprender = new ReportDEEmprenderController($this->cx, null, null, null);
-                            $token = $emprender->apsEmprender($this->qs);
+                            // $emprender = new ReportDEEmprenderController($this->cx, null, null, null);
+                            // $token = $emprender->apsEmprender($this->qs);
                             break;
                         case 'PV':
-                            $paulovi = new ReportDEPauloviController($this->cx, null, null, null);
-                            $token = $paulovi->apsPauloVI($this->qs);
+                            // $paulovi = new ReportDEPauloviController($this->cx, null, null, null);
+                            // $token = $paulovi->apsPauloVI($this->qs);
                             break;
                         case 'ID':
-                            $idepro = new ReportDEIdeproController($this->cx, null, null, null);
-                            $token = $idepro->apsIdepro($this->qs);
+                            // $idepro = new ReportDEIdeproController($this->cx, null, null, null);
+                            // $token = $idepro->apsIdepro($this->qs);
                             break;
                         case 'CR':
-                            $crecer = new ReportDECrecerController($this->cx, null, null, null);
-                            $token = $crecer->apsCrecer($this->qs);
+                            // $crecer = new ReportDECrecerController($this->cx, null, null, null);
+                            // $token = $crecer->apsCrecer($this->qs);
                             break;
                         }
 

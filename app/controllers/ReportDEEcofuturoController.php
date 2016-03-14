@@ -409,6 +409,10 @@ class ReportDEEcofuturoController
 		        insert into tbl_certificado_version
 		        	values
 		        	(4, null, null, curdate(), 1);
+		        ALTER TABLE tblcotizacabecerade 
+		        	ADD tasa DOUBLE(10,3) NOT NULL;
+				ALTER TABLE tbl_emision_des_cabecera 
+					ADD tasa DOUBLE(10,3) NOT NULL;
 		        ';
 
 		        $sql .= '
@@ -441,9 +445,10 @@ class ReportDEEcofuturoController
 		        if ($this->cx->multi_query($sql) === true) {
 		        	do {
 		        		if ($this->cx->errno !== 0) {
+		        			echo mysqli_error($this->cx);
 		        			$err = true;
 		        		}
-		        	} while ($this->cx->next_result());
+		        	} while ($this->cx->more_results() && $this->cx->next_result());
 		        } else {
 		        	$err = true;
 		        }

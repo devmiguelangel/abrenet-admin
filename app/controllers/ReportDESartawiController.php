@@ -415,6 +415,10 @@ class ReportDESartawiController
 		        update tbl_certificado_version
 		        	set activo = 1 
 		        where id_certificado_version = 2;
+		        ALTER TABLE tblcotizacabecerade 
+		        	ADD tasa DOUBLE(10,3) NOT NULL;
+				ALTER TABLE tbl_emision_des_cabecera2 
+					ADD tasa DOUBLE(10,3) NOT NULL;
 		        ';
 
 		        $sql .= '
@@ -449,7 +453,7 @@ class ReportDESartawiController
 		        		if ($this->cx->errno !== 0) {
 		        			$err = true;
 		        		}
-		        	} while ($this->cx->next_result());
+		        	} while ($this->cx->more_results() && $this->cx->next_result());
 		        } else {
 		        	$err = true;
 		        }
